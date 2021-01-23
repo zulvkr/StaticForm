@@ -1,6 +1,23 @@
 ---
 layout: layouts/form.njk
 title: Form 2
+form:
+  - type: textfield
+    label: Alamat
+    id: alamat
+    required: true
+  - type: textfield
+    label: Penerima
+    id: receiver
+    required: true
+  - type: selectfield
+    label: Buku yang dipesan
+    id: book
+    required: true
+    options:
+      - Jalan Menuju Surga
+      - Kematian Terindah
+      - Siapa sangka ada yang punya??
 ---
 
 This is Form 2
