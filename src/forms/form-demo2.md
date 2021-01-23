@@ -1,5 +1,5 @@
 ---
-layout: layouts/form.njk
+layout: layouts/formtest.njk
 title: Form 2
 form:
   - type: textfield
@@ -14,7 +14,7 @@ form:
     label: Buku yang dipesan
     id: book
     required: true
-    options:
+    enum:
       - Jalan Menuju Surga
       - Kematian Terindah
       - Siapa sangka ada yang punya??

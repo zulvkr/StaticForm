@@ -45,6 +45,6 @@ collections:
               - { label: Id, name: id, widget: string }
               - { label: Required, name: required, widget: boolean }
               - label: Options
-                name: options
+                name: enum
                 widget: list
                 field: { label: Option, name: option, widget: string }
