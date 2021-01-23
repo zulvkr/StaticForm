@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-    {% if page.url == "/" %}
+    <!-- Set to true if need to open registration to NetlifyCMS -->
+    {% if page.url == "/" and false %}
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
     {% endif %}
 
@@ -16,7 +17,7 @@
 </head>
 <body class="flex flex-col min-h-screen">
   {% if page.url == "/" %}
-    <div class="fixed right-0 bottom-0 bg-gradient-to-r from-blue-300 via-green-300 to-green-200 rounded p-2 m-2 text-sm text-white font-bold tracking-tighter">
+    <div class="fixed opacity-50 hover:opacity-100 right-0 bottom-0 bg-gradient-to-r from-blue-400 to-green-400 rounded p-2 m-2 text-sm text-white font-bold tracking-tighter">
       <a href="/admin">admin</a>
     </div>
   {% endif %}
