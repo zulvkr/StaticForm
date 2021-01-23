@@ -23,6 +23,9 @@ collections:
       - label: Title
         name: title
         widget: string
+      - label: Tanggal
+        name: date
+        widget: datetime
       - label: Body text
         name: body
         widget: markdown

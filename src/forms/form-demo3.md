@@ -1,6 +1,23 @@
 ---
-layout: layouts/form.njk
+date: Last Modified
 title: Form 3
+form:
+  - type: textfield
+    label: Alamat
+    id: alamat
+    required: true
+  - type: textfield
+    label: Penerima
+    id: receiver
+    required: true
+  - type: selectfield
+    label: Buku yang dipesan
+    id: book
+    required: true
+    enum:
+      - Jalan Menuju Surga
+      - Kematian Terindah
+      - Siapa sangka ada yang punya??
 ---
 
 This is Form 3

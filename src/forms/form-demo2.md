@@ -1,5 +1,5 @@
 ---
-layout: layouts/formtest.njk
+date: Last Modified
 title: Form 2
 form:
   - type: textfield
