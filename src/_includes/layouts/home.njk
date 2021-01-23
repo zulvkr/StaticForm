@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<div class="flex items-center mb-4">
+  <div class="mx-auto max-w-3xl px-5 border-t border-gray-200 py-10 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
+    <article class="mb-5 prose lg:prose-lg">{{ content | safe }}</article>
+    <div class="w-full">
+      <ul class="flex flex-wrap justify-center">
+        {%- for form in collections.forms -%}
+          <li class="w-full sm:w-1/2 block py-2 px-2">
+            <a href="{{form.url}}" class="block h-full shadow p-5 border text-lg text-gray-700 rounded transition hover:text-white hover:bg-gray-600 focus:ring-4 ring-green-500">
+              <p class="font-bold text-sm">Demo</p>
+              <p>{{ form.data.title }}</p>
+            </a>
+          </li>
+        {%- endfor -%}
+        </ul>
+    </div>
+  </div>
+</div>

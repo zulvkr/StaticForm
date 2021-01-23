@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ '/style.css' | url }}">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
+    <title>{{ title }}</title>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <div class="bg-gradient-to-r from-blue-300 via-green-300 to-green-200">
+    <div class="container mx-auto flex flex-col items-left h-4 px-6 text-lg font-semibold text-white">
+      <a href="{{ '/' | url }}"><span></span></a>
+  </div>
+  </div>
+    <header class="flex flex-col items-center mx-8">
+      <div class="tracking-tight text-center text-3xl my-5 sm:leading-normal sm:text-5xl sm:my-9 text-gray-600 transition font-bold">{{ title }}</div>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer class="flex bg-green-500 h-2 mt-auto">
+      <script>
+        {% include 'js/inline.js' %}
+      </script>
+    </footer>
+</body>
+</html>

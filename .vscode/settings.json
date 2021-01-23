@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/package-lock.json": true,
+        "node_modules/": true
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.includeLanguages": {
+        ".11ty.js": "js"
+    }
+}

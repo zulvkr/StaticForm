@@ -1,0 +1,27 @@
+{
+    "title": "Demo Form Preset",
+    "action": "console.log",
+    "form": [
+        {
+            "label": "Name",
+            "id": "name",
+            "required": true
+        },
+        {
+            "label": "Amount of Donation",
+            "id": "amount",
+            "required": true
+        },
+        {
+            "label": "Bank",
+            "id": "bank",
+            "required": true,
+            "enum": [
+                "Bank BNI - [074] 10685 8967 8682 ",
+                "Bank Mandiri - [120] 2629 383 02826",
+                "Bank BTPN - [190] 6283 383 2935",
+                "Bank BRI - [101] 8237 292 02949"
+            ]
+        }
+    ]
+}
