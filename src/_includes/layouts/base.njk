@@ -6,11 +6,20 @@
     <link rel="stylesheet" href="{{ '/style.css' | url }}">
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    {% if page.url == "/" %}
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+    {% endif %}
+
     <title>{{ title }}</title>
 </head>
 <body class="flex flex-col min-h-screen">
-
+  {% if page.url == "/" %}
+    <div class="fixed right-0 bottom-0 bg-gradient-to-r from-blue-300 via-green-300 to-green-200 rounded p-2 m-2 text-sm text-white font-bold tracking-tighter">
+      <a href="/admin">admin</a>
+    </div>
+  {% endif %}
   <div class="bg-gradient-to-r from-blue-300 via-green-300 to-green-200">
     <div class="container mx-auto flex flex-col items-left h-4 px-6 text-lg font-semibold text-white">
       <a href="{{ '/' | url }}"><span></span></a>

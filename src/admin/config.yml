@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  # name: test-repo # use this for testing
+  branch: main
+
+media_folder: src/img
+public_folder: /img
+
+site_url: https://staticform21.netlify.app
+publish_mode: editorial_workflow
+
+# logo_url: https://st.netlify.app/logo.svg
+
+locale: "en"
+
+collections:
+  - label: "Forms"
+    name: "forms"
+    folder: "src/forms"
+    create: true
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Body text"
+        name: "body"
+        widget: "markdown"
+      - label: "Form"
+        name: "form"
+        widget: "list"
+        types:
+          - label: "Text Field"
+            name: "textfield"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Id", name: "id", widget: "string" }
+              - { label: "Required", name: "required", widget: "boolean" }
+          - label: "Select Field"
+            name: "selectfield"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Id", name: "id", widget: "string" }
+              - { label: "Required", name: "required", widget: "boolean" }
+              - label: "Options"
+                name: "options"
+                widget: "list"
+                field: { label: "Option", name: "option", widget: "string" }

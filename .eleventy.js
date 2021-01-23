@@ -7,16 +7,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   const Form = require("./src/_includes/components/_all");
-  
+
   eleventyConfig.addShortcode(
     "Button", Form.att.Button);
-  
+
   eleventyConfig.addShortcode(
     "Label", Form.att.Label); /* arguments: for */
-  
+
   eleventyConfig.addShortcode(
     "Text", Form.att.Text); /* arguments: id, name, placeholder, required:bool */
-  
+
   eleventyConfig.addShortcode(
     "Select", Form.att.Select); /* arguments: id, name, required:bool */
 
@@ -34,10 +34,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/_tmp/style.css": "./style.css" });
   }
 
-  eleventyConfig.addPassthroughCopy({ "favicon.png": "./favicon.png" });
+  eleventyConfig.addPassthroughCopy({
+    "favicon.png": "./favicon.png",
+    "src/admin/config.yml": "./admin/config.yml"
+  });
 
   eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
-  
+
   return {
     dir: {
       input: "src"
