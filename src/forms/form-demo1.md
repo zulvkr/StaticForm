@@ -1,6 +1,6 @@
 ---
-date: Last Modified
 title: Form 1
+date: 2021-01-24T22:49:43.965Z
 waNumber: 6285890710139
 form:
   - type: textfield
@@ -18,7 +18,7 @@ form:
     enum:
       - Jalan Menuju Surga
       - Kematian Terindah
-      - Siapa sangka ada yang punya??
+      - Siapa kira ada yang punya??
 ---
 
 This is Form 1
