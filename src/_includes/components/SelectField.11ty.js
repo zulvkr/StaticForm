@@ -14,11 +14,9 @@ module.exports = (id, name, required, placeholder, options) => {
     }
 
     return `
-    <div class="relative">
         <select ${Select(id, name, required)}>
             ${placeholder ? placeholder : ""}
             ${optionHtml}
         </select>
-    </div>
     `
 }

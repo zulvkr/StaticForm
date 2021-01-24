@@ -2,12 +2,12 @@
 layout: layouts/base.njk
 ---
 <div class="flex items-center mb-4">
-  <div class="mx-auto px-5 border-t border-gray-200 py-10 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
-    <article class="overflow-auto mb-5 prose lg:prose-lg">{{ content | safe }}</article>
+  <div class="px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
+    <article class="mb-5 overflow-auto prose lg:prose-lg">{{ content | safe }}</article>
 
     {% set fields = form %}
 
-    <form class="mx-auto max-w-xl border-t-2 border-gray-500 border-dotted py-5 sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
+    <form class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
      id="main-form" name="main-{{ page.fileSlug }}">
 
       {% for field in fields %}
@@ -22,7 +22,7 @@ layout: layouts/base.njk
         {% endif %}
       {% endfor %}
 
-      <div class="rounded-b-lg flex flex-row-reverse">
+      <div class="flex flex-row-reverse rounded-b-lg">
         <button {% Button %}>Submit</button>
       </div>
 

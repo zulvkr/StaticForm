@@ -20,27 +20,21 @@
 <body class="flex flex-col min-h-screen">
   {% if page.url == "/" %}
   <a href="/admin">
-    <div class="fixed opacity-50 hover:opacity-100 hover:shadow-lg right-4 bottom-4
-       bg-gray-300 bg-gradient-to-r hover:from-blue-300 hover:to-green-400 rounded
-       p-2 text-sm text-white font-bold tracking-tighter transition">
+    <div class="fixed p-2 text-sm font-bold tracking-tighter text-white transition bg-gray-300 rounded opacity-50 hover:opacity-100 hover:shadow-lg right-4 bottom-4 bg-gradient-to-r hover:from-blue-300 hover:to-green-400">
       admin
     </div>
   </a>
   {% endif %}
-  <div class="bg-gradient-to-r from-blue-300 via-green-300 to-green-200">
-    <div class="container mx-auto flex flex-col items-left h-4 px-6 text-lg font-semibold text-white">
-      <a href="{{ '/' | url }}"><span></span></a>
-    </div>
-  </div>
+  <div class="h-4 bg-gradient-to-r from-blue-300 via-green-300 to-green-200"></div>
   <header class="flex flex-col items-center mx-8">
     <div
-      class="tracking-tight text-center text-3xl my-5 sm:leading-normal sm:text-5xl sm:my-9 text-gray-600 transition font-bold">
+      class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
       {{ title }}</div>
   </header>
   <main>
     {{ content | safe }}
   </main>
-  <footer class="flex bg-green-500 h-2 mt-auto">
+  <footer class="flex h-2 mt-auto bg-green-500">
     <script>
       let waNumber = "{{ waNumber }}";
       let mode = "{{ mode }}";
