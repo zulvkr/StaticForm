@@ -26,6 +26,9 @@ collections:
       - label: Tanggal
         name: date
         widget: datetime
+      - label: Nomor WhatsApp
+        name: waNumber
+        widget: string
       - label: Body text
         name: body
         widget: markdown

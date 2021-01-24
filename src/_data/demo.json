@@ -1,6 +1,7 @@
 {
-    "title": "Demo Form Preset",
-    "action": "console.log",
+    "title": "Demo Form",
+    "mode": "log",
+    "waNumber": "628906857965",
     "form": [
         {
             "label": "Name",

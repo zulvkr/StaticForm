@@ -9,7 +9,7 @@
     "start": "npx concurrently \"npm:11ty\" \"npm:pcss\"",
     "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css"
   },
-  "//" : [
+  "//": [
     "11ty and postcss work tandemly during development. PostCSS save CSS files in ",
     "src/_tmp/ which watched & passed by 11ty to _site/ and trigger browser reload.",
     "In production build, PostCSS save directly in _site/"
@@ -30,6 +30,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.1",
     "concurrently": "^5.3.0",
+    "cssnano": "^4.1.10",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
   }

@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ '/style.css' | url }}">
-    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- Set to true if need to open registration to NetlifyCMS -->
-    {% if page.url == "/" and false %}
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
-    {% endif %}
+  <!-- Set to true if need to open registration to NetlifyCMS -->
+  {% if page.url == "/" and false %}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+  {% endif %}
 
-    <title>{{ title }}</title>
+  <title>{{ title }}</title>
 </head>
+
 <body class="flex flex-col min-h-screen">
   {% if page.url == "/" %}
-    <div class="fixed opacity-50 hover:opacity-100 right-0 bottom-0 bg-gradient-to-r from-blue-400 to-green-400 rounded p-2 m-2 text-sm text-white font-bold tracking-tighter transition">
-      <a href="/admin">admin</a>
+  <a href="/admin">
+    <div class="fixed opacity-50 hover:opacity-100 hover:shadow-lg right-4 bottom-4
+       bg-gray-300 bg-gradient-to-r hover:from-blue-300 hover:to-green-400 rounded
+       p-2 text-sm text-white font-bold tracking-tighter transition">
+      admin
     </div>
+  </a>
   {% endif %}
   <div class="bg-gradient-to-r from-blue-300 via-green-300 to-green-200">
     <div class="container mx-auto flex flex-col items-left h-4 px-6 text-lg font-semibold text-white">
       <a href="{{ '/' | url }}"><span></span></a>
+    </div>
   </div>
-  </div>
-    <header class="flex flex-col items-center mx-8">
-      <div class="tracking-tight text-center text-3xl my-5 sm:leading-normal sm:text-5xl sm:my-9 text-gray-600 transition font-bold">{{ title }}</div>
-    </header>
-    <main>
-      {{ content | safe }}
-    </main>
-    <footer class="flex bg-green-500 h-2 mt-auto">
-      <script>
-        {% include 'js/inline.js' %}
-      </script>
-    </footer>
+  <header class="flex flex-col items-center mx-8">
+    <div
+      class="tracking-tight text-center text-3xl my-5 sm:leading-normal sm:text-5xl sm:my-9 text-gray-600 transition font-bold">
+      {{ title }}</div>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer class="flex bg-green-500 h-2 mt-auto">
+    <script>
+      let waNumber = "{{ waNumber }}";
+      let mode = "{{ mode }}";
+      {% include "js/inline.js" %}
+    </script>
+  </footer>
 </body>
+
 </html>

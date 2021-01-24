@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "favicon.png": "./favicon.png",
-    "src/admin/config.yml": "./admin/config.yml"
+    "src/admin/": "./admin/"
   });
 
   eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);

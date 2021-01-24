@@ -7,7 +7,8 @@ layout: layouts/base.njk
 
     {% set fields = form %}
 
-    <form class="mx-auto max-w-xl border-t-2 border-gray-500 border-dotted py-5 sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-50 sm:rounded-lg">
+    <form class="mx-auto max-w-xl border-t-2 border-gray-500 border-dotted py-5 sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
+     id="main-form" name="main-{{ page.fileSlug }}">
 
       {% for field in fields %}
         {% if field.enum %}
