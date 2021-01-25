@@ -55,3 +55,5 @@ fields:
     showOnly:
       field: type
       value: selectfield
+pages:
+- src/forms/trail-of-forestry.md
