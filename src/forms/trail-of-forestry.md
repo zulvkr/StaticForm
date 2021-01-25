@@ -1,37 +1,30 @@
 ---
-date: 2021-01-25T08:44:21Z
 title: Trail of Forestry
+date: 2021-01-25T08:44:21.000Z
 waNumber: 6285890710139
 form:
-- type: selectfield
-  label: Select one of this
-  required: true
-  enum:
-  - pernah
-  - solat
-  - makan
-  - puasa
-  id: select
-- type: selectfield
-  label: something
-  id: sum
-  required: true
-  enum:
-  - husjbee
-  - jduhwj
-  - hsuuwhd,
-  - 'usuhw, '
-- type: selectfield
-  label: is nine
-  id: nine
-  required: true
-  enum:
-  - uwuurr
-  - jhdbd
-  - jusbudue
-  - jsuhwbidie
-  - ksi uehjd
-
+  - type: textfield
+    label: ioioiioio
+    id: oioioi
+    required: false
+  - type: selectfield
+    label: Select one of this
+    required: true
+    enum:
+      - pernah
+      - solat
+      - makan
+      - puasa
+    id: select
+  - type: selectfield
+    label: something
+    id: sum
+    required: true
+    enum:
+      - husjbee
+      - jduhwj
+      - hsuuwhd,
+      - "usuhw, "
 ---
 ## HTML Best Practices
 
