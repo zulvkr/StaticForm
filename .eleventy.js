@@ -3,26 +3,17 @@ const inspect = require("util").inspect;
 module.exports = function (eleventyConfig) {
 
   // Use .eleventyignore
-  //
   eleventyConfig.setUseGitIgnore(false);
 
-  const Form = require("./src/_includes/components/_all");
-
-  eleventyConfig.addShortcode(
-    "Text", Form.att.Text); /* arguments: id, name, placeholder, required:bool */
-
-  eleventyConfig.addShortcode(
-    "Select", Form.att.Select); /* arguments: id, name, required:bool */
-
-  eleventyConfig.addShortcode(
-    "SelectField", Form.SelectField); /* arguments: id, name, required:bool, placeholder:string||null, [options] */
-
-  eleventyConfig.addPairedShortcode(
-    "Group", Form.Group); /* arguments: content, for, label, required */
+  // Register Shortcodes
+  const Form = require("./src/_includes/components/Index");
+  eleventyConfig.addShortcode("Text", Form.att.text);
+  eleventyConfig.addShortcode("Select", Form.att.select);
+  eleventyConfig.addShortcode("SelectField", Form.SelectField);
+  eleventyConfig.addPairedShortcode("Group", Form.Group);
 
 
   // Trigger reload when CSS updated
-  //
   if (!process.env.ELEVENTY_PRODUCTION) {
     eleventyConfig.addWatchTarget("src/_tmp/style.css");
     eleventyConfig.addPassthroughCopy({ "src/_tmp/style.css": "./style.css" });
@@ -34,6 +25,7 @@ module.exports = function (eleventyConfig) {
     "src/static/img/": "./img"
   });
 
+  // Print eleventy data object
   eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 
   return {

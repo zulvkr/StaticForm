@@ -1,3 +1,10 @@
+/**
+ * @param {string} content Return content between shortcodes
+ * @param {string} forId 
+ * @param {string} label 
+ * @param {Boolean} required 
+ */
+
 module.exports = (content, forId, label,required) => {
     return `
     <div class="mb-6">
