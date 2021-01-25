@@ -12,20 +12,31 @@ form:
   - makan
   - puasa
   id: select
-- type: textfield
+- type: selectfield
   label: something
   id: sum
   required: true
-  enum: []
-- type: textfield
+  enum:
+  - husjbee
+  - jduhwj
+  - hsuuwhd,
+  - 'usuhw, '
+- type: selectfield
   label: is nine
   id: nine
   required: true
-  enum: []
+  enum:
+  - uwuurr
+  - jhdbd
+  - jusbudue
+  - jsuhwbidie
+  - ksi uehjd
 
 ---
 ## HTML Best Practices
 
 For _security_ reasons, not all **`Markdown`** applications support HTML in Markdown documents. When in doubt, **check** your Markdown application’s documentation. Some applications support only a subset of HTML tags.
 
-[**Use blank lines to**](https://www.google.com/) separate block-level HTM
+[**Use blank lines to**](https://www.google.com/) separate block-level HTML.
+
+Previously I have gone to Japan and america
