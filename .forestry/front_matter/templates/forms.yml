@@ -27,3 +27,8 @@ fields:
   - type: boolean
     name: required
     label: required
+  - name: enum
+    type: tag_list
+    default: []
+    label: Options
+    description: Option to provide in select field
