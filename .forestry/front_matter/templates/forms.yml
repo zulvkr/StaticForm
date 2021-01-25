@@ -1,0 +1,29 @@
+---
+label: Forms
+hide_body: false
+fields:
+- type: text
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: number
+  name: waNumber
+  label: waNumber
+- type: field_group_list
+  name: form
+  label: form
+  fields:
+  - type: text
+    name: type
+    label: type
+  - type: text
+    name: label
+    label: label
+  - type: text
+    name: id
+    label: id
+  - type: boolean
+    name: required
+    label: required
