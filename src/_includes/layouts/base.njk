@@ -1,46 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ '/style.css' | url }}">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-
-  <!-- Set to true if need to open registration to NetlifyCMS -->
-  {% if page.url == "/" and false %}
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
-  {% endif %}
-
-  <title>{{ title }}</title>
-</head>
+{% include "partials/head.njk" %}
 
 <body class="flex flex-col min-h-screen">
-  {% if page.url == "/" %}
-  <a href="/admin">
-    <div class="fixed p-2 text-sm font-bold tracking-tighter text-white transition bg-gray-300 rounded opacity-50 hover:opacity-100 hover:shadow-lg right-4 bottom-4 bg-gradient-to-r hover:from-blue-300 hover:to-green-400">
-      admin
-    </div>
-  </a>
-  {% endif %}
-  <div class="h-4 bg-gradient-to-r from-blue-300 via-green-300 to-green-200"></div>
-  <header class="flex flex-col items-center mx-8">
-    <div
-      class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
-      {{ title }}</div>
-  </header>
-  <main>
-    {{ content | safe }}
-  </main>
-  <footer class="flex h-2 mt-auto bg-green-500">
-    <script>
-      let waNumber = "{{ waNumber }}";
-      let mode = "{{ mode }}";
-      {% include "js/inline.js" %}
-    </script>
-  </footer>
-</body>
+<div class="h-4 bg-gradient-to-r from-blue-300 via-green-300 to-green-200"></div>
+<header class="flex flex-col items-center mx-8">
+  <div class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
+    {{ title }}
+  </div>
+</header>
+<main>
+  {{ content | safe }}
+</main>
+{% include "partials/adminButton.njk" %}
+{% include "partials/footer.njk" %}
 
+</body>
 </html>

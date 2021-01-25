@@ -7,11 +7,11 @@ layout: layouts/base.njk
 
     {% set fields = form %}
 
-    <form class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
+    <form
+     class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
      id="main-form" name="main-{{ page.fileSlug }}">
-
       {% for field in fields %}
-        {% if field.enum %}
+        {% if field.type === "selectfield" %}
           {% Group field.id, field.label, field.required  %}
             {% SelectField field.id, field.id, field.required, null, field.enum %}
           {% endGroup %}
@@ -21,11 +21,9 @@ layout: layouts/base.njk
           {% endGroup %}
         {% endif %}
       {% endfor %}
-
       <div class="flex flex-row-reverse">
         <button type="Submit" class="button">Submit</button>
       </div>
-
     </form>
   </div>
 </div>

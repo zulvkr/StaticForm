@@ -1,0 +1,11 @@
+<footer class="flex h-2 mt-auto bg-green-500">
+    <!-- Set to true if need to open NetlifyIdentity Registration -->
+    {% if page.url == "/" and false %}
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+    {% endif %}
+    <script>
+    let waNumber = "{{ waNumber }}";
+    let mode = "{{ mode }}";
+    {% include "js/inline.js" %}
+    </script>
+</footer>
