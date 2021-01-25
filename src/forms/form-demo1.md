@@ -16,9 +16,10 @@ form:
     id: book
     required: true
     enum:
-      - Jalan Menuju Surga
-      - Kematian Terindah
+      - Jalan Menuju Neraka
+      - Kehidupan Terindah
       - Siapa sangka ada yang punya??
+published: true
 ---
 
 This is Form 1
@@ -29,4 +30,4 @@ This is Form 1
 
 For *security* reasons, not all `Markdown` applications support HTML in Markdown documents. When in doubt, **check** your Markdown application’s documentation. Some applications support only a subset of HTML tags.
 
-[Use blank lines to](https://www.google.com) separate block-level HTML 
+[Use blank lines to](https://www.google.com) separate block-level HTML
