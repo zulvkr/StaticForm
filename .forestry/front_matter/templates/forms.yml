@@ -3,11 +3,18 @@ label: Forms
 hide_body: false
 fields:
 - type: text
-  name: date
-  label: date
-- type: text
   name: title
   label: title
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
 - type: number
   name: waNumber
   label: waNumber
