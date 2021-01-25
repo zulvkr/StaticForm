@@ -22,12 +22,25 @@ fields:
   name: form
   label: form
   fields:
-  - type: text
-    name: type
-    label: type
+  - name: type
+    type: select
+    default: []
+    config:
+      required: true
+      options:
+      - textfield
+      - selectfield
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Field Type
   - type: text
     name: label
     label: label
+    config:
+      required: true
   - type: text
     name: id
     label: id
@@ -39,3 +52,6 @@ fields:
     default: []
     label: Options
     description: Option to provide in select field
+    showOnly:
+      field: type
+      value: selectfield
