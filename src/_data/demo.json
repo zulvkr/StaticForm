@@ -4,16 +4,19 @@
     "waNumber": "628906857965",
     "form": [
         {
+            "type": "textfield",
             "label": "Name",
             "id": "name",
             "required": true
         },
-        {
+        {   
+            "type": "textfield",
             "label": "Amount of Donation",
             "id": "amount",
             "required": true
         },
         {
+            "type": "selectfield",
             "label": "Bank",
             "id": "bank",
             "required": true,

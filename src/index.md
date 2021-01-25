@@ -1,6 +1,6 @@
 ---
 layout: layouts/home.njk
-title: WhatsForm UI
+title: Static Form
 eleventyNavigation:
   key: Home
   order: 1

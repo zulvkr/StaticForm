@@ -1,6 +1,6 @@
 backend:
-  # name: git-gateway
-  name: test-repo # use this for testing
+  name: git-gateway
+  # name: test-repo # use this for testing
   branch: main
 
 media_folder: src/static/img
@@ -54,3 +54,24 @@ collections:
                 name: enum
                 widget: list
                 field: { label: Option, name: option, widget: string }
+  - label: Pages
+    name: pages
+    files:
+      - label: Home
+        name: Home
+        file: src/index.md
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+  - label: Settings
+    name: settings
+    files:
+      - label: Site Metadata
+        name: metadata
+        file: src/_data/site.json
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: URL, name: url, widget: string}
+          - {label: Favicon, name: favicon, widget: image}
