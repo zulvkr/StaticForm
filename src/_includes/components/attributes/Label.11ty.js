@@ -1,8 +1,8 @@
-// must return strings or template literals
-
+// this components is deprecated in favor of tailwind @apply
+//
 module.exports = function(forId) {
     return `
-    class="block tracking-wide text-gray-600 text-sm font-semibold mb-2"
+    class="label"
     for="${forId}"
     `
 }

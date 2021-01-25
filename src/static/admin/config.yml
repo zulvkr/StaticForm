@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  # name: test-repo # use this for testing
+  # name: git-gateway
+  name: test-repo # use this for testing
   branch: main
 
 media_folder: src/static/img

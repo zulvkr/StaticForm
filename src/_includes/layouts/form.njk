@@ -12,18 +12,18 @@ layout: layouts/base.njk
 
       {% for field in fields %}
         {% if field.enum %}
-          {% Group field.id, field.label  %}
-            {% SelectField field.id, field.id, true, null, field.enum %}
+          {% Group field.id, field.label, field.required  %}
+            {% SelectField field.id, field.id, field.required, null, field.enum %}
           {% endGroup %}
         {% else %}
-          {% Group field.id, field.label  %}
-            <input {% Text field.id , field.id , "" , true %}>
+          {% Group field.id, field.label, field.required  %}
+            <input {% Text field.id , field.id , "" , field.required %}>
           {% endGroup %}
         {% endif %}
       {% endfor %}
 
-      <div class="flex flex-row-reverse rounded-b-lg">
-        <button {% Button %}>Submit</button>
+      <div class="flex flex-row-reverse">
+        <button type="Submit" class="button">Submit</button>
       </div>
 
     </form>

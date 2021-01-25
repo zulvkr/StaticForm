@@ -1,9 +1,10 @@
-module.exports = (content, forId, label) => {
-    const Label = require('./attributes/Label.11ty');
-
+module.exports = (content, forId, label,required) => {
     return `
     <div class="mb-6">
-        <label ${Label(forId)}>${label}</label>
+        <label class="label" for="${forId}">
+            ${label}
+            ${required ? "<span class='text-red-500'>*</span>" : null }
+        </label>
         ${content}
     </div>
     `

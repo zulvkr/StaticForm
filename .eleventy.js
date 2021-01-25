@@ -9,12 +9,6 @@ module.exports = function (eleventyConfig) {
   const Form = require("./src/_includes/components/_all");
 
   eleventyConfig.addShortcode(
-    "Button", Form.att.Button);
-
-  eleventyConfig.addShortcode(
-    "Label", Form.att.Label); /* arguments: for */
-
-  eleventyConfig.addShortcode(
     "Text", Form.att.Text); /* arguments: id, name, placeholder, required:bool */
 
   eleventyConfig.addShortcode(
@@ -24,7 +18,7 @@ module.exports = function (eleventyConfig) {
     "SelectField", Form.SelectField); /* arguments: id, name, required:bool, placeholder:string||null, [options] */
 
   eleventyConfig.addPairedShortcode(
-    "Group", Form.Group); /* arguments: content, for, label */
+    "Group", Form.Group); /* arguments: content, for, label, required */
 
 
   // Trigger reload when CSS updated

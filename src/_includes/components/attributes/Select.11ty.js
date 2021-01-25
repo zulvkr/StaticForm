@@ -2,7 +2,7 @@
 
 module.exports = (id, name, required) => {
     return `
-    class="input appearance-none bg-white bg-select-arrow"
+    class="input bg-select-arrow"
     id="${id}"
     name="${ name ? name : id }"
     ${ required ? "required" : ""}

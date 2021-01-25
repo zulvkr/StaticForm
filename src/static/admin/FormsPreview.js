@@ -16,8 +16,8 @@ const FormsPreview = createClass({
             if (field.toJS().data.type === "selectfield") {
                 return html`
                 <div class="mb-6">    
-                    <label class="block tracking-wide text-gray-600 text-sm font-semibold mb-2">${field.getIn(["data", "label"])}</label>
-                    <select class="input appearance-none bg-white bg-select-arrow">
+                    <label class="label">${field.getIn(["data", "label"])}</label>
+                    <select class="input bg-select-arrow">
 
                         <!-- render options, check enum is available to prevent get() error --> 
                         ${field.get("data").toJS().enum ? field
@@ -30,7 +30,7 @@ const FormsPreview = createClass({
             } else {
                 return html`
                 <div class="mb-6">
-                    <label class="block tracking-wide text-gray-600 text-sm font-semibold mb-2">${field.getIn(["data", "label"])}</label>
+                    <label class="label">${field.getIn(["data", "label"])}</label>
                     <input class="input" type="text" placeholder="" />
                 </div>
                 `;
@@ -43,8 +43,8 @@ const FormsPreview = createClass({
                 return html`
                     <form class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
                         ${fields.map(field => html`${renderField(field)}`)}
-                        <div class="flex flex-row-reverse rounded-b-lg">
-                            <button type="submit" class="rounded-md font-bold bg-green-500 transition focus:outline-none focus:bg-green-100 focus:ring ring-green-400 py-2 px-4 text-white focus:text-green-500">Submit</button>
+                        <div class="flex flex-row-reverse">
+                            <button type="submit" class="button">Submit</button>
                         </div>
                     </form>
             `} else {
