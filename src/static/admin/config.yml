@@ -29,7 +29,7 @@ collections:
       - label: WhatsApp Number
         name: waNumber
         widget: number
-        hint: "example: 6281612345678"
+        hint: "accept number only and start with country code, example: 6281612345678"
       - label: Body text
         name: body
         widget: markdown
@@ -37,7 +37,7 @@ collections:
         name: form
         widget: list
         types:
-          - label: Text Field
+          - label: Text Field # Text field component
             name: textfield
             widget: object
             fields:
@@ -53,7 +53,7 @@ collections:
                 name: required
                 widget: boolean
                 default: true
-          - label: Select Field
+          - label: Select Field # Select field component
             name: selectfield
             widget: object
             fields:
@@ -78,7 +78,7 @@ collections:
     editor:
       preview: false
     files:
-      - label: Home
+      - label: Home # Homepage
         name: Home
         file: src/index.md
         fields:
@@ -89,7 +89,7 @@ collections:
     editor:
       preview: false
     files:
-      - label: Site Metadata
+      - label: Site Metadata # modify site.json
         name: metadata
         file: src/_data/site.json
         fields:

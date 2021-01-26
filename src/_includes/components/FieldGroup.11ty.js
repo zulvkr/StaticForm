@@ -1,5 +1,5 @@
 /**
- * @param {string} content Return content between shortcodes
+ * @param {string} content Return content between paired shortcodes
  * @param {string} forId 
  * @param {string} label 
  * @param {Boolean} required 

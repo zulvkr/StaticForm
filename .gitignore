@@ -84,7 +84,6 @@ dist
 
 # Eleventy build / generate output
 _site/
-**/**/fake_*
 src/_tmp/
 
 # Remove NetlifyCMS form this repo, this repo for design onlyg
