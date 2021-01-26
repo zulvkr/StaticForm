@@ -1,8 +1,8 @@
 # Static Form
 
-![Static Form](docs/web.gif)
-
 Static From is a form builder, like Google Form, that built on JAMStack technology.
+
+![Static Form](docs/web.gif)
 
 On the front end side we use Eleventy static site generator, Netlify CMS for the admin panel, and Tailwind CSS.
 
@@ -63,7 +63,7 @@ TODO
     ```
     npm run start
     ```
-    
+
     ![npm run start image](docs/start.gif)
     
     Open *localhost:8080* in your browser to see if the server running properly
