@@ -1,17 +1,17 @@
 backend:
-  name: git-gateway
-  # name: test-repo # use this for testing
+  # name: git-gateway
+  name: test-repo ## only use this for local testing ###
   branch: main
 
 media_folder: src/static/img
 public_folder: /img
 
-site_url: https://staticform21.netlify.app
-publish_mode: editorial_workflow
+# uncomment to enable drafts
+# publish_mode: editorial_workflow
 
-# logo_url: https://st.netlify.app/logo.svg
-
-locale: en
+# add your site url here without trailing "/" to enable
+# preview link and local development with git-gateway
+# site_url: 
 
 collections:
   - label: Forms
@@ -23,12 +23,13 @@ collections:
       - label: Title
         name: title
         widget: string
-      - label: Tanggal
+      - label: Date
         name: date
         widget: datetime
-      - label: Nomor WhatsApp
+      - label: WhatsApp Number
         name: waNumber
-        widget: string
+        widget: number
+        hint: "example: 6281612345678"
       - label: Body text
         name: body
         widget: markdown
@@ -40,38 +41,65 @@ collections:
             name: textfield
             widget: object
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Id, name: id, widget: string }
-              - { label: Required, name: required, widget: boolean }
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
           - label: Select Field
             name: selectfield
             widget: object
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Id, name: id, widget: string }
-              - { label: Required, name: required, widget: boolean }
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
               - label: Options
                 name: enum
                 widget: list
                 field: { label: Option, name: option, widget: string }
   - label: Pages
     name: pages
+    editor:
+      preview: false
     files:
       - label: Home
         name: Home
         file: src/index.md
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Body, name: body, widget: markdown}
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: markdown }
   - label: Settings
     name: settings
+    editor:
+      preview: false
     files:
       - label: Site Metadata
         name: metadata
         file: src/_data/site.json
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Description, name: description, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: URL, name: url, widget: string}
-          - {label: Favicon, name: favicon, widget: image}
+          - { label: Title, name: title, widget: string }
+          - {
+              label: Description,
+              name: description,
+              widget: string,
+              hint: 50-160 characters,
+            }
+          - { label: Image, name: image, widget: image }
+          - { label: URL, name: url, widget: string }
+          - { label: Favicon, name: favicon, widget: image }

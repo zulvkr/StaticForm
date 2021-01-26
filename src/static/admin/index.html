@@ -5,15 +5,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <title>Content Manager - {{ site.title }}</title>
+  <title>Content Manager - Netlify CMS</title>
 </head>
 
 <body>
+  <!-- 
+    Set to false if you do not need Netlify Identity.
+    Netlify CMS only require Identity for initial registration and devlopment using git-gateway
+    You can safely disable it after that.
+  -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    CMS.registerPreviewStyle("../style.css");
-    CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
+  CMS.registerPreviewStyle("../style.css");
+  CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap")
   </script>
   <script type="module" src="./FormsPreview.js"></script>
 </body>
