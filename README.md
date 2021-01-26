@@ -1,4 +1,7 @@
+
 # Static Form
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a7080df2-1a6f-4408-b74f-ad09b0e26e9f/deploy-status)](https://app.netlify.com/sites/staticform21/deploys)
 
 Static From is a form builder, like Google Form, that built on JAMStack technology.
 
@@ -8,7 +11,7 @@ On the front end side we use Eleventy static site generator, Netlify CMS for the
 
 No complicated build tools, just using PostCSS CLI and Eleventy. HTML and JS minifier are included in Eleventy build process.
 
-On the back end, well there is no back end. Static Form is configured to work with WhatsApp API and Netlify Form as endpoint out-of-the-box so you don't really have to bake your own API endpoint.
+On the back end, well there is no back end. Static Form is configured to work with WhatsApp API and Netlify Form as endpoint out-of-the-box so you don't really have to bake your own API endpoint. Netlify will automatically re-build the website when git repo updated.
 
 
 ## Usage
@@ -18,8 +21,14 @@ Static Form demo is live [here](staticform21.netlify.app). You can also try make
 
 ## Installation
 
-TODO
+TLDR;
 
+```
+git clone https://github.com/zulvkr/StaticForm.git
+cd StaticForm
+npm install
+npm run start
+```
 
 ### Requirement
 
@@ -56,7 +65,7 @@ TODO
     npm install
     ```
 
-    This command will install all depencies of this project in node_modules directory. You can see all dependecies of this project in package.json.
+    This command will install all dependecies of this project in *node_modules* directory. You can see all dependecies of this project in *package.json*.
 
 6. You can start the development server by running
 
