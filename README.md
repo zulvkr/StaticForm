@@ -49,7 +49,7 @@ Actually [Netlify](https://www.netlify.com/) provide the back end, which include
 
 ## Demo
 
-*Static Form* demo is live **[here](https://staticform21.netlify.app)**.
+*Static Form* lives **[here](https://staticform21.netlify.app)**.
 
 You can also log in with Github account and make form draft in the **[admin interface](https://staticform21.netlify.app/admin)**. If you need your form published in this demo, please contact me personally.
 
@@ -69,13 +69,13 @@ or click this button:
 
 [![Netlify Status](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
 
-Netlify will fork this repository on your account, build it in their edge server and set up the CI/CD automagically.
+This button will tell Netlify to fork this repository on your account, build it in their edge server and set up the CI/CD automagically.
 
 ### Prerequisites
 
 1. A good Unix-like terminal. If you use Windows, [CMDER](https://cmder.net/) with bundled git will do.
 2. `git` should be installed with inital setup done.
-3. Node JS >= 10.0. The latest currently (^15.0) should work fine.
+3. Node JS >= 10.0. The latest currently (^15) should work fine.
 
 
 ### Step by step installation for local development
@@ -113,7 +113,7 @@ Netlify will fork this repository on your account, build it in their edge server
     ```
     npm run start
     ```
-    Open *localhost:8080* in your browser to see if the server running properly
+    Open *localhost:8080* in your browser to see if the server is running properly
 
     ![npm run start image](docs/start.gif)
 
