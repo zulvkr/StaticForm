@@ -16,7 +16,7 @@ Sounds like a Google Form ripoff, but it has some benefits:
 
 ## Roadmap
 
-1. Build more basic form component: checkbox, radio button, text field, number and email field ⛏.
+1. Build complete basic form component: checkbox, radio button, text field, number and email field ⛏.
 2. Make advanced programmable form. Form can be programmed to be sent between several Whatsapp numbers based on user input 🌏.
 3. Make advanced programmable form. Form output can be customized heavily in admin panel, in example choose different separator, using custom text ⛓.
 4. Build advanced form component: star rating, emoji rating, bank select with good background image, select province component, select country component 🚅.
@@ -106,9 +106,9 @@ This button will tell Netlify to fork this repository on your account, build it 
     npm install
     ```
 
-    This command will tell node package manager to install all dependecies of this project to *node_modules* directory. You can see all dependecies of this project in *package.json*.
+    This command will tell node package manager to install all dependencies of this project to *node_modules* directory. You can see all dependencies of this project in *package.json*.
 
-6. You can start the development server by running in your project directory
+6. Start the development server in your project directory
 
     ```
     npm run start
@@ -116,6 +116,7 @@ This button will tell Netlify to fork this repository on your account, build it 
     Open *localhost:8080* in your browser to see if the server is running properly
 
     ![npm run start image](docs/start.gif)
+
 
 ## Usage
 
