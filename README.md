@@ -1,22 +1,31 @@
-
 # Static Form
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7080df2-1a6f-4408-b74f-ad09b0e26e9f/deploy-status)](https://app.netlify.com/sites/staticform21/deploys)
 
-Static From is a form builder, like Google Form, that built on JAMStack technology.
+Static Form is a form builder, like Google Form, that built on JAMStack aka static website.
 
 ![Static Form](docs/web.gif)
 
-On the front end side we use Eleventy static site generator, Netlify CMS for the admin panel, and Tailwind CSS.
+Sounds like a google form ripoff, but it has some benefits:
+
+1. Hackable front end - both on admin and user side -, hackable form API end point, hackable data processing.
+2. Fast! Near 100 Google Lighthouse test.
+3. Zero cost, but you probably waste your time due to hacking happy
+
+On the front end side it uses Eleventy static site generator, Netlify CMS for the admin panel, and Tailwind CSS.
 
 No complicated build tools, just using PostCSS CLI and Eleventy. HTML and JS minifier are included in Eleventy build process.
 
-On the back end, well there is no back end. Static Form is configured to work with WhatsApp API and Netlify Form as endpoint out-of-the-box so you don't really have to bake your own API endpoint. Netlify will automatically re-build the website when git repo updated.
+On the back end, well.. There is no back end.
+
+Actually netlify provide the back end, which is the static site hosting, form API end point and authentication.
+
+Static Form is configured to work with WhatsApp API and Netlify Form as endpoint so you don't really have to bake your own API endpoint.
 
 
 ## Usage
 
-Static Form demo is live [here](staticform21.netlify.app). You can also try make a draft of form in the [admin interface](staticform21.netlify.app/admin) with Github account.
+Static Form demo is live [here](staticform21.netlify.app). You can also try login and make a draft of form in the [admin interface](staticform21.netlify.app/admin) with Github account.
 
 
 ## Installation
@@ -30,11 +39,18 @@ npm install
 npm run start
 ```
 
-### Requirement
+or click this button:
 
-1. Git, see https://git-scm.com/downloads
-2. Node JS, see https://nodejs.org/en/
-3. A good linux-like terminal/command line. If you use Windows, I suggest to try [CMDER](https://cmder.net/).
+[![Netlify Status](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
+
+Netlify will fork this repository on your account, build it and setup CI/CD automagically.
+
+
+### Prerequisites
+
+1. `git` should be installed
+2. Node JS
+3. A good Unix-like terminal/command line. If you use Windows, I suggest to try [CMDER](https://cmder.net/).
 
 
 ### Step by step installation

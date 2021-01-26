@@ -1,5 +1,5 @@
 const inspect = require("util").inspect;
-const Terser = require("terser");
+const terser = require("terser");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
@@ -36,14 +36,13 @@ module.exports = function (eleventyConfig) {
   ) {
     try {
       if (process.env.ELEVENTY_PRODUCTION) {
-        const minified = await Terser.minify(code);
+        const minified = await terser.minify(code);
         callback(null, minified.code);
       } else {
         callback(null, code)
       }
     } catch (err) {
       console.error("Terser error: ", err);
-      // Fail gracefully.
       callback(null, code);
     }
   });
