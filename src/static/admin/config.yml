@@ -1,17 +1,19 @@
 backend:
-  # name: git-gateway
-  name: test-repo ## only use this for local testing ###
-  branch: main
+  repo: zulvkr/StaticForm
+  open_authoring: true
+  name: github
+  # name: test-repo ## only use this for local testing ###
+  branch: demo
 
 media_folder: src/static/img
 public_folder: /img
 
 # uncomment to enable drafts
-# publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 # add your site url here without trailing "/" to enable
 # preview link and local development with git-gateway
-# site_url: 
+site_url: https://staticform21.netlify.app 
 
 collections:
   - label: Forms
