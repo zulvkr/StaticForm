@@ -2,27 +2,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7080df2-1a6f-4408-b74f-ad09b0e26e9f/deploy-status)](https://app.netlify.com/sites/staticform21/deploys)
 
-*Static Form* is a form builder, like Google Form, that built on JAMStack aka static website.
+***Static Form*** is a form builder, like Google Form, that built on JAMStack aka static website.
 
-![Static Form](docs/web.gif)
+![Static Form Demo](docs/web.gif)
 
 Sounds like a Google Form ripoff, but it has some benefits:
 
-1. **Hackable - both on admin and user side -, replace the CMS and end point with custom API as you want it**
+1. **Hackable, make custom form, make custom admin, use other CMS, or whatever.**
 2. **Fast! 90+ Google Lighthouse test.**
-3. **0$ cost on netlify free tier.**
-4. **Flexibile to host it anywhere, and open source**, *Static Form* is open source and built on open source technology. Cheap VPS or even shared hosting will do with some hacking.
-
-
-## Roadmap
-
-1. Build complete basic form component: checkbox, radio button, text field, number and email field ⛏.
-2. Make advanced programmable form. Form can be programmed to be sent between several Whatsapp numbers based on user input 🌏.
-3. Make advanced programmable form. Form output can be customized heavily in admin panel, in example choose different separator, using custom text ⛓.
-4. Build advanced form component: star rating, emoji rating, bank select with good background image, select province component, select country component 🚅.
-5. Build even more advanced component using netlify function. Make shipping cost calculator component by consuming API, maybe..
-6. Build more theme 🌈.
-7. Build custom form for the demo website, extend the possibility.
+3. **Zero cost on netlify free tier.**
+4. **Open source and can be hosted anywhere.**
 
 ## Technology Stack
 
@@ -38,20 +27,29 @@ Client side javascript is used minimally and we sticks with ES6, at least for no
 
 On the back end, well... There is no back end.
 
-Actually [Netlify](https://www.netlify.com/) provide the back end, which include:
-* Static edge hosting. Your whole website on CDN.
+Actually **[Netlify](https://www.netlify.com/)** provide the back end, which include:
+* Static edge hosting.
 * Form API end point.
-* Authentication with Netlify Identity.
+* Authentication.
 * Possibly this project will also use Netlify serverless function.
 
-*Static Form* is preconfigured to work with WhatsApp API and Netlify Form as form end point. It was meant to be used that way, but you can bring your own form end point.
+*Static Form* is preconfigured to work with WhatsApp API, Netlify Form and Netlify CMS. You can bring your own API/CMSto be integrated.
 
+## Roadmap
+
+1. Build complete basic form component: checkbox, radio button, text field, number and email field ⛏.
+2. Make advanced programmable form. Form can be programmed to be sent between several Whatsapp numbers based on user input 🌏.
+3. Make advanced programmable form. Form output can be customized heavily in admin panel, in example choose different separator, using custom text ⛓.
+4. Build advanced form component: star rating, emoji rating, bank select with good background image, select province component, select country component 🚅.
+5. Build even more advanced component using netlify function. Make shipping cost calculator component by consuming API, maybe..
+6. Build more theme 🌈.
+7. Build custom form for the demo website, extend the possibility.
 
 ## Demo
 
 *Static Form* lives **[here](https://staticform21.netlify.app)**.
 
-You can also log in with Github account and make form draft in the **[admin interface](https://staticform21.netlify.app/admin)**. If you need your form published in this demo, please contact me personally.
+You can also log in with Github account and make form draft in the **[admin interface](https://staticform21.netlify.app/admin)**. We will accept your form submission, the site will be updated daily by manual deploy to prevent excessive build time.
 
 
 ## Installation
@@ -74,8 +72,8 @@ This button will tell Netlify to fork this repository on your account, build it 
 ### Prerequisites
 
 1. A good Unix-like terminal. If you use Windows, [CMDER](https://cmder.net/) with bundled git will do.
-2. `git` should be installed with inital setup done.
-3. Node JS >= 10.0. The latest currently (^15) should work fine.
+2. `git` should be installed.
+3. Node JS >=10.
 
 
 ### Step by step installation for local development
