@@ -7,8 +7,8 @@ const Group = require('./FieldGroup.11ty');
 const SelectField = require('./SelectField.11ty');
 
 /**
- * Attribute-level component is used to provide flexibility
- * to add more attributes in form layout.
+ * Attribute-level component is provide flexibility
+ * to add more attributes in when layouting.
  * For styling-only components consider using tailwind apply
  */
 

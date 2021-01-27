@@ -1,6 +1,5 @@
 const inspect = require("util").inspect;
-const terser = require("terser");
-const htmlmin = require("html-minifier");
+const htmlmin = require("html-minifier-terser");
 
 module.exports = function (eleventyConfig) {
 
@@ -23,7 +22,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "src/static/admin/": "./admin/",
-    "src/static/img/": "./img"
+    "src/static/img/": "./img/"
   });
 
   // Print eleventy data object
@@ -53,7 +52,8 @@ module.exports = function (eleventyConfig) {
       const minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        minifyJS: true
       });
       return minified;
     }

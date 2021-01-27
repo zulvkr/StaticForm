@@ -33,7 +33,6 @@
     "cssnano": "^4.1.10",
     "html-minifier-terser": "^5.1.1",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.2",
-    "terser": "^5.5.1"
+    "tailwindcss": "^2.0.2"
   }
 }

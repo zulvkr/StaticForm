@@ -13,8 +13,8 @@ function waURL(number, text) {
 
 
 function submit(event) {
+    event.preventDefault();
     const formData = new FormData(form);
-
     stringData = processData(formData);
 
     if (mode === "log") {
@@ -31,8 +31,6 @@ function submit(event) {
         encoded = encodeURIComponent(stringData);
         window.open(waURL(waNumber, encoded));
     }
-
-    event.preventDefault();
 }
 
 form = document.getElementById("main-form");
