@@ -109,3 +109,6 @@ src/admin_example/
 
 # TernJS port file
 .tern-port
+
+# Local Netlify folder
+.netlify
