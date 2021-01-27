@@ -2,7 +2,7 @@
  * @param {string} id 
  * @param {string} name 
  * @param {Boolean} required 
- * @param {string} placeholder Optional
+ * @param {string} placeholder Null -> no placeholder
  * @param {Array} options 
  */
 
