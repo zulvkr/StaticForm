@@ -47,7 +47,7 @@ Actually **[Netlify](https://www.netlify.com/)** provide the back end, which inc
     * input component with custom text output 🔡
 4. Advanced form feature: confugure form ouput separator.
 5. Build *moar* themes 🌈.
-6. Build with *moar* javascript: Nuxt JS.
+6. Build with *moar* javascript: <span style="color:green">**Nuxt.js**</span>.
 
 ## Demo
 
