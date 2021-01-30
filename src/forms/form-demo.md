@@ -21,5 +21,4 @@ form:
 
 This form shows a normal text field and select field for rating.
 
-In 
 Output of this form and the whatsapp number will be printed in console.
