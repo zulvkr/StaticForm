@@ -112,3 +112,6 @@ src/admin_example/
 
 # Local Netlify folder
 .netlify
+
+# VSCode settings
+.vscode

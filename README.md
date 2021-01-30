@@ -2,27 +2,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7080df2-1a6f-4408-b74f-ad09b0e26e9f/deploy-status)](https://app.netlify.com/sites/staticform21/deploys)
 
-*Static Form* is a form builder, like Google Form, that built on JAMStack aka static website.
+***Static Form*** is a form builder, like Google Form, that built on JAMStack aka static website.
 
-![Static Form](docs/web.gif)
+![Static Form Demo](docs/web.gif)
 
 Sounds like a Google Form ripoff, but it has some benefits:
 
-1. **Hackable - both on admin and user side -, replace the CMS and end point with custom API as you want it**
+1. **Hackable! Make custom form, make custom admin, use other CMS, or whatever.**
 2. **Fast! 90+ Google Lighthouse test.**
-3. **0$ cost on netlify free tier.**
-4. **Flexibile to host it anywhere, and open source**, *Static Form* is open source and built on open source technology. Cheap VPS or even shared hosting will do with some hacking.
-
-
-## Roadmap
-
-1. Build complete basic form component: checkbox, radio button, text field, number and email field ⛏.
-2. Make advanced programmable form. Form can be programmed to be sent between several Whatsapp numbers based on user input 🌏.
-3. Make advanced programmable form. Form output can be customized heavily in admin panel, in example choose different separator, using custom text ⛓.
-4. Build advanced form component: star rating, emoji rating, bank select with good background image, select province component, select country component 🚅.
-5. Build even more advanced component using netlify function. Make shipping cost calculator component by consuming API, maybe..
-6. Build more theme 🌈.
-7. Build custom form for the demo website, extend the possibility.
+3. **Zero cost on Netlify free tier.**
+4. **Open source and can be hosted anywhere.**
 
 ## Technology Stack
 
@@ -34,27 +23,55 @@ On the front end side:
 
 No complicated build tools, just `postcss` and `eleventy`. HTML, CSS and JS minifier are included in the build process.
 
-Client side javascript is used minimally and we sticks with ES6, at least for now.
+Client side vanilla javascript is used minimally and we sticks with ES6.
 
 On the back end, well... There is no back end.
 
-Actually [Netlify](https://www.netlify.com/) provide the back end, which include:
-* Static edge hosting. Your whole website on CDN.
+Actually **[Netlify](https://www.netlify.com/)** provide the back end, which include:
+* Static edge hosting.
 * Form API end point.
-* Authentication with Netlify Identity.
+* Authentication server.
 * Possibly this project will also use Netlify serverless function.
 
-*Static Form* is preconfigured to work with WhatsApp API and Netlify Form as form end point. It was meant to be used that way, but you can bring your own form end point.
+*Static Form* is preconfigured to work with WhatsApp API, Netlify Form and Netlify CMS. The default stack is very *netlifyish*, but you can bring your own API/CMS to be integrated.
 
+## Roadmap
+
+1. Build complete basic form component: checkbox, radio button, text field, number and email field ⛏.
+2. Advanced form feature: Route form output to between several Whatsapp number. Useful for sharing loads between several customer service.
+3. Build advanced form component:
+    * star rating ⭐
+    * emoji rating 😃
+    * bank selection component 🏦
+    * country/province selection component 🏝
+    * input component with custom text output 🔡
+4. Advanced form feature: confugure form ouput separator.
+5. Build *moar* themes 🌈.
+6. Build with *moar* javascript: <span style="color:green">**Nuxt.js**</span>.
 
 ## Demo
 
-*Static Form* lives **[here](https://staticform21.netlify.app)**.
+***Static Form*** lives **[here](https://staticform21.netlify.app)**.
 
-You can also log in with Github account and make form draft in the **[admin interface](https://staticform21.netlify.app/admin)**. If you need your form published in this demo, please contact me personally.
+You can log in with Github account and make form in the **[admin panel](https://staticform21.netlify.app/admin)**. Your form submission will be saved as draft at first and will be published by manual deploy daily to prevent excessive build time of our website.
+
+Making your own instance of *Static Form* is a one-click though 😃. Give it a try!
 
 
 ## Installation
+
+Thanks to netlify, deploying is a one click:
+
+[![Netlify Status](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
+
+You need Netlify and GitHub / GitLab account.
+
+This button will tell Netlify to fork this repository on your account, build it in their edge server and set up the CI/CD automagically.
+
+You need to do some configuration to use Netlify CMS. See [Configuration](#configuration).
+
+
+## Local Installation
 
 ### TLDR;
 
@@ -65,17 +82,11 @@ npm install
 npm run start
 ```
 
-or click this button:
-
-[![Netlify Status](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
-
-This button will tell Netlify to fork this repository on your account, build it in their edge server and set up the CI/CD automagically.
-
 ### Prerequisites
 
 1. A good Unix-like terminal. If you use Windows, [CMDER](https://cmder.net/) with bundled git will do.
-2. `git` should be installed with inital setup done.
-3. Node JS >= 10.0. The latest currently (^15) should work fine.
+2. `git` should be installed.
+3. Node.js should be installed.
 
 
 ### Step by step installation for local development
@@ -85,10 +96,9 @@ This button will tell Netlify to fork this repository on your account, build it 
 
     ![cd image](docs/cd.gif)
 
-    tips: you can use `tab` to autocomplete terminal command and double `tab` for suggestion.
+    >tips: you can use `tab` to autocomplete a terminal command and double `tab` for suggestion.
 
-3. `clone` this repository to your local system
-
+3. `clone` this repository to your local system. You should clone your own fork if you used the deploy button.
 
     ```
     git clone https://github.com/zulvkr/StaticForm.git
@@ -106,18 +116,29 @@ This button will tell Netlify to fork this repository on your account, build it 
     npm install
     ```
 
-    This command will tell node package manager to install all dependencies of this project to *node_modules* directory. You can see all dependencies of this project in *package.json*.
+    This command run Node Package Manager to install all dependencies of this project in *node_modules* directory. You can see all dependencies of this project in *package.json*.
 
 6. Start the development server in your project directory
 
     ```
     npm run start
     ```
-    Open *localhost:8080* in your browser to see if the server is running properly
+
+    This command will run `eleventy --serve` and `postcss --watch` concurrently (see  *package.json*).
 
     ![npm run start image](docs/start.gif)
 
+    Open *localhost:8080* in your browser to see if the server is running properly
+    
+    You can stop the server with `Ctrl + C` in the terminal.
+    
+## Configuration
 
-## Usage
+### Netlify CMS authentication
 
-TODO
+After you make your own *Static Form* instance, you need to do 3 tasks to enable Netlify CMS:
+1. Make sure Netlify git-gateway enabled
+2. Add your email in Netlify Identity
+3. Confirm Netlify Identity in your email and input your new password.
+
+Now, you should be able to login in https://yoursite.netlify.app/admin/.

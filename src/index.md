@@ -6,6 +6,7 @@ eleventyNavigation:
   order: 1
 ---
 
+
 ***Static Form*** is a form builder, much like Google Form. It can help you collect form submission via WhatsApp. 
 
 ![StaticForm](/img/web.gif)
