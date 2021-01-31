@@ -7,11 +7,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   // Register Shortcodes
-  const Form = require("./src/_includes/components/Index");
-  eleventyConfig.addShortcode("Text", Form.att.text);
-  eleventyConfig.addShortcode("Select", Form.att.select);
+  const Form = require("./src/_includes/components/basic/Index");
   eleventyConfig.addShortcode("SelectField", Form.SelectField);
   eleventyConfig.addPairedShortcode("Group", Form.Group);
+  eleventyConfig.addShortcode("Text", Form.att.text);
+  eleventyConfig.addShortcode("Select", Form.att.select);
+  eleventyConfig.addShortcode("Email", Form.att.email);
+  eleventyConfig.addShortcode("Number", Form.att.number);
+
+
 
 
   // Trigger reload when CSS updated

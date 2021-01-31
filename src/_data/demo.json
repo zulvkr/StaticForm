@@ -1,5 +1,5 @@
 {
-    "title": "Demo Form",
+    "title": "Demo: Basic Form",
     "mode": "log",
     "waNumber": "628906857965",
     "form": [
@@ -10,7 +10,13 @@
             "required": true
         },
         {   
-            "type": "textfield",
+            "type": "numberfield",
+            "label": "Amount of Donation",
+            "id": "amount",
+            "required": true
+        },
+        {   
+            "type": "emailfield",
             "label": "Amount of Donation",
             "id": "amount",
             "required": true

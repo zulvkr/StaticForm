@@ -8,7 +8,7 @@
 
 Sounds like a Google Form ripoff, but it has some benefits:
 
-1. **Hackable! Make custom form, make custom admin, use other CMS, or whatever.**
+1. **Hackable! Make custom form components, use other CMS, or whatever.**
 2. **Fast! 90+ Google Lighthouse test.**
 3. **Zero cost on Netlify free tier.**
 4. **Open source and can be hosted anywhere.**
@@ -21,54 +21,46 @@ On the front end side:
 * [Netlify CMS](https://www.netlifycms.org/)
 * [Tailwind CSS](https://tailwindcss.com/).
 
-No complicated build tools, just `postcss` and `eleventy`. HTML, CSS and JS minifier are included in the build process.
+No complicated build tools, just `postcss` and `eleventy`. HTML, CSS and JavaScript minifier are included in the build process.
 
-Client side vanilla javascript is used minimally and we sticks with ES6.
+Client side vanilla JavaScript is used minimally and we sticks with ES6.
 
-On the back end, well... There is no back end.
+On the back end, well... There is no back end...
 
 Actually **[Netlify](https://www.netlify.com/)** provide the back end, which include:
 * Static edge hosting.
-* Form API end point.
+* Form API endpoint.
 * Authentication server.
-* Possibly this project will also use Netlify serverless function.
+* Possibly this project will also use Netlify function.
 
-*Static Form* is preconfigured to work with WhatsApp API, Netlify Form and Netlify CMS. The default stack is very *netlifyish*, but you can bring your own API/CMS to be integrated.
+*Static Form* is configured to work with Whatsapp wa.me link and Netlify Form as form endpoint, which has some limitation. You can use any other form backend like Formspree ([there are lots of provider out there](https://free-for.dev/#/?id=forms)).
 
 ## Roadmap
 
-1. Build complete basic form component: checkbox, radio button, text field, number and email field ⛏.
-2. Advanced form feature: Route form output to between several Whatsapp number. Useful for sharing loads between several customer service.
-3. Build advanced form component:
-    * star rating ⭐
-    * emoji rating 😃
-    * bank selection component 🏦
-    * country/province selection component 🏝
-    * input component with custom text output 🔡
-4. Advanced form feature: confugure form ouput separator.
-5. Build *moar* themes 🌈.
-6. Build with *moar* javascript: <span style="color:green">**Nuxt.js**</span>.
+1. Build complete basic form component: check box, radio button, text field, number and email field ⛏.
+2. Advanced form feature: Route form output to between several WhatsApp number. Useful for sharing loads between several customer service.
+4. Build *moar* themes 🌈. Should I did it like Typeform?
 
 ## Demo
 
-***Static Form*** lives **[here](https://staticform21.netlify.app)**.
+***Static Form Demo*** lives **[here](https://staticform21.netlify.app)**.
 
-You can log in with Github account and make form in the **[admin panel](https://staticform21.netlify.app/admin)**. Your form submission will be saved as draft at first and will be published by manual deploy daily to prevent excessive build time of our website.
+You can log in with GitHub account and make form in the **[admin panel](https://staticform21.netlify.app/admin)**. Your form submission will be saved as draft at first and will be published by manual deploy daily to prevent excessive build time of our website.
 
 Making your own instance of *Static Form* is a one-click though 😃. Give it a try!
 
 
 ## Installation
 
-Thanks to netlify, deploying is a one click:
+Thanks to Netlify, deploying is a one-click:
 
-[![Netlify Status](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
+[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
 
 You need Netlify and GitHub / GitLab account.
 
-This button will tell Netlify to fork this repository on your account, build it in their edge server and set up the CI/CD automagically.
+This button will tell Netlify to fork this repository on your account, build it in their edge server and set up the CI/CD automatically.
 
-You need to do some configuration to use Netlify CMS. See [Configuration](#configuration).
+You need to do some configuration to use Netlify CMS. See [configuration](#configuration).
 
 
 ## Local Installation
@@ -137,8 +129,8 @@ npm run start
 ### Netlify CMS authentication
 
 After you make your own *Static Form* instance, you need to do 3 tasks to enable Netlify CMS:
-1. Make sure Netlify git-gateway enabled
+1. Make sure Netlify git-gateway isenabled
 2. Add your email in Netlify Identity
-3. Confirm Netlify Identity in your email and input your new password.
+3. Open your email, you will find invitation email to become administrator. Follow the link and input your new password.
 
 Now, you should be able to login in https://yoursite.netlify.app/admin/.

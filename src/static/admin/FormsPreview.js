@@ -22,34 +22,72 @@ const FormsPreview = createClass({
             <label class="label">
             ${data.get("label")}
             ${data.toJS().required ? html`
-            <span class='text-red-500'>*</span>` : null }
+            <span class='text-red-500'>*</span>` : null}
             </label>
             `
         }
 
         /**
-         * Render Field Group: Select Field or Text Field
+         * Render text field
+         * @param {object} data fields.getIn([n,"data"])
+         */
+        const renderTextField = data => {
+            return html`
+            <div class="mb-6">
+                ${renderLabel(data)}
+                ${/* React break when using non-self-closing input tag here */''}
+                <input class="input" type="text" placeholder="" />
+            </div>
+            `
+        }
+
+        /**
+         * Render number field
+         * @param {object} data fields.getIn([n,"data"])
+         */
+        const renderNumberField = data => {
+            return html`
+            <div class="mb-6">
+                ${renderLabel(data)}
+                ${/* React break when using non-self-closing input tag here */''}
+                <input class="input appearance-none" type="number" placeholder="" />
+            </div>
+            `
+        }
+
+        /**
+         * Render select field
+         * @param {object} data fields.getIn([n,"data"])
+         */
+        const renderSelectField = data => {
+            return html`
+            <div class="mb-6">    
+                ${renderLabel(data)}
+                <select class="input bg-select-arrow">
+                    ${/* enum array must be checked before mapping to prevent error */''}
+                    ${data.toJS().enum ? data.get("enum").map(a => html`<option>${a}</option>`) : null}
+                </select>
+            </div>  
+            `
+        }
+
+        /**
+         * Render Field: Select Field or Text Field
          * @param {object} field fields.getIn([n,"data"])
          */
         const renderField = data => {
             if (data.toJS().type === "selectfield") {
                 return html`
-                <div class="mb-6">    
-                    ${renderLabel(data)}
-                    <select class="input bg-select-arrow">
-                        ${/* enum array must be checked before mapping to prevent error */''}
-                        ${data.toJS().enum ? data.get("enum").map(a => html`<option>${a}</option>`) : null}
-                    </select>
-                </div>               
-                `;
+                ${renderSelectField(data)}`
+            } else if (data.toJS().type === "numberfield") {
+                return html`
+                ${renderNumberField(data)}`
+            } else if (data.toJS().type === "emailfield") {
+                return html`
+                ${renderTextField(data)}`
             } else {
                 return html`
-                <div class="mb-6">
-                    ${renderLabel(data)}
-                    ${/* React break when using non-self-closing input tag here */''}
-                    <input class="input" type="text" placeholder="" />
-                </div>
-                `;
+                ${renderTextField(data)}`
             }
         }
 
@@ -64,7 +102,7 @@ const FormsPreview = createClass({
                     <form class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
                         ${fields.map(field => html`${renderField(field.get("data"))}`)}
                         <div class="flex flex-row-reverse">
-                            <button type="submit" class="button">Submit</button>
+                            <button class="button" disabled>Submit</button>
                         </div>
                     </form>
             `} else {

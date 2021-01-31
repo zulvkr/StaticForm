@@ -1,6 +1,12 @@
 ---
 layout: layouts/base.njk
 ---
+<div class="h-4 bg-gradient-to-r from-blue-300 via-green-300 to-green-200"></div>
+<header class="flex flex-col items-center mx-8">
+  <div class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
+    {{ title or site.title }}
+  </div>
+</header>
 <div class="flex items-center mb-4">
   <div class="px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
     <article class="mb-5 overflow-auto prose lg:prose-lg">{{ content | safe }}</article>
@@ -14,6 +20,14 @@ layout: layouts/base.njk
         {% if field.type === "selectfield" %}
           {% Group field.id, field.label, field.required  %}
             {% SelectField field.id, field.id, field.required, null, field.enum %}
+          {% endGroup %}
+        {% elif field.type === "emailfield" %}
+          {% Group field.id, field.label, field.required  %}
+            <input {% Email field.id , field.id , "" , field.required %}>
+          {% endGroup %}
+        {% elif field.type === "numberfield" %}
+          {% Group field.id, field.label, field.required  %}
+            <input {% Number field.id , field.id , "" , field.required %}>
           {% endGroup %}
         {% else %}
           {% Group field.id, field.label, field.required  %}
