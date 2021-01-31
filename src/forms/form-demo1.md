@@ -6,11 +6,15 @@ form:
   - type: textfield
     label: Alamat
     id: alamat
-    required: true
-  - type: textfield
+    required: false
+  - type: emailfield
     label: Penerima
     id: receiver
     required: true
+  - type: numberfield
+    label: Penjawab
+    id: answer
+    required: false
   - type: selectfield
     label: Buku yang dipesan
     id: book
