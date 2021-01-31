@@ -21,6 +21,14 @@ layout: layouts/base.njk
           {% Group field.id, field.label, field.required  %}
             {% SelectField field.id, field.id, field.required, null, field.enum %}
           {% endGroup %}
+        {% elif field.type === "emailfield" %}
+          {% Group field.id, field.label, field.required  %}
+            <input {% Email field.id , field.id , "" , field.required %}>
+          {% endGroup %}
+        {% elif field.type === "numberfield" %}
+          {% Group field.id, field.label, field.required  %}
+            <input {% Number field.id , field.id , "" , field.required %}>
+          {% endGroup %}
         {% else %}
           {% Group field.id, field.label, field.required  %}
             <input {% Text field.id , field.id , "" , field.required %}>

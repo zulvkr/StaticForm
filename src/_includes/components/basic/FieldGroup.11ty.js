@@ -10,7 +10,7 @@ module.exports = (content, forId, label, required) => {
     <div class="mb-6">
         <label class="label" for="${forId}">
             ${label}
-            ${required ? "<span class='text-red-500'>*</span>" : null }
+            ${required ? "<span class='text-red-500'>*</span>" : "" }
         </label>
         ${content}
     </div>

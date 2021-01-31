@@ -7,7 +7,7 @@
 
 module.exports = (id, name, placeholder, required) => {
     return `
-    class="input"
+    class="input appearance-none"
     id="${id}"
     name="${name}"
     type="number"
