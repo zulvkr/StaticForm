@@ -7,13 +7,18 @@ const Group = require('./FieldGroup.11ty');
 const SelectField = require('./SelectField.11ty');
 
 /**
- * Attribute-level component is provide flexibility
- * to add more attributes in when layouting.
- * For styling-only components consider using tailwind apply
+ * Attribute-level component provide more flexibility
+ * to add attributes when layouting.
+ * 
+ * Class and style only component can use tailwind 
+ * "@apply" feature to have better style sharing 
+ * between Eleventy and Netlify CMS
  */
 
 const select = require('./attributes/select.11ty');
 const text = require('./attributes/text.11ty');
+const email = require('./attributes/email.11ty')
+const number = require('./attributes/number.11ty')
 
 
 module.exports = {
@@ -21,6 +26,8 @@ module.exports = {
     SelectField: SelectField,
     att: {
         select: select,
-        text: text
+        text: text,
+        email: email,
+        number: number
     }
 }

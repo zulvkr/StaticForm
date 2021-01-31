@@ -29,11 +29,11 @@ On the back end, well... There is no back end...
 
 Actually **[Netlify](https://www.netlify.com/)** provide the back end, which include:
 * Static edge hosting.
-* Form API end point.
+* Form API endpoint.
 * Authentication server.
 * Possibly this project will also use Netlify function.
 
-*Static Form* is configured to work with Whatsapp wa.me link and Netlify Form as form end point, which has some limitation. You can use any other form backend like Formspree.
+*Static Form* is configured to work with Whatsapp wa.me link and Netlify Form as form endpoint, which has some limitation. You can use any other form backend like Formspree ([there are lots of provider out there](https://free-for.dev/#/?id=forms)).
 
 ## Roadmap
 
