@@ -8,7 +8,7 @@
 
 Sounds like a Google Form ripoff, but it has some benefits:
 
-1. **Hackable! Make custom form, make custom admin, use other CMS, or whatever.**
+1. **Hackable! Make custom form components, use other CMS, or whatever.**
 2. **Fast! 90+ Google Lighthouse test.**
 3. **Zero cost on Netlify free tier.**
 4. **Open source and can be hosted anywhere.**
@@ -33,27 +33,17 @@ Actually **[Netlify](https://www.netlify.com/)** provide the back end, which inc
 * Authentication server.
 * Possibly this project will also use Netlify function.
 
-*Static Form* is configured to work with WhatsApp API, Netlify Form and Netlify CMS. The default stack is very *Netlifyish*, but you can bring your own API/CMS to be integrated.
-
-There is no support for server side validation built in yet.
+*Static Form* is configured to work with Whatsapp wa.me link and Netlify Form as form end point, which has some limitation. You can use any other form backend like Formspree.
 
 ## Roadmap
 
 1. Build complete basic form component: check box, radio button, text field, number and email field ⛏.
 2. Advanced form feature: Route form output to between several WhatsApp number. Useful for sharing loads between several customer service.
-3. Build advanced form component:
-    * Star rating ⭐
-    * Emoji rating 😃
-    * Bank selection component 🏦
-    * Country/province selection component 🏝
-    * Input component with custom text output 🔡
-4. Advanced form feature: configure form output separator.
-5. Build *moar* themes 🌈.
-6. Build with *moar* JavaScript: <span style="color:green">**Nuxt.js**</span>.
+4. Build *moar* themes 🌈. Should I did it like Typeform?
 
 ## Demo
 
-***Static Form*** lives **[here](https://staticform21.netlify.app)**.
+***Static Form Demo*** lives **[here](https://staticform21.netlify.app)**.
 
 You can log in with GitHub account and make form in the **[admin panel](https://staticform21.netlify.app/admin)**. Your form submission will be saved as draft at first and will be published by manual deploy daily to prevent excessive build time of our website.
 
@@ -64,7 +54,7 @@ Making your own instance of *Static Form* is a one-click though 😃. Give it a 
 
 Thanks to Netlify, deploying is a one-click:
 
-[![Netlify Status](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
+[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
 
 You need Netlify and GitHub / GitLab account.
 
@@ -139,8 +129,8 @@ npm run start
 ### Netlify CMS authentication
 
 After you make your own *Static Form* instance, you need to do 3 tasks to enable Netlify CMS:
-1. Make sure Netlify git-gateway enabled
+1. Make sure Netlify git-gateway isenabled
 2. Add your email in Netlify Identity
-3. Confirm Netlify Identity in your email and input your new password.
+3. Open your email, you will find invitation email to become administrator. Follow the link and input your new password.
 
 Now, you should be able to login in https://yoursite.netlify.app/admin/.

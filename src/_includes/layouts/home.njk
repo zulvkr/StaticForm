@@ -1,22 +1,114 @@
 ---
 layout: layouts/base.njk
 ---
-<div class="flex items-center mb-4">
-  <div class="max-w-3xl px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
-    <article class="mb-5 prose lg:prose-lg">{{ content | safe }}</article>
-    <div class="w-full">
-      <ul class="flex flex-wrap justify-center">
+<div class="border-t-8 border-gray-800">
+  <div class="transform bg-gradient-to-t from-gray-100">
+    <div class="container max-w-screen-xl px-5 m-auto md:pb-28 ">
+      <nav class="" x-data="{ open: false }">
+        <div class="flex flex-col items-stretch sm:flex-row sm:justify-between">
+          <div class="flex items-stretch justify-between">
+            <a href="{{ '/' | url }}" class="px-3 py-5 font-bold bg-gray-800 rounded-b-lg text-green-50">Static
+              Form</a>
+            <button class="block px-3 py-5 mx-4 sm:hidden" @click="open = true"
+              :class="{ 'hidden': open === true }">Menu</button>
+          </div>
+          <div :class="{ 'hidden': open === false }" class="sm:block" @click.away="open = false">
+            <ul
+              class="flex flex-col items-stretch my-2 text-gray-600 rounded-lg shadow-lg sm:flex-row sm:m-0 sm:shadow-none">
+              <li class="py-3 pl-8 transition sm:py-5 hover:text-green-400">
+                <a href="{{ '/admin' | url }}">Submision</a>
+              </li>
+              <li class="py-3 pl-8 transition sm:py-5 hover:text-green-400">
+                <a href="https://github.com/zulvkr/StaticForm">Docs</a>
+              </li>
+              <li class="py-3 pl-8 transition sm:py-5 hover:text-green-400">
+                <a href="https://github.com/zulvkr/StaticForm">GitHub</a>
+              </li>
+              <li class="py-3 pl-8 transition sm:py-4 hover:text-green-400">
+                <a
+                  href="https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms">
+                  <img src="https://www.netlify.com/img/deploy/button.svg" alt="Netlify Deploy">
+                </a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+      <div class="py-12 lg:py-24">
+        <h2 class="mb-4 text-3xl font-bold sm:text-5xl lg:text-7xl">Make the form.<br />Make the builder.</h2>
+        <h3 class="text-lg text-gray-500 mb-9 lg:text-2xl max-w-prose">Create forms with intuitive form builder.
+          Extend the capability with form components.</h3>
+        <div class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:text-left sm:max-w-max sm:m-0">
+          <a href=""
+            class="py-3 mr-0 text-white transition bg-indigo-600 rounded px-7 sm:mr-2 text hover:bg-indigo-800">Install
+            (5
+            min)</a>
+          <a href="#demo-form"
+            class="py-3 mr-0 transition border border-indigo-600 rounded ring-offset-purple-400 px-7 sm:mr-2 text hover:border-indigo-900 hover:bg-gray-200">Demo
+            Form</a>
+          <a href="" class="px-4 py-3 underline hover:no-underline">Learn more about this project</a>
+        </div>
+      </div>
+      <div class="mx-auto mb-10 space-y-10 md:flex md:justify-between">
+        <ul class="items-center max-w-sm m-auto space-y-8 text-center md:mr-8 md:ml-0 md:text-left">
+          <li class="">
+            <h3 class="text-xl font-bold ">Easy 👋</h3>
+            <p class="text-gray-700">Get started really quickly with Netlify deploy button.</p>
+          </li>
+          <li class="">
+            <h3 class="text-xl font-bold ">Intuitive 👌</h3>
+            <p class="text-gray-700">Create form exactly as you want it with instant preview.</p>
+          </li>
+          <li class="">
+            <h3 class="text-xl font-bold ">Open source 💚</h3>
+            <p class="text-gray-700">Extend Static Form with components. Make your own component with Eleventy + Tailwind CSS +
+              Alpine.js</p>
+          </li>
+        </ul>
+        <div class="max-w-3xl">
+          <img src="/img/web.gif" alt="Static Form admin" class="h-auto max-w-full transform rounded-lg shadow-xl">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative md:h-36">
+    <div class="text-white bg-gray-900 md:max-w-2xl md:rounded-xl md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0">
+      <div class="container max-w-xl p-10 m-auto">
+        <div class="mb-5">
+          <b>Getting started is easy and free!</b><br/>
+          Install your own instance of Static Form in Netlify or try creating a public form now.
+        </div>
+        <div class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:text-left sm:max-w-max sm:m-0">
+          <a href=""
+            class="py-3 mr-0 text-white transition bg-indigo-600 rounded px-7 sm:mr-2 text hover:bg-indigo-800">Install (5 min)
+          </a>
+          <a href="#demo-form"
+            class="py-3 mr-0 transition border border-indigo-600 rounded ring-offset-purple-400 px-7 sm:mr-2 text hover:bg-indigo-800">Create
+            Form</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        {%- for form in collections.forms -%}
+
+  <div class="flex items-center mb-4">
+    <div class="max-w-3xl px-5 py-10 mx-auto">
+      <div class="w-full">
+        <h3 id="demo-form">Demo Form</h3>
+        <ul class="flex flex-wrap justify-center">
+
+          {%- for form in collections.forms -%}
           <li class="block w-full px-2 py-2 sm:w-1/2">
-            <a href="{{ form.url }}" class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out border rounded shadow hover:text-white bg-gradient-to-tr hover:from-blue-300 hover:to-green-300 focus:ring-4 ring-green-300 focus:outline-none">
+            <a href="{{ form.url }}"
+              class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out bg-white border rounded shadow from-white hover:text-white bg-gradient-to-tr hover:from-blue-300 hover:to-green-300 focus:ring-4 ring-green-300 focus:outline-none">
               <p class="text-sm font-bold">Basic Form</p>
               <p>{{ form.data.title }}</p>
             </a>
           </li>
-        {%- endfor -%}
+          {%- endfor -%}
 
         </ul>
+      </div>
     </div>
   </div>
+</div>
 </div>
