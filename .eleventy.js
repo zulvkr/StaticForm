@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
   // Use .eleventyignore
   eleventyConfig.setUseGitIgnore(false);
 
-  // Register Shortcodes
+  // Register Themes
   eleventyConfig.addPlugin(require("./src/_includes/theme/basic/basic"))
 
   // Trigger reload when CSS updated

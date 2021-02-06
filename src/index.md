@@ -16,6 +16,6 @@ Try our form demo to see what it can do!
 
 You can start making your own form in the [admin panel](/admin). Please login with your GitHub account.
 
-Your form draft submission here will be reserved as draft first. It will published during daily update.
+Your form draft submission here will be reserved as draft.
 
-Are you a developer? Make your own ***Static Form*** instance! See our [GitHub](https://github.com/zulvkr/StaticForm).
+Make your own ***Static Form*** instance! [Install now!](https://github.com/zulvkr/StaticForm).

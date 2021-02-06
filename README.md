@@ -13,21 +13,16 @@ Sounds like a Google Form ripoff, but it has some benefits:
 3. **Zero cost on Netlify free tier.**
 4. **Open source and can be hosted anywhere.**
 
-## Technology Stack
-
-On the front end side:
+## Stack
 
 * [Eleventy](https://www.11ty.dev/) 
 * [Netlify CMS](https://www.netlifycms.org/)
-* [Tailwind CSS](https://tailwindcss.com/).
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Alpine.js](https://github.com/alpinejs/alpine)
 
 No complicated build tools, just `postcss` and `eleventy`. HTML, CSS and JavaScript minifier are included in the build process.
 
-Client side vanilla JavaScript is used minimally and we sticks with ES6.
-
-On the back end, well... There is no back end...
-
-Actually **[Netlify](https://www.netlify.com/)** provide the back end, which include:
+**[Netlify](https://www.netlify.com/)** provide the back end, which include:
 * Static edge hosting.
 * Form API endpoint.
 * Authentication server.
@@ -37,17 +32,17 @@ Actually **[Netlify](https://www.netlify.com/)** provide the back end, which inc
 
 ## Roadmap
 
-1. Build complete basic form component: check box, radio button, text field, number and email field ⛏.
+1. Build complete basic form component: check box, radio button, text field ⛏.
 2. Advanced form feature: Route form output to between several WhatsApp number. Useful for sharing loads between several customer service.
-4. Build *moar* themes 🌈. Should I did it like Typeform?
+4. Build more themes 🌈. Made like typeform.
 
 ## Demo
 
 ***Static Form Demo*** lives **[here](https://staticform21.netlify.app)**.
 
-You can log in with GitHub account and make form in the **[admin panel](https://staticform21.netlify.app/admin)**. Your form submission will be saved as draft at first and will be published by manual deploy daily to prevent excessive build time of our website.
+You can try making form by login GitHub account in the **[admin panel](https://staticform21.netlify.app/admin)**.
 
-Making your own instance of *Static Form* is a one-click though 😃. Give it a try!
+Please note that all information submitted to the demo page is  publicly available. Your form submission will be saved as draft only. Make your own instance of *Static Form* is a one-click though 😃. Give it a try!
 
 
 ## Installation
@@ -56,9 +51,9 @@ Thanks to Netlify, deploying is a one-click:
 
 [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zulvkr/StaticForm&stack=cms)
 
-You need Netlify and GitHub / GitLab account.
+You need Netlify account and GitHub account.
 
-This button will tell Netlify to fork this repository on your account, build it in their edge server and set up the CI/CD automatically.
+This button will tell Netlify to make a copy of this the sorce code to your GitHub account, build the website in their edge server and set up the CI/CD automatically.
 
 You need to do some configuration to use Netlify CMS. See [configuration](#configuration).
 
