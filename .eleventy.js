@@ -7,16 +7,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   // Register Shortcodes
-  const Form = require("./src/_includes/components/basic/Index");
-  eleventyConfig.addShortcode("SelectField", Form.SelectField);
-  eleventyConfig.addPairedShortcode("Group", Form.Group);
-  eleventyConfig.addShortcode("Text", Form.att.text);
-  eleventyConfig.addShortcode("Select", Form.att.select);
-  eleventyConfig.addShortcode("Email", Form.att.email);
-  eleventyConfig.addShortcode("Number", Form.att.number);
-
-
-
+  eleventyConfig.addPlugin(require("./src/_includes/theme/basic/basic"))
 
   // Trigger reload when CSS updated
   if (!process.env.ELEVENTY_PRODUCTION) {
@@ -52,7 +43,7 @@ module.exports = function (eleventyConfig) {
 
   // Minify HTML output in Production
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath.indexOf(".html") > -1 && process.env.ELEVENTY_PRODUCTION) {
+    if (process.env.ELEVENTY_PRODUCTION && outputPath.indexOf(".html") > -1) {
       const minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,

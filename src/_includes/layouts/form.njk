@@ -18,21 +18,13 @@ layout: layouts/base.njk
      id="main-form" name="main-{{ page.fileSlug }}" data-netlify=true>
       {% for field in fields %}
         {% if field.type === "selectfield" %}
-          {% Group field.id, field.label, field.required  %}
-            {% SelectField field.id, field.id, field.required, null, field.enum %}
-          {% endGroup %}
+          {% BaseGroupSelect field.id, field.name, null, field.required, field.enum, field.label %}
         {% elif field.type === "emailfield" %}
-          {% Group field.id, field.label, field.required  %}
-            <input {% Email field.id , field.id , "" , field.required %}>
-          {% endGroup %}
+          {% BaseGroupEmail field.id, field.name, "", field.required, field.label %}
         {% elif field.type === "numberfield" %}
-          {% Group field.id, field.label, field.required  %}
-            <input {% Number field.id , field.id , "" , field.required %}>
-          {% endGroup %}
+          {% BaseGroupNumber field.id, field.name, "", field.required, field.label %}
         {% else %}
-          {% Group field.id, field.label, field.required  %}
-            <input {% Text field.id , field.id , "" , field.required %}>
-          {% endGroup %}
+          {% BaseGroupText field.id, field.name, "", field.required, field.label %}
         {% endif %}
       {% endfor %}
       <div class="flex flex-row-reverse">

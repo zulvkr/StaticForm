@@ -1,4 +1,5 @@
 /**
+ * Eleventy Paired Shortcode
  * @param {string} content Return content between paired shortcodes
  * @param {string} forId 
  * @param {string} label 
