@@ -6,7 +6,7 @@
 
 module.exports = (id, name, required) => {
     return `
-    class="base-input"
+    class="basic-input"
     id="${id}"
     name="${ name ? name : id }"
     ${ required ? "required" : ""}

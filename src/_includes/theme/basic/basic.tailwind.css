@@ -1,13 +1,13 @@
 @layer components {
-    .base-input {
+    .basic-input {
         @apply block w-full mt-1 rounded-md focus:border-green-500 ring-green-500 !important;
     }
 
-    .base-button {
+    .basic-button {
         @apply px-4 py-2 font-bold text-white transition bg-green-500 rounded-md outline-none focus:bg-green-100 focus:ring ring-green-400 focus:text-green-500;
     }
 
-    .base-label {
+    .basic-label {
         @apply block mb-2 text-sm font-semibold tracking-wide text-gray-600;
     }
 }

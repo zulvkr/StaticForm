@@ -9,9 +9,9 @@ const { GroupText, GroupNumber, GroupEmail, GroupSelect } = require('./component
 
 module.exports = function (eleventyConfig) {
 
-    eleventyConfig.addShortcode("BaseGroupText", GroupText);
-    eleventyConfig.addShortcode("BaseGroupEmail", GroupEmail);
-    eleventyConfig.addShortcode("BaseGroupNumber", GroupNumber);
-    eleventyConfig.addShortcode("BaseGroupSelect", GroupSelect);
-    eleventyConfig.addShortcode("BaseForm", basic);
+    eleventyConfig.addShortcode("BasicGroupText", GroupText);
+    eleventyConfig.addShortcode("BasicGroupEmail", GroupEmail);
+    eleventyConfig.addShortcode("BasicGroupNumber", GroupNumber);
+    eleventyConfig.addShortcode("BasicGroupSelect", GroupSelect);
+    eleventyConfig.addShortcode("BasicForm", basic);
 }

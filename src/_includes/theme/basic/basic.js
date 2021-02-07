@@ -25,7 +25,7 @@ module.exports = (fields, name, mode) => {
      ${ mode === "netlify" ? "data-netlify=true" : "" }>
         ${fields.map(field => fieldIs(field)).join("")}
         <div class="flex flex-row-reverse">
-            <button type="Submit" class="base-button">Submit</button>
+            <button type="Submit" class="basic-button">Submit</button>
         </div>
     </form>
     `
