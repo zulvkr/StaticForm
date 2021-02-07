@@ -19,11 +19,24 @@ const FormsPreview = createClass({
          */
         const renderLabel = data => {
             return html`
-            <label class="label">
+            <label class="base-label">
             ${data.get("label")}
             ${data.toJS().required ? html`
             <span class='text-red-500'>*</span>` : null}
             </label>
+            `
+        }
+
+
+        /**
+         * Render field preview not avilable
+         * @param {object} data fields.getIn([n,"data"])
+         */
+        const renderPreviewNA = data => {
+            return html`
+            <div class="mb-6 py-10 w-full text-center bg-gray-200 text-gray-700">
+                Field Preview for ${data.toJS().type} not available
+            </div>
             `
         }
 
@@ -36,7 +49,7 @@ const FormsPreview = createClass({
             <div class="mb-6">
                 ${renderLabel(data)}
                 ${/* React break when using non-self-closing input tag here */''}
-                <input class="input" type="text" placeholder="" />
+                <input class="base-input" type="text" placeholder="" />
             </div>
             `
         }
@@ -50,7 +63,21 @@ const FormsPreview = createClass({
             <div class="mb-6">
                 ${renderLabel(data)}
                 ${/* React break when using non-self-closing input tag here */''}
-                <input class="input appearance-none" type="number" placeholder="" />
+                <input class="base-input" type="number" placeholder="" />
+            </div>
+            `
+        }
+
+        /**
+         * Render email field
+         * @param {object} data fields.getIn([n,"data"])
+         */
+        const renderEmailField = data => {
+            return html`
+            <div class="mb-6">
+                ${renderLabel(data)}
+                ${/* React break when using non-self-closing input tag here */''}
+                <input class="base-input" type="email" placeholder="" />
             </div>
             `
         }
@@ -63,7 +90,7 @@ const FormsPreview = createClass({
             return html`
             <div class="mb-6">    
                 ${renderLabel(data)}
-                <select class="input bg-select-arrow">
+                <select class="base-input">
                     ${/* enum array must be checked before mapping to prevent error */''}
                     ${data.toJS().enum ? data.get("enum").map(a => html`<option>${a}</option>`) : null}
                 </select>
@@ -84,10 +111,13 @@ const FormsPreview = createClass({
                 ${renderNumberField(data)}`
             } else if (data.toJS().type === "emailfield") {
                 return html`
+                ${renderEmailField(data)}`
+            } else if (data.toJS().type === "textfield") {
+                return html`
                 ${renderTextField(data)}`
             } else {
                 return html`
-                ${renderTextField(data)}`
+                ${renderPreviewNA(data)}`
             }
         }
 
@@ -102,7 +132,7 @@ const FormsPreview = createClass({
                     <form class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
                         ${fields.map(field => html`${renderField(field.get("data"))}`)}
                         <div class="flex flex-row-reverse">
-                            <button class="button" disabled>Submit</button>
+                            <button class="base-button" disabled>Submit</button>
                         </div>
                     </form>
             `} else {

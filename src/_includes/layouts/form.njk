@@ -11,7 +11,7 @@ layout: layouts/base.njk
   <div class="px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
     <article class="mb-5 overflow-auto prose lg:prose-lg">{{ content | safe }}</article>
 
-    {% BaseForm form, "" %}
+    {% BaseForm form, "main-"+page.fileSlug, "" %}
 
   </div>
 </div>

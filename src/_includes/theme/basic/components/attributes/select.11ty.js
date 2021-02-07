@@ -6,7 +6,7 @@
 
 module.exports = (id, name, required) => {
     return `
-    class="input bg-select-arrow"
+    class="base-input"
     id="${id}"
     name="${ name ? name : id }"
     ${ required ? "required" : ""}

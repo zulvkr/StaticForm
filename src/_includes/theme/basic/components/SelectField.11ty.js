@@ -6,18 +6,19 @@
  * @param {Array} options 
  */
 
+const Select = require('./attributes/select.11ty');
+
 module.exports = (id, name, required, placeholder, options) => {
-    const Select = require('./attributes/select.11ty');
 
     let optionHtml = "";
 
-    if(Array.isArray(options)) {
+    if (Array.isArray(options)) {
         options.forEach(option => {
             optionHtml += `<option>${option}</option>`;
         });
     }
 
-    if(placeholder) {
+    if (placeholder) {
         placeholder = `<option selected disabled>${placeholder}</option>`
     }
 
