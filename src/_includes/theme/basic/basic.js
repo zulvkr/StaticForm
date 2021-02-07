@@ -2,18 +2,18 @@ const { GroupText, GroupNumber, GroupEmail, GroupSelect } = require('./component
 
 module.exports = (fields, name, mode) => {
     const fieldIs = (field) => {
-        const { id, name, required, label, enum: options, placeholder, type } = field;
+        const { id, required, label, enum: options, placeholder, type } = field;
         switch (type) {
             case "textfield":
-                return GroupText(id, name, "", required, label)
+                return GroupText(id, id, "", required, label)
             case "numberfield":
-                return GroupNumber(id, name, "", required, label)
+                return GroupNumber(id, id, "", required, label)
             case "emailfield":
-                return GroupEmail(id, name, "", required, label)
+                return GroupEmail(id, id, "", required, label)
             case "selectfield":
-                return GroupSelect(id, name, null, required, options, label)
+                return GroupSelect(id, id, null, required, options, label)
             default:
-                return GroupText(id, name, "", required, label)
+                return GroupText(id, id, "", required, label)
         }
     }
 
