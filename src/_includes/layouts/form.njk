@@ -11,25 +11,7 @@ layout: layouts/base.njk
   <div class="px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
     <article class="mb-5 overflow-auto prose lg:prose-lg">{{ content | safe }}</article>
 
-    {% set fields = form %}
+    {% BaseForm form, "" %}
 
-    <form
-     class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
-     id="main-form" name="main-{{ page.fileSlug }}" data-netlify=true>
-      {% for field in fields %}
-        {% if field.type === "selectfield" %}
-          {% BaseGroupSelect field.id, field.name, null, field.required, field.enum, field.label %}
-        {% elif field.type === "emailfield" %}
-          {% BaseGroupEmail field.id, field.name, "", field.required, field.label %}
-        {% elif field.type === "numberfield" %}
-          {% BaseGroupNumber field.id, field.name, "", field.required, field.label %}
-        {% else %}
-          {% BaseGroupText field.id, field.name, "", field.required, field.label %}
-        {% endif %}
-      {% endfor %}
-      <div class="flex flex-row-reverse">
-        <button type="Submit" class="button">Submit</button>
-      </div>
-    </form>
   </div>
 </div>

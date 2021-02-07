@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7080df2-1a6f-4408-b74f-ad09b0e26e9f/deploy-status)](https://app.netlify.com/sites/staticform21/deploys)
 
-***Static Form*** is a form builder, like Google Form, that built on JAMStack aka static website.
+***Static Form*** is a form builder, like Google Form, that built on JAMStack.
 
 ![Static Form Demo](docs/web.gif)
 
@@ -28,13 +28,13 @@ No complicated build tools, just `postcss` and `eleventy`. HTML, CSS and JavaScr
 * Authentication server.
 * Possibly this project will also use Netlify function.
 
-*Static Form* is configured to work with Whatsapp wa.me link and Netlify Form as form endpoint, which has some limitation. You can use any other form backend like Formspree ([there are lots of provider out there](https://free-for.dev/#/?id=forms)).
+*Static Form* is configured to work with Whatsapp wa.me link and Netlify Form as form endpoint, which has some limitation. You can use any other form backend like Formspree ([there are lots of provider out there](https://free-for.dev/#/?id=forms)) or build your own.
 
 ## Roadmap
 
 1. Build complete basic form component: check box, radio button, text field ⛏.
 2. Advanced form feature: Route form output to between several WhatsApp number. Useful for sharing loads between several customer service.
-4. Build more themes 🌈. Made like typeform.
+4. Build more themes 🌈.
 
 ## Demo
 
