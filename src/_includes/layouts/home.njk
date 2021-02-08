@@ -88,8 +88,6 @@ layout: layouts/base.njk
       </div>
     </div>
   </div>
-
-
   <div class="flex items-center mb-4">
     <div class="max-w-3xl px-5 py-10 mx-auto">
       <div class="w-full">
@@ -97,18 +95,17 @@ layout: layouts/base.njk
         <ul class="flex flex-wrap justify-center">
 
           {%- for form in collections.forms -%}
-          <li class="block w-full px-2 py-2 sm:w-1/2">
-            <a href="{{ form.url }}"
-              class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out bg-white border rounded shadow from-white hover:text-white bg-gradient-to-tr hover:from-blue-300 hover:to-green-300 focus:ring-4 ring-green-300 focus:outline-none">
-              <p class="text-sm font-bold">Basic Form</p>
-              <p>{{ form.data.title }}</p>
-            </a>
-          </li>
+            <li class="block w-full px-2 py-2 sm:w-1/2">
+              <a href="{{ form.url }}"
+                class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out bg-white border rounded shadow from-white hover:text-white bg-gradient-to-tr hover:from-blue-300 hover:to-green-300 focus:ring-4 ring-green-300 focus:outline-none">
+                <p class="text-sm font-bold">Basic Form</p>
+                <p>{{ form.data.title }}</p>
+              </a>
+            </li>
           {%- endfor -%}
 
         </ul>
       </div>
     </div>
   </div>
-</div>
 </div>
