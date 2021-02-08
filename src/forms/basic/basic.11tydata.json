@@ -1,4 +1,4 @@
 {
     "tags": "forms",
-    "layout": "layouts/form.njk"
+    "layout": "theme/basic/index.njk"
 }
