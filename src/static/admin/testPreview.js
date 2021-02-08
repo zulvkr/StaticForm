@@ -7,6 +7,8 @@ import htm from "https://unpkg.com/htm?module";
 
 const html = htm.bind(h);
 
+import Group from "./Group.js";
+
 const FormsPreview = createClass({
     render() {
         // Data from NetlifyCMS

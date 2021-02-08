@@ -1,17 +1,9 @@
-/**
- * Components are .11ty.js files that registered as Shortcodes
- * Components must return string or template literal
- */ 
-
-const basic = require('./basic');
-const { GroupText, GroupNumber, GroupEmail, GroupSelect } = require('./components/Groups.11ty');
-
+const Group = require('./components/Group')
+const Input = require('./components/Input')
+const SelectField = require('./components/SelectField')
 
 module.exports = function (eleventyConfig) {
-
-    eleventyConfig.addShortcode("BasicGroupText", GroupText);
-    eleventyConfig.addShortcode("BasicGroupEmail", GroupEmail);
-    eleventyConfig.addShortcode("BasicGroupNumber", GroupNumber);
-    eleventyConfig.addShortcode("BasicGroupSelect", GroupSelect);
-    eleventyConfig.addShortcode("BasicForm", basic);
+    eleventyConfig.addPairedShortcode("BasicGroup", Group);
+    eleventyConfig.addShortcode("BasicInput", Input);
+    eleventyConfig.addShortcode("BasicSelectField", SelectField);
 }

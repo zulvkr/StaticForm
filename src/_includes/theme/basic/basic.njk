@@ -3,7 +3,8 @@ layout: layouts/base.njk
 ---
 <div class="h-4 bg-gradient-to-r from-blue-300 via-green-300 to-green-200"></div>
 <header class="flex flex-col items-center mx-8">
-  <div class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
+  <div
+    class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
     {{ title or site.title }}
   </div>
 </header>
@@ -11,7 +12,23 @@ layout: layouts/base.njk
   <div class="px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
     <article class="mb-5 overflow-auto prose lg:prose-lg">{{ content | safe }}</article>
 
-    {% BasicForm form, "main-"+page.fileSlug, "" %}
-
+    <form id="main-form" name="main-{{ page.fileSlug }}" {{ "data-netlify=true" if mode==="netlify" else "" }}
+      class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
+      {% for field in form %}
+        {% BasicGroup field %}
+          {% switch field.type %}
+            {% case "textfield" %}{% case "numberfield" %}{% case "emailfield" %}
+              {% BasicInput field %}
+            {% case "selectfield" %}
+              {% BasicSelectField field %}
+            {% default %}
+              <p>error, field type is not supported</p>
+          {% endswitch %}
+        {% endBasicGroup %}
+      {% endfor %}
+      <div class="flex flex-row-reverse">
+        <button type="Submit" class="basic-button">Submit</button>
+      </div>
+    </form>
   </div>
 </div>
