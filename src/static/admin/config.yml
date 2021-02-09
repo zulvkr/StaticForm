@@ -14,10 +14,40 @@ public_folder: /img
 # site_url: 
 
 collections:
-  - label: Forms
-    name: forms
-    folder: src/forms
-    preview_path: forms/{{slug}}
+  - label: Pages
+    name: pages
+    editor:
+      preview: false
+    files:
+      - label: Home # Homepage
+        name: Home
+        file: src/index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: markdown }
+  - label: Settings
+    name: settings
+    editor:
+      preview: false
+    files:
+      - label: Site Metadata # modify site.json
+        name: metadata
+        file: src/_data/site.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - {
+              label: Description,
+              name: description,
+              widget: string,
+              hint: 50-160 characters,
+            }
+          - { label: Image, name: image, widget: image }
+          - { label: URL, name: url, widget: string }
+          - { label: Favicon, name: favicon, widget: image }
+  - label: Basic Forms
+    name: basic
+    folder: src/forms/basic
+    preview_path: forms/basic/{{slug}}
     create: true
     fields:
       - label: Title
@@ -105,33 +135,3 @@ collections:
                 name: enum
                 widget: list
                 field: { label: Option, name: option, widget: string }
-  - label: Pages
-    name: pages
-    editor:
-      preview: false
-    files:
-      - label: Home # Homepage
-        name: Home
-        file: src/index.md
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Body, name: body, widget: markdown }
-  - label: Settings
-    name: settings
-    editor:
-      preview: false
-    files:
-      - label: Site Metadata # modify site.json
-        name: metadata
-        file: src/_data/site.json
-        fields:
-          - { label: Title, name: title, widget: string }
-          - {
-              label: Description,
-              name: description,
-              widget: string,
-              hint: 50-160 characters,
-            }
-          - { label: Image, name: image, widget: image }
-          - { label: URL, name: url, widget: string }
-          - { label: Favicon, name: favicon, widget: image }

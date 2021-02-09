@@ -71,4 +71,4 @@ const FormsPreview = createClass({
     }
 })
 
-CMS.registerPreviewTemplate("forms", FormsPreview);
+CMS.registerPreviewTemplate("basic", FormsPreview);

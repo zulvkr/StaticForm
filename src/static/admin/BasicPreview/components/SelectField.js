@@ -16,7 +16,7 @@ export default ({ id, name, required, placeholder, enum: options }) => {
         ${required ? html`required` : ""}
         >
             ${placeholder ? placeholder : ""}
-            ${options.map(option => html`<option>${option}</option>`)}
+            ${options ? options.map(option => html`<option>${option}</option>`) : ""}
         </select>
     `
 }
