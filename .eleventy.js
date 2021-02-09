@@ -16,8 +16,8 @@ module.exports = function (eleventyConfig) {
   }
 
   eleventyConfig.addPassthroughCopy({
-    "src/static/admin/": "./admin/",
-    "src/static/img/": "./img/"
+    "src/_includes/static/admin/": "./admin/",
+    "src/_includes/static/img/": "./img/"
   });
 
   // Print eleventy data object

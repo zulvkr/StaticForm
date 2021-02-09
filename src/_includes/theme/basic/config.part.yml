@@ -1,0 +1,91 @@
+  - label: Basic Forms
+    name: basic
+    folder: src/forms/basic
+    preview_path: forms/basic/{{slug}}
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: WhatsApp Number
+        name: waNumber
+        widget: number
+        hint: "accept number only and start with country code, example: 6281612345678"
+      - label: Body text
+        name: body
+        widget: markdown
+      - label: Form
+        name: form
+        widget: list
+        types:
+          - label: Text Field # Text field component
+            name: textfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+          - label: Email Field # Text field component
+            name: emailfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+          - label: Number Field # Text field component
+            name: numberfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+          - label: Select Field # Select field component
+            name: selectfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+              - label: Options
+                name: enum
+                widget: list
+                field: { label: Option, name: option, widget: string }
