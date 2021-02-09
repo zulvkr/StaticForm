@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "partials/head.njk" %}
+{% include "layouts/head.njk" %}
 
 <body class="flex flex-col min-h-screen">
 <main>
   {{ content | safe }}
 </main>
-{% include "partials/footer.njk" %}
+{% include "layouts/footer.njk" %}
 
 </body>
 </html>
