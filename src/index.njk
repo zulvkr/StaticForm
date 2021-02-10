@@ -1,9 +1,6 @@
 ---
 layout: layouts/base.njk
 title: Home
-eleventyNavigation:
-key: Home
-order: 1
 ---
 <div class="flex flex-col min-h-screen">
   <div class="flex-grow">
@@ -13,7 +10,7 @@ order: 1
     <nav class="container max-w-screen-xl px-5 m-auto" x-data="{ open: false }">
       <div class="flex flex-col items-stretch sm:flex-row sm:justify-between">
         <div class="flex items-stretch justify-between">
-          <a href="{{ '/' | url }}" class="px-3 py-5 font-bold bg-gray-800 rounded-b-lg text-green-50">
+          <a href="{{ '/' | url }}" class="px-2 py-2 my-3 font-bold text-white bg-gray-800 rounded">
             {{ site.title }}
           </a>
           <button class="block px-3 py-5 mx-4 sm:hidden" @click="open = true" :class="{ 'hidden': open === true }">
@@ -40,11 +37,12 @@ order: 1
         <div class="container max-w-screen-xl px-5 pb-16 m-auto sm:pb-28">
 
           <section class="py-16 text-center lg:py-24">
-            <h3 class="text-4xl text-gray-700 mb-9">Extendable Form Builder that Easy to Deploy</h3>
+            <h2 class="p-5 mx-auto mb-3 text-4xl font-bold text-white bg-gray-800 rounded-lg sm:rounded-2xl max-w-max sm:text-7xl">Static Form</h2>
+            <h3 class="text-xl text-gray-700 mb-9">Extendable Form Builder that Easy to Deploy</h3>
             <div class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:max-w-max">
-              <a href="https://github.com/zulvkr/StaticForm" class="py-3 mr-0 text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600">
+              <a href="https://github.com/zulvkr/StaticForm" class="py-3 mr-0 font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600">
                 Deploy (5 min)</a>
-              <a href="#demo-form" class="py-3 mr-0 transition border border-green-500 rounded ring-green-purple-400 px-7 sm:mr-2 text hover:border-green-600 hover:bg-gray-200">
+              <a href="#demo-form" class="py-3 mr-0 font-bold text-green-500 transition border border-green-500 rounded ring-green-purple-400 px-7 sm:mr-2 text hover:border-green-600 hover:text-green-600 hover:bg-gray-50">
                 Try Demo</a>
               <a href="" class="px-4 py-3 underline hover:no-underline sm:block">Learn more</a>
             </div>
@@ -104,7 +102,9 @@ order: 1
           {%- for form in collections.forms -%}
             <li class="w-full sm:w-1/2">
               <a href="{{ form.url }}" class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out bg-white border rounded shadow hover:shadow-lg hover:border-green-400 focus:border-green-400 focus:outline-none">
-                <p class="mb-3 text-sm font-bold">{{ form.data.layout }} - {{ form.data.date | readable }}</p>
+                <p class="mb-3 text-sm font-bold">{{ form.data.layout }}
+                  -
+                  {{ form.data.date | readable }}</p>
                 <p>{{ form.data.title }}</p>
               </a>
             </li>

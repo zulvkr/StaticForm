@@ -9,11 +9,6 @@
     "start": "npx concurrently \"npm:11ty\" \"npm:pcss\"",
     "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css"
   },
-  "//": [
-    "11ty and postcss work tandemly during development. PostCSS save CSS files in ",
-    "src/_tmp/ which watched & passed by 11ty to _site/ and trigger browser reload.",
-    "In production build, PostCSS save directly in _site/"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zulvkr/11tail.git"

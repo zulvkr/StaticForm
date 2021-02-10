@@ -1,4 +1,4 @@
-#this is a helper to generate markdown posts for testing, inspired by laravel factory
+#this is a helper to generate markdown posts for testing
 #credits to tshiono for answering my stupid question in Stack Overflow
 
 #!/bin/bash
