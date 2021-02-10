@@ -1,32 +1,44 @@
 ---
-date: Last Modified
-title: Form _INCREMENT_
-waNumber: 621123456
+date: 2021-02-09
+layout: basic
+title: "Bogor COVID Case Reporting Form"
+waNumber: 6212345678
 form:
   - type: textfield
-    label: Alamat
-    id: alamat
+    label: Name
+    id: name
     required: true
-  - type: textfield
-    label: Penerima
-    id: receiver
+  - type: numberfield
+    label: Age
+    id: age
     required: true
   - type: selectfield
-    label: Buku yang dipesan
-    id: book
+    label: Area
+    id: area
     required: true
     enum:
-      - Jalan Menuju Surga
-      - Kematian Terindah
-      - Siapa sangka ada yang punya??
+      - Bogor Barat
+      - Bogor Tengah
+      - Bogor Timur
+      - Bogor Utara
+      - Bogor Selatan
+      - Tanah Sareal
+  - type: selectfield
+    label: Severity
+    id: severity
+    required: true
+    enum:
+      - Asimptomatic
+      - Low
+      - Medium
+      - High
+  - type: textarea
+    label: Remarks
+    id: remarks
+    required: false
 ---
 
-This is Form _INCREMENT_
+> This form is for demo purpose only.
+> Form submission will try to send result to imaginary WhatsApp number +62 1234 5678
 
-🎉 Tailwind CSS v0.4.0 is out!
-
-## HTML Best Practices
-
-For *security* reasons, not all `Markdown` applications support HTML in Markdown documents. When in doubt, **check** your Markdown application’s documentation. Some applications support only a subset of HTML tags.
-
-[Use blank lines to](https://www.google.com) separate block-level HTML 
+[Actual Covid Case Report Form](https://www.who.int/docs/default-source/coronaviruse/2019-covid-crf-v6.pdf?sfvrsn=c5ff90c6_2)

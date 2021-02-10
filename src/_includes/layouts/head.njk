@@ -2,13 +2,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/style.css' | url }}">
-  <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}" />
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+  <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}"/>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer="defer"></script>
+  
+  <!-- Netlify CMS only require Identity for initial registration and devlopment using git-gateway You can safely disable it after that. -->
+  {% if page.url == "/" %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async="async"></script>
+  {% endif %}
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Primary Meta Tags -->
-  <title>{{ title }} - {{ site.title }}</title>
+  <title>{{ title }}
+    -
+    {{ site.title }}</title>
   <meta name="title" content="{{ title }} - {{ site.title }}">
   <meta name="description" content="{{ description or site.description }}">
 
@@ -25,4 +34,5 @@
   <meta property="twitter:title" content="{{ title }} - {{ site.title }}">
   <meta property="twitter:description" content="{{ description or site.description }}">
   <meta property="twitter:image" content="{{ image or site.image }}">
+
 </head>

@@ -1,6 +1,6 @@
 {
-  "name": "11tail",
-  "version": "1.0.0",
+  "name": "static-form",
+  "version": "0.1.0",
   "description": "Eleventy boilerplate with low level components utilizing 11ty shortcodes and tailwind. Made to work with form",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "url": "git+https://github.com/zulvkr/11tail.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ivan Zulfikar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zulvkr/11tail/issues"
@@ -32,9 +32,13 @@
     "autoprefixer": "^10.2.1",
     "concurrently": "^5.3.0",
     "cssnano": "^4.1.10",
+    "dateformat": "^4.5.1",
     "html-minifier-terser": "^5.1.1",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.0",
     "tailwindcss": "^2.0.2"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

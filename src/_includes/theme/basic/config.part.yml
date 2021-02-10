@@ -1,9 +1,14 @@
+#collections:
   - label: Basic Forms
     name: basic
     folder: src/forms/basic
     preview_path: forms/basic/{{slug}}
     create: true
     fields:
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: basic
       - label: Title
         name: title
         widget: string

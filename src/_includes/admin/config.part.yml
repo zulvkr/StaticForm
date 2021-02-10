@@ -33,3 +33,4 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: URL, name: url, widget: string }
           - { label: Favicon, name: favicon, widget: image }
+# other collection in "src/config.yml.njk" concatenated here.
