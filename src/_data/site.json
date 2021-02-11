@@ -4,7 +4,7 @@
   "image": "/img/StaticFormDark.png",
   "url": "https://staticform21.netlify.app",
   "favicon": "/img/StaticFormDark.png",
-  "showHero": true,
+  "showHero": false,
   "nav": [
     ["GitHub", "https://github.com/zulvkr/StaticForm"],
     ["Docs", "#"],
