@@ -2,7 +2,7 @@
   - label: Basic Forms
     name: basic
     folder: src/forms/basic
-    preview_path: forms/basic/{{slug}}
+    preview_path: forms/basic/{{'{{slug}}'}}
     create: true
     fields:
       - label: Layout
@@ -26,7 +26,7 @@
         name: form
         widget: list
         types:
-          - label: Text Field # Text field component
+          - label: Text Field
             name: textfield
             widget: object
             fields:
@@ -42,7 +42,7 @@
                 name: required
                 widget: boolean
                 default: true
-          - label: Email Field # Text field component
+          - label: Email Field
             name: emailfield
             widget: object
             fields:
@@ -58,7 +58,7 @@
                 name: required
                 widget: boolean
                 default: true
-          - label: Number Field # Text field component
+          - label: Number Field
             name: numberfield
             widget: object
             fields:
@@ -74,7 +74,7 @@
                 name: required
                 widget: boolean
                 default: true
-          - label: Select Field # Select field component
+          - label: Select Field
             name: selectfield
             widget: object
             fields:
@@ -94,3 +94,65 @@
                 name: enum
                 widget: list
                 field: { label: Option, name: option, widget: string }
+          - label: Text Area
+            name: textarea
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+              - label: Placeholder
+                name: placeholder
+                widget: string
+          - label: Radio Group
+            name: radio
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Must be unique value
+                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+              - label: Options
+                name: enum
+                widget: list
+                field: { label: Option, name: option, widget: string }
+          - label: Checklist
+            name: checklist
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Checklist
+                name: checklist
+                widget: list
+                fields:
+                  - label: Id
+                    name: id
+                    widget: string
+                    hint: Must be unique value
+                    pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
+                  - label: Label
+                    name: label
+                    widget: string
+                  - label: Required
+                    name: required
+                    widget: boolean
+                    default: true

@@ -3,15 +3,15 @@ layout: layouts/base.njk
 ---
 <header class="flex flex-col items-center mx-8">
   <div
-    class="my-5 text-3xl font-bold tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-5xl sm:my-9">
+    class="my-5 text-3xl tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-3xl sm:my-9 md:text-4xl">
     {{ title or site.title }}
   </div>
 </header>
 
 <div class="flex items-center mb-4">
-  <div class="px-5 py-10 mx-auto border-t border-gray-200 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
+  <div class="px-5 py-10 mx-auto border-t border-gray-200 md:border-gray-800">
 
-    <article class="mb-5 overflow-auto prose lg:prose-lg">{{ content | safe }}</article>
+    <article class="mb-5 overflow-auto prose">{{ content | safe }}</article>
 
     <form id="main-form" name="main-{{ page.fileSlug }}" {{ "data-netlify=true" if mode==="netlify" else "" }}
       class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
@@ -22,6 +22,12 @@ layout: layouts/base.njk
               {% BasicInput field %}
             {% case "selectfield" %}
               {% BasicSelectField field %}
+            {% case "textarea" %}
+              {% BasicTextArea field %}
+            {% case "radio" %}
+              {% BasicRadioButtons field %}
+            {% case "checklist" %}
+              {% BasicCheckList field %}
             {% default %}
               <p class="w-full py-2 text-sm text-center text-gray-500 bg-gray-200">error, {{ field.type }} is not supported</p>
           {% endswitch %}

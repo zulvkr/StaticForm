@@ -10,4 +10,8 @@
     .basic-label {
         @apply block mb-2 text-sm font-semibold tracking-wide text-gray-600;
     }
+
+    .basic-radio {
+        @apply text-green-500 bg-gray-200 focus:border-transparent focus:ring-green-500;
+    }
 }

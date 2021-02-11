@@ -10,6 +10,10 @@ const html = htm.bind(h);
 import Group from "./components/Group.js";
 import Input from "./components/Input.js";
 import SelectField from "./components/SelectField.js";
+import TextArea from "./components/TextArea.js";
+import RadioButtons from "./components/RadioButtons.js";
+import CheckList from "./components/CheckList.js";
+
 
 const FormsPreview = createClass({
     render() {
@@ -18,14 +22,20 @@ const FormsPreview = createClass({
         const fields = this.props.widgetsFor("form");
 
         const renderField = data => {
-
+            
             switch (data.toJS().type) {
                 case "selectfield":
-                    return html`${Group(SelectField(data.toJS()), data.toJS())}`
+                    return SelectField(data.toJS())
                 case "numberfield":
                 case "emailfield":
                 case "textfield":
-                    return html`${Group(Input(data.toJS()), data.toJS())}`
+                    return Input(data.toJS())
+                case "textarea":
+                    return TextArea(data.toJS())
+                case "radio":
+                    return RadioButtons(data.toJS())
+                case "checklist":
+                    return CheckList(data.toJS())
                 default:
                     return html`
                     <div class="mb-6 py-10 w-full text-center bg-gray-200 text-gray-700">
@@ -33,6 +43,10 @@ const FormsPreview = createClass({
                     </div>
                     `
             }
+        }
+
+        const renderGroup = data => {
+            return Group(renderField(data), data)
         }
 
         /**
@@ -43,30 +57,31 @@ const FormsPreview = createClass({
         const renderForm = (condition) => {
             if (condition) {
                 return html`
-                    <form class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
-                        ${fields.map(field => html`${renderField(field.get("data"))}`)}
-                        <div class="flex flex-row-reverse">
-                            <button class="basic-button" disabled>Submit</button>
-                        </div>
-                    </form>
+                  <form id="main-form" 
+                    class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
+                      ${fields.map(field => html`${renderGroup(field.get("data"))}`)}
+                    <div class="flex flex-row-reverse">
+                      <button type="Submit" class="basic-button" disabled>Submit</button>
+                    </div>
+                  </form>
             `} else {
                 return "";
             }
         }
 
         return html`
-            <main>
-                <div class="bg-gradient-to-r from-blue-300 via-green-300 to-green-200 h-3"></div>
-                <div class="tracking-tight text-center text-3xl my-5 sm:leading-normal sm:text-5xl sm:my-9 text-gray-600 transition font-bold">
-                    ${entry.getIn(["data", "title"])}
-                </div>
-                <div class="mx-auto px-5 border-t border-gray-200 py-10 sm:border-t-4 sm:border-gray-500 sm:border-dotted">
-                    <article class="overflow-auto mb-5 prose lg:prose-lg">
-                        ${this.props.widgetFor("body")}
-                    </article>
+                <header class="flex flex-col items-center mx-8">
+                    <div
+                        class="my-5 text-3xl tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-3xl sm:my-9 md:text-4xl">
+                        ${entry.getIn(["data", "title"])}
+                    </div>
+                </header>
+
+                <div class="px-5 py-10 mx-auto border-t border-gray-200 md:border-gray-800">
+
+                    <article class="mb-5 overflow-auto prose">${this.props.widgetFor("body")}</article>
                     ${renderForm(fields.toArray()[0] !== undefined)}
-                </div>
-            </main>
+                </div>            
       `;
     }
 })

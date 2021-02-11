@@ -23,15 +23,24 @@ form:
       - Bogor Utara
       - Bogor Selatan
       - Tanah Sareal
-  - type: selectfield
+  - type: radio
     label: Severity
     id: severity
     required: true
     enum:
-      - Asimptomatic
+      - Asymptomatic
       - Low
       - Medium
       - High
+  - type: checklist
+    label: Symptom
+    checklist:
+      - label: Cough
+        id: cough
+        required: false
+      - label: Fever
+        id: fever
+        required: false
   - type: textarea
     label: Remarks
     id: remarks

@@ -9,13 +9,13 @@
             "id": "name",
             "required": true
         },
-        {   
+        {
             "type": "numberfield",
             "label": "Amount of Donation",
             "id": "amount",
             "required": true
         },
-        {   
+        {
             "type": "emailfield",
             "label": "Amount of Donation",
             "id": "amount",
@@ -31,6 +31,46 @@
                 "Bank Mandiri - [120] 2629 383 02826",
                 "Bank BTPN - [190] 6283 383 2935",
                 "Bank BRI - [101] 8237 292 02949"
+            ]
+        },
+        {
+            "type": "textarea",
+            "label": "Message",
+            "id": "message",
+            "placeholder": "Thank your for your contribution",
+            "required": false
+        },
+        {
+            "type": "radio",
+            "label": "Bank",
+            "id": "bank",
+            "required": true,
+            "enum": [
+                "Bank BNI - [074] 10685 8967 8682 ",
+                "Bank Mandiri - [120] 2629 383 02826",
+                "Bank BTPN - [190] 6283 383 2935",
+                "Bank BRI - [101] 8237 292 02949"
+            ]
+        },
+        {
+            "type": "checklist",
+            "label": "Donation purposes",
+            "checklist": [
+                {
+                    "label": "Zakat",
+                    "id": "zakat",
+                    "required": false
+                },
+                {
+                    "label": "Program 1",
+                    "id": "pg1",
+                    "required": false
+                },
+                {
+                    "label": "Program 2",
+                    "id": "pg 2",
+                    "required": false
+                }
             ]
         }
     ]
