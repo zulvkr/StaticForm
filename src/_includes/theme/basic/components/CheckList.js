@@ -1,9 +1,9 @@
 module.exports = ({checklist}) => {
     
-    const checkBox = ({id, required, label}) => {
+    const checkBox = ({id, name, required, label}) => {
         return `
     <div>
-        <input type="checkbox" id="${id}" name="${id}"
+        <input type="checkbox" id="${id}" name="${name ? name : id}"
          class="basic-radio"
          ${required ? "required" : ""}>
         <label for="${id}">${label}</label>

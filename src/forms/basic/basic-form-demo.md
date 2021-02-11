@@ -50,4 +50,12 @@ form:
 > This form is for demo purpose only.
 > Form submission will try to send result to imaginary WhatsApp number +62 1234 5678
 
+The most common symptoms of COVID-19 are
+
+- Fever
+- Dry cough
+- Fatigue
+
+People of all ages who experience fever and/or cough associated with difficulty breathing or shortness of breath, chest pain or pressure, or loss of speech or movement should seek medical care immediately. If possible, call your health care provider, hotline or health facility first, so you can be directed to the right clinic.
+
 [Actual Covid Case Report Form](https://www.who.int/docs/default-source/coronaviruse/2019-covid-crf-v6.pdf?sfvrsn=c5ff90c6_2)

@@ -12,7 +12,7 @@ export default ({ id, name, required, placeholder, enum: options }) => {
         <select 
         class="basic-input"
         id="${id}"
-        name="${name}"
+        name="${name ? name : id}"
         ${required ? html`required` : ""}
         >
             ${placeholder ? placeholder : ""}

@@ -4,10 +4,10 @@ const html = htm.bind(h);
 
 export default ({ checklist }) => {
 
-    const checkBox = ({id, required, label}) => {
+    const checkBox = ({ id, name, required, label }) => {
         return html`
     <div>
-        <input type="checkbox" id="${id}" name="${id}"
+        <input type="checkbox" id="${id}" name="${name ? name : id}"
          class="basic-radio"
          ${required ? html`required` : ""}/>
         <label for="${id}">${label}</label>

@@ -20,7 +20,7 @@ module.exports = ({ id, name, placeholder="", required, type }) => {
     <input 
     class="basic-input"
     id="${id}"
-    name="${name}"
+    name="${name ? name : id}"
     type="${inputType}"
     placeholder="${placeholder}"
     ${required ? "required" : ""}>
