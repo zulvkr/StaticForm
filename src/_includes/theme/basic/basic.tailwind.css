@@ -1,0 +1,17 @@
+@layer components {
+    .basic-input {
+        @apply block w-full mt-1 rounded-md focus:border-green-500 ring-green-500 !important;
+    }
+
+    .basic-button {
+        @apply px-4 py-2 font-bold text-white transition bg-green-500 rounded-md outline-none focus:bg-green-100 focus:ring ring-green-400 focus:text-green-500;
+    }
+
+    .basic-label {
+        @apply block mb-2 text-sm font-semibold tracking-wide text-gray-600;
+    }
+
+    .basic-radio {
+        @apply text-green-500 bg-gray-200 focus:border-transparent focus:ring-green-500;
+    }
+}

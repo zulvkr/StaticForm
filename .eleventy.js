@@ -1,22 +1,14 @@
 const inspect = require("util").inspect;
 const htmlmin = require("html-minifier-terser");
+const dateFormat = require("dateformat");
 
 module.exports = function (eleventyConfig) {
 
   // Use .eleventyignore
   eleventyConfig.setUseGitIgnore(false);
 
-  // Register Shortcodes
-  const Form = require("./src/_includes/components/basic/Index");
-  eleventyConfig.addShortcode("SelectField", Form.SelectField);
-  eleventyConfig.addPairedShortcode("Group", Form.Group);
-  eleventyConfig.addShortcode("Text", Form.att.text);
-  eleventyConfig.addShortcode("Select", Form.att.select);
-  eleventyConfig.addShortcode("Email", Form.att.email);
-  eleventyConfig.addShortcode("Number", Form.att.number);
-
-
-
+  // Register Themes
+  eleventyConfig.addPlugin(require("./src/_includes/theme/basic/basic.eleventy"))
 
   // Trigger reload when CSS updated
   if (!process.env.ELEVENTY_PRODUCTION) {
@@ -25,34 +17,19 @@ module.exports = function (eleventyConfig) {
   }
 
   eleventyConfig.addPassthroughCopy({
-    "src/static/admin/": "./admin/",
-    "src/static/img/": "./img/"
+    "src/_includes/admin/": "./admin/",
+    "src/img/": "./img/"
   });
 
   // Print eleventy data object
   eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 
-  // Minify JS in Production
-  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
-    code,
-    callback
-  ) {
-    try {
-      if (process.env.ELEVENTY_PRODUCTION) {
-        const minified = await terser.minify(code);
-        callback(null, minified.code);
-      } else {
-        callback(null, code)
-      }
-    } catch (err) {
-      console.error("Terser error: ", err);
-      callback(null, code);
-    }
-  });
+  // Format readable date
+  eleventyConfig.addFilter("readable", (date) => dateFormat(date, "mediumDate"));
 
-  // Minify HTML output in Production
+  // Minify HTML, including inlined JavaScript
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath.indexOf(".html") > -1 && process.env.ELEVENTY_PRODUCTION) {
+    if (process.env.ELEVENTY_PRODUCTION && outputPath.indexOf(".html") > -1) {
       const minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
