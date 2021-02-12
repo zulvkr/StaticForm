@@ -1,5 +1,4 @@
 # This file is Nunjucks / Jinja flavored YAML
-# See src/config.yml.njk for more info
 
 ##------------------------------ Basic Theme ------------------------------##
 
@@ -35,30 +34,74 @@
             name: textfield
             widget: object
             fields:
-              - {{ Label | safe }}
-              - {{ Id | safe }}
-              - {{ Required | safe }}
+              - { label: Label, name: label, widget: string }
+              - {
+                  label: Id,
+                  name: id,
+                  widget: string,
+                  hint: Must be unique value,
+                  pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                }
+              - {
+                  label: Required,
+                  name: required,
+                  widget: boolean,
+                  default: true,
+                }
           - label: Email Field
             name: emailfield
             widget: object
             fields:
-              - {{ Label | safe }}
-              - {{ Id | safe }}
-              - {{ Required | safe }}
+              - { label: Label, name: label, widget: string }
+              - {
+                  label: Id,
+                  name: id,
+                  widget: string,
+                  hint: Must be unique value,
+                  pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                }
+              - {
+                  label: Required,
+                  name: required,
+                  widget: boolean,
+                  default: true,
+                }
           - label: Number Field
             name: numberfield
             widget: object
             fields:
-              - {{ Label | safe }}
-              - {{ Id | safe }}
-              - {{ Required | safe }}
+              - { label: Label, name: label, widget: string }
+              - {
+                  label: Id,
+                  name: id,
+                  widget: string,
+                  hint: Must be unique value,
+                  pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                }
+              - {
+                  label: Required,
+                  name: required,
+                  widget: boolean,
+                  default: true,
+                }
           - label: Select Field
             name: selectfield
             widget: object
             fields:
-              - {{ Label | safe }}
-              - {{ Id | safe }}
-              - {{ Required | safe }}
+              - { label: Label, name: label, widget: string }
+              - {
+                  label: Id,
+                  name: id,
+                  widget: string,
+                  hint: Must be unique value,
+                  pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                }
+              - {
+                  label: Required,
+                  name: required,
+                  widget: boolean,
+                  default: true,
+                }
               - label: Options
                 name: enum
                 widget: list
@@ -67,9 +110,20 @@
             name: textarea
             widget: object
             fields:
-              - {{ Label | safe }}
-              - {{ Id | safe }}
-              - {{ Required | safe }}
+              - { label: Label, name: label, widget: string }
+              - {
+                  label: Id,
+                  name: id,
+                  widget: string,
+                  hint: Must be unique value,
+                  pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                }
+              - {
+                  label: Required,
+                  name: required,
+                  widget: boolean,
+                  default: true,
+                }
               - label: Placeholder
                 name: placeholder
                 widget: string
@@ -77,9 +131,20 @@
             name: radio
             widget: object
             fields:
-              - {{ Label | safe }}
-              - {{ Id | safe }}
-              - {{ Required | safe }}
+              - { label: Label, name: label, widget: string }
+              - {
+                  label: Id,
+                  name: id,
+                  widget: string,
+                  hint: Must be unique value,
+                  pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                }
+              - {
+                  label: Required,
+                  name: required,
+                  widget: boolean,
+                  default: true,
+                }
               - label: Options
                 name: enum
                 widget: list
@@ -88,11 +153,22 @@
             name: checklist
             widget: object
             fields:
-              - {{ Label | safe }}
+              - { label: Label, name: label, widget: string }
               - label: Checklist
                 name: checklist
                 widget: list
                 fields:
-                  - {{ Label | safe }}
-                  - {{ Id | safe }}
-                  - {{ Required | safe }}
+                  - { label: Label, name: label, widget: string }
+                  - {
+                      label: Id,
+                      name: id,
+                      widget: string,
+                      hint: Must be unique value,
+                      pattern: ["^[a-z0-9-]*$", "Must only contain small alphabet, 0-9 and -"],
+                    }
+                  - {
+                      label: Required,
+                      name: required,
+                      widget: boolean,
+                      default: true,
+                    }
