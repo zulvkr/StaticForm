@@ -2,10 +2,6 @@
 
 ##------------------------------ Main ------------------------------##
 
-# Define backend to interact with.
-# git-gateway: used in production, directly write to remote git
-# test-repo: used for testing, doesn't show posts
-
 backend:
   name: git-gateway
   branch: main
@@ -13,8 +9,6 @@ backend:
 media_folder: src/img
 public_folder: /img
 
-# uncomment below to enable drafts
-# publish_mode: editorial_workflow
 
 site_url: "{{site.url|safe}}"
 
@@ -57,4 +51,4 @@ collections:
         file: src/_data/themes.json
         fields:
           - { label: Register, name: register, widget: list }
-          - { label: Tailwind CSS, name: twcss, widget: code }
+          - { label: Tailwind CSS, name: twcss, widget: text }

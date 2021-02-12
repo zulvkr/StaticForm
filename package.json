@@ -7,7 +7,7 @@
     "11ty": "npx eleventy --serve",
     "pcss": "npx postcss src/styles/tailwind.css -o src/_tmp/style.css -w --verbose",
     "start": "npx concurrently \"npm:11ty\" \"npm:pcss\"",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css",
+    "build": "node src/styles/cssedit && ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css --verbose",
     "clean": "rm -r _site src/_tmp/style.css",
     "test": "npx eleventy --dryrun"
   },
