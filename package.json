@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zulvkr/11tail.git"
+    "url": "git+https://github.com/zulvkr/StaticForm.git"
   },
   "keywords": [],
   "author": "Ivan Zulfikar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zulvkr/11tail/issues"
+    "url": "https://github.com/zulvkr/StaticForm/issues"
   },
-  "homepage": "https://github.com/zulvkr/11tail#readme",
+  "homepage": "https://github.com/zulvkr/StaticForm#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@tailwindcss/forms": "^0.2.1",
