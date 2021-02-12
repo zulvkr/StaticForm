@@ -1,3 +1,6 @@
+---
+permalink: /admin/super/index.html
+---
 <!doctype html>
 <html>
 
@@ -12,9 +15,11 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-  CMS.registerPreviewStyle("../style.css");
+  CMS.registerPreviewStyle("../../style.css");
   </script>
-  <script type="module" src="./preview/basic/index.js"></script>
+  {% for theme in themes.register %}
+    <script type="module" src="../preview/{{ theme }}/index.js"></script>
+  {% endfor %}
 </body>
 
 </html>

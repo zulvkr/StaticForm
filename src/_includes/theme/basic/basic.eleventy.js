@@ -13,4 +13,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("BasicRadioButtons", RadioButtons);
     eleventyConfig.addShortcode("BasicCheckList", CheckList);
     eleventyConfig.addLayoutAlias("basic", 'theme/basic/index.njk');
+
+    eleventyConfig.addPassthroughCopy({
+        "src/_includes/theme/basic/preview/": "./admin/preview/basic/"
+      });
 }

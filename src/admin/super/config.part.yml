@@ -1,5 +1,4 @@
 # This file is Nunjucks / Jinja flavored YAML
-# See src/config.yml.njk for more info
 
 ##------------------------------ Main ------------------------------##
 
@@ -8,8 +7,8 @@
 # test-repo: used for testing, doesn't show posts
 
 backend:
-  branch: demo
-  name: test-repo
+  name: git-gateway
+  branch: main
 
 media_folder: src/img
 public_folder: /img
@@ -17,9 +16,7 @@ public_folder: /img
 # uncomment below to enable drafts
 # publish_mode: editorial_workflow
 
-# add your site url here without trailing "/" to enable
-# preview link and local development with git-gateway
-# example: "site_url: https://staticform21.netlify.app"
+site_url: "{{site.url|safe}}"
 
 collections:
   - label: Settings
@@ -41,3 +38,23 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: URL, name: url, widget: string }
           - { label: Favicon, name: favicon, widget: image }
+          - { label: Show Hero, name: showHero, widget: boolean }
+          - {
+              label: Navigation,
+              name: nav,
+              widget: list,
+              field:
+                {
+                  label: Link,
+                  name: link,
+                  widget: list,
+                  max: 2,
+                  hint: "example: GitHub, https://github.com",
+                },
+            }
+      - label: Themes
+        name: themes
+        file: src/_data/themes.json
+        fields:
+          - { label: Register, name: register, widget: list }
+          - { label: Tailwind CSS, name: twcss, widget: code }

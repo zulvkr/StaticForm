@@ -12,12 +12,11 @@ module.exports = function (eleventyConfig) {
 
   // Trigger reload when CSS updated
   if (!process.env.ELEVENTY_PRODUCTION) {
-    eleventyConfig.addWatchTarget("src/_tmp/style.css");
+    eleventyConfig.addWatchTarget("src/_tmp/");
     eleventyConfig.addPassthroughCopy({ "src/_tmp/style.css": "./style.css" });
   }
 
   eleventyConfig.addPassthroughCopy({
-    "src/_includes/admin/": "./admin/",
     "src/img/": "./img/"
   });
 
