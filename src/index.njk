@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+<div class="flex flex-col min-h-screen">
+  <div class="h-2 bg-gray-800"></div>
+  <div class="flex-grow bg-gray-200">
+
+    <div class="bg-white">
+      <nav class="container max-w-screen-xl px-5 m-auto" x-data="{ open: false }">
+        <div class="flex flex-col items-stretch sm:flex-row sm:justify-between">
+          <div class="flex items-stretch justify-between">
+            <a href="{{ '/' | url }}" class="px-2 py-2 my-3 font-bold text-white bg-gray-800 rounded">
+              {{ site.title }}
+            </a>
+            <button class="block px-3 py-5 mx-4 sm:hidden" @click="open = true" :class="{ 'hidden': open === true }">
+              { menu }
+            </button>
+            <button class="block px-3 py-5 mx-4 sm:hidden" :class="{ 'hidden': open === false }">
+              X
+            </button>
+          </div>
+          <div :class="{ 'hidden': open === false }" class="absolute z-10 top-16 right-12 sm:block sm:static"
+            @click.away="open = false">
+            <ul
+              class="flex flex-col w-48 px-5 py-2 text-gray-600 bg-white border rounded-lg shadow-md sm:border-0 sm:w-auto sm:p-0 sm:flex-row sm:m-0 sm:shadow-none">
+              {% for item, link in site.nav %}
+                <li class="py-3 text-center text-gray-500 transition sm:text-left sm:pl-8 sm:py-5 hover:text-green-400">
+                  <a href="{{link}}">{{item}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% if site.showHero %}
+        <div class="shadow-xl">
+          <div class="container max-w-screen-xl px-5 pb-16 m-auto sm:pb-28">
+
+            <section class="py-16 text-center lg:py-24">
+              <h2
+              class="p-5 mx-auto mb-5 text-4xl font-bold text-white bg-gray-800 rounded-lg sm:rounded-xl max-w-max sm:text-5xl">
+              Static Form</h2>
+              <h3 class="text-2xl italic mb-9">Extendable Form Builder that Easy to Deploy</h3>
+              <div class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:max-w-max">
+                <a href="https://github.com/zulvkr/StaticForm"
+                class="py-3 mr-0 font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600">
+                Deploy (5 min)</a>
+                <a href="#demo-form"
+                class="py-3 mr-0 font-bold text-green-500 transition border border-green-500 rounded ring-green-purple-400 px-7 sm:mr-2 text hover:border-green-600 hover:text-green-600 hover:bg-gray-50">
+                Try Demo</a>
+                <a href="" class="px-4 py-3 underline hover:no-underline sm:block">Learn more</a>
+              </div>
+            </section>
+
+            <section class="mx-auto mb-10 space-y-10 md:flex md:justify-between">
+              <ul class="items-center max-w-sm m-auto space-y-8 text-center md:mr-8 md:ml-0 md:text-left">
+                <li class="md:pl-5 md:border-l-4 md:border-green-400">
+                  <h3 class="mb-1 text-lg font-bold text-gray-700">Easy 👋</h3>
+                  <p class="text-gray-700">Get started really easily with Netlify deploy button.</p>
+                </li>
+                <li class="md:pl-5 md:border-l-4 md:border-green-400">
+                  <h3 class="mb-1 text-lg font-bold text-gray-700">Intuitive 👌</h3>
+                  <p class="text-gray-700">Create form exactly as you want it with instant preview.</p>
+                </li>
+                <li class="md:pl-5 md:border-l-4 md:border-green-400">
+                  <h3 class="mb-1 text-lg font-bold text-gray-700">Extendable 🍵</h3>
+                  <p class="text-gray-700">Extend with components. Make your own component with Tailwind CSS + Eleventy +
+                  Alpine.js</p>
+                </li>
+              </ul>
+              <div class="relative max-w-3xl">
+                <video autoplay muted loop playsinline class="w-full rounded-lg shadow-lg">
+                  <source src="/img/web.webm" type="video/webm">
+                  <source src="/img/web.mp4" type="video/mp4">
+                </video>
+              </div>
+            </section>
+
+          </div>
+          <!-- end container -->
+        </div>
+        <!-- end gradient -->
+
+        <section class="relative md:mb-28">
+          <div
+          class="text-white bg-gray-900 md:max-w-2xl md:rounded-xl md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0">
+            <div class="container max-w-screen-xl p-10 m-auto md:m-0">
+              <div class="mb-7">
+                <b>Getting started is easy and free!</b><br/>
+              Deploy your own instance of Static Form or try demo.
+            </div>
+              <div class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:text-left sm:max-w-max sm:m-0">
+                <a href="#"
+                class="py-3 mr-0 font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600">
+                Deploy (5 min)
+              </a>
+                <a href="/admin"
+                class="py-3 mr-0 font-bold transition border border-white rounded ring-offset-purple-400 px-7 sm:mr-2 text hover:bg-gray-700">
+                Try Demo
+              </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+    </div>
+
+    <section class="container max-w-screen-md px-5 py-20 m-auto">
+      <h3 class="text-2xl mb-7" id="demo-form">Recent Form</h3>
+
+      <div>
+        <ul class="flex flex-wrap">
+
+          {%- for form in collections.forms | reverse -%}
+            <li class="w-full px-1 py-1 sm:w-max">
+              <a href="{{ form.url }}"
+              class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out bg-white border rounded shadow hover:shadow-lg hover:border-green-400 focus:border-green-400 focus:outline-none">
+                <p class="mb-3 text-sm font-bold">{{ form.data.layout }}
+                -
+                {{ form.data.date | readable }}</p>
+                <p>{{ form.data.title }}</p>
+              </a>
+            </li>
+          {%- endfor -%}
+
+        </ul>
+      </div>
+    </section>
+  </div>
+  <!-- end flex-grow -->
+
+  <footer class="h-2 bg-gray-800"></footer>
+</div>

@@ -1,0 +1,42 @@
+# This file is Nunjucks / Jinja flavored YAML
+# See src/config.yml.njk for more info
+
+##------------------------------ Main ------------------------------##
+
+# Define backend to interact with.
+# git-gateway: used in production, directly write to remote git
+# test-repo: used for testing, doesn't show posts
+
+backend:
+  name: git-gateway
+
+media_folder: src/img
+public_folder: /img
+
+# uncomment below to enable drafts
+# publish_mode: editorial_workflow
+
+# add your site url here without trailing "/" to enable
+# preview link and local development with git-gateway
+# example: "site_url: https://staticform21.netlify.app"
+
+collections:
+  - label: Settings
+    name: settings
+    editor:
+      preview: false
+    files:
+      - label: Site Metadata
+        name: metadata
+        file: src/_data/site.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - {
+              label: Description,
+              name: description,
+              widget: string,
+              hint: 50-160 characters,
+            }
+          - { label: Image, name: image, widget: image }
+          - { label: URL, name: url, widget: string }
+          - { label: Favicon, name: favicon, widget: image }

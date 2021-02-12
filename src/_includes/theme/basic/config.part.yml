@@ -1,0 +1,98 @@
+# This file is Nunjucks / Jinja flavored YAML
+# See src/config.yml.njk for more info
+
+##------------------------------ Basic Theme ------------------------------##
+
+#collections:
+  - label: Basic Forms
+    name: basic
+    folder: src/forms/basic
+    preview_path: forms/basic/{{'{{slug}}'|safe}}
+    create: true
+    fields:
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: basic
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: WhatsApp Number
+        name: waNumber
+        widget: number
+        hint: "accept number only and start with country code, example: 6281612345678"
+      - label: Body text
+        name: body
+        widget: markdown
+      - label: Form
+        name: form
+        widget: list
+        types:
+          - label: Text Field
+            name: textfield
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
+          - label: Email Field
+            name: emailfield
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
+          - label: Number Field
+            name: numberfield
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
+          - label: Select Field
+            name: selectfield
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
+              - label: Options
+                name: enum
+                widget: list
+                field: { label: Option, name: option, widget: string }
+          - label: Text Area
+            name: textarea
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
+              - label: Placeholder
+                name: placeholder
+                widget: string
+          - label: Radio Group
+            name: radio
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
+              - label: Options
+                name: enum
+                widget: list
+                field: { label: Option, name: option, widget: string }
+          - label: Checklist
+            name: checklist
+            widget: object
+            fields:
+              - {{ Label | safe }}
+              - label: Checklist
+                name: checklist
+                widget: list
+                fields:
+                  - {{ Label | safe }}
+                  - {{ Id | safe }}
+                  - {{ Required | safe }}
