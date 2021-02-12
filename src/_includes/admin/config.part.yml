@@ -8,7 +8,8 @@
 # test-repo: used for testing, doesn't show posts
 
 backend:
-  name: git-gateway
+  branch: demo
+  name: test-repo
 
 media_folder: src/img
 public_folder: /img
