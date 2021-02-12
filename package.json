@@ -1,13 +1,15 @@
 {
   "name": "static-form",
   "version": "0.1.0",
-  "description": "Eleventy boilerplate with low level components utilizing 11ty shortcodes and tailwind. Made to work with form",
-  "main": "index.js",
+  "description": "Form builder built with JAMStack. Easily deployed.",
+  "main": ".eleventy.js",
   "scripts": {
     "11ty": "npx eleventy --serve",
     "pcss": "npx postcss src/styles/tailwind.css -o src/_tmp/style.css -w --verbose",
     "start": "npx concurrently \"npm:11ty\" \"npm:pcss\"",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css"
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css",
+    "clean": "rm -r _site src/_tmp",
+    "test": "npx eleventy --dryrun"
   },
   "repository": {
     "type": "git",

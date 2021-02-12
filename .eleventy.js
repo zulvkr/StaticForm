@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
   // Use .eleventyignore
   eleventyConfig.setUseGitIgnore(false);
 
-  // Register Basic Theme Shortcodes
+  // Register Themes
   eleventyConfig.addPlugin(require("./src/_includes/theme/basic/basic.eleventy"))
 
   // Trigger reload when CSS updated
@@ -24,28 +24,10 @@ module.exports = function (eleventyConfig) {
   // Print eleventy data object
   eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 
-  // Format Date
+  // Format readable date
   eleventyConfig.addFilter("readable", (date) => dateFormat(date, "mediumDate"));
 
-  // Minify JS in Production
-  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
-    code,
-    callback
-  ) {
-    try {
-      if (process.env.ELEVENTY_PRODUCTION) {
-        const minified = await terser.minify(code);
-        callback(null, minified.code);
-      } else {
-        callback(null, code)
-      }
-    } catch (err) {
-      console.error("Terser error: ", err);
-      callback(null, code);
-    }
-  });
-
-  // Minify HTML output in Production
+  // Minify HTML, including inlined JavaScript
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (process.env.ELEVENTY_PRODUCTION && outputPath.indexOf(".html") > -1) {
       const minified = htmlmin.minify(content, {

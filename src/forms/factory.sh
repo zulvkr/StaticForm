@@ -1,5 +1,4 @@
-#this is a helper to generate markdown posts for testing
-#credits to tshiono for answering my stupid question in Stack Overflow
+# This is a helper to generate markdown froms for testing
 
 #!/bin/bash
 

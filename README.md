@@ -14,8 +14,7 @@
 
 ---
 
-<p align="center"> Form Builder Built with JAMStack. 
-    <br> Easily deployed.
+<p align="center"> Form builder built with JAMStack. Easily deployed.
 </p>
 
 ## Introduction
@@ -56,4 +55,4 @@ Please visit our [documentation](#) for detailed information.
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - The idea of using [htm](https://github.com/developit/htm) for NetlifyCMS from this [boilerplate](https://github.com/danurbanowicz/eleventy-netlify-boilerplate/)
-- Lots of people who used 11ty with Tailwind, and finally convince me to try Tailwind.
+- Lots of people who used 11ty with Tailwind and finally convinced me
