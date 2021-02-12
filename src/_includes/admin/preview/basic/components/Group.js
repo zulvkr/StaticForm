@@ -3,10 +3,10 @@ import htm from "https://unpkg.com/htm?module";
 const html = htm.bind(h);
 
 export default (content, { id, label, required, type }) => {
-    if (type === "radio") {
+    if (type === "radio" || type === "checklist") {
         return html`
         <div class="mb-6">
-            <p class="basic-label" for="${id}">
+            <p class="basic-label">
                 ${label}
                 ${required ? html`<span class='text-red-500'>*</span>` : "" }
             </p>
