@@ -1,17 +1,27 @@
+# This file is Nunjucks / Jinja flavored YAML
+# See src/config.yml.njk for more info
+
+##------------------------------ Main ------------------------------##
+
+# backend setting define what backend will Netlify CMS
+# interact with.
+
+# git-gateway: used in production, directly write to remote git
+# test-repo: used for testing, doesn't show posts
+
 backend:
+  name: test-repo
   # name: git-gateway
-  name: test-repo ## only use this for local testing ###
-  branch: main
 
 media_folder: src/img
 public_folder: /img
 
-# uncomment to enable drafts
+# uncomment below to enable drafts
 # publish_mode: editorial_workflow
 
 # add your site url here without trailing "/" to enable
 # preview link and local development with git-gateway
-# site_url: 
+# site_url:
 
 collections:
   - label: Settings
@@ -19,7 +29,7 @@ collections:
     editor:
       preview: false
     files:
-      - label: Site Metadata # modify site.json
+      - label: Site Metadata
         name: metadata
         file: src/_data/site.json
         fields:
@@ -33,4 +43,3 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: URL, name: url, widget: string }
           - { label: Favicon, name: favicon, widget: image }
-# other collection in "src/config.yml.njk" concatenated here.

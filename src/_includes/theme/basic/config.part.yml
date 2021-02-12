@@ -1,8 +1,13 @@
+# This file is Nunjucks / Jinja flavored YAML
+# See src/config.yml.njk for more info
+
+##------------------------------ Basic Theme ------------------------------##
+
 #collections:
   - label: Basic Forms
     name: basic
     folder: src/forms/basic
-    preview_path: forms/basic/{{'{{slug}}'}}
+    preview_path: forms/basic/{{'{{slug}}'|safe}}
     create: true
     fields:
       - label: Layout
@@ -30,66 +35,30 @@
             name: textfield
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
-              - label: Id
-                name: id
-                widget: string
-                hint: Must be unique value
-                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-              - label: Required
-                name: required
-                widget: boolean
-                default: true
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
           - label: Email Field
             name: emailfield
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
-              - label: Id
-                name: id
-                widget: string
-                hint: Must be unique value
-                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-              - label: Required
-                name: required
-                widget: boolean
-                default: true
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
           - label: Number Field
             name: numberfield
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
-              - label: Id
-                name: id
-                widget: string
-                hint: Must be unique value
-                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-              - label: Required
-                name: required
-                widget: boolean
-                default: true
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
           - label: Select Field
             name: selectfield
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
-              - label: Id
-                name: id
-                widget: string
-                hint: Must be unique value
-                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-              - label: Required
-                name: required
-                widget: boolean
-                default: true
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
               - label: Options
                 name: enum
                 widget: list
@@ -98,18 +67,9 @@
             name: textarea
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
-              - label: Id
-                name: id
-                widget: string
-                hint: Must be unique value
-                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-              - label: Required
-                name: required
-                widget: boolean
-                default: true
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
               - label: Placeholder
                 name: placeholder
                 widget: string
@@ -117,18 +77,9 @@
             name: radio
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
-              - label: Id
-                name: id
-                widget: string
-                hint: Must be unique value
-                pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-              - label: Required
-                name: required
-                widget: boolean
-                default: true
+              - {{ Label | safe }}
+              - {{ Id | safe }}
+              - {{ Required | safe }}
               - label: Options
                 name: enum
                 widget: list
@@ -137,22 +88,11 @@
             name: checklist
             widget: object
             fields:
-              - label: Label
-                name: label
-                widget: string
+              - {{ Label | safe }}
               - label: Checklist
                 name: checklist
                 widget: list
                 fields:
-                  - label: Id
-                    name: id
-                    widget: string
-                    hint: Must be unique value
-                    pattern: ["^[a-z0-9-]*$", "Must only contain a-z, 0-9 and -"]
-                  - label: Label
-                    name: label
-                    widget: string
-                  - label: Required
-                    name: required
-                    widget: boolean
-                    default: true
+                  - {{ Label | safe }}
+                  - {{ Id | safe }}
+                  - {{ Required | safe }}

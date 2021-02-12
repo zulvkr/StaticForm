@@ -1,5 +1,15 @@
 ---
 permalink: /admin/config.yml
+
+##------------------------------ One-liner reusable widget setting ------------------------------##
+
+Label: "{ label: Label, name: label, widget: string }"
+Id: "{ label: Id, name: id, widget: string, hint: Must be unique value, pattern: [\"^[a-z0-9-]*$\", \"Must only contain a-z, 0-9 and -\"]}"
+Required: "{ label: Required, name: required, widget: boolean, default: true }"
+
 ---
-{% include "admin/config.part.yml" %}
-{% include "theme/basic/config.part.yml" %}
+{# Parent -#}
+{%- include "admin/config.part.yml" %}
+
+{# Basic Theme -#}
+{%- include "theme/basic/config.part.yml" %}
