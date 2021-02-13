@@ -82,12 +82,9 @@ typings/
 .nuxt
 dist
 
-# Eleventy build / generate output
+# Static Forms
 _site/
-src/_tmp/style.css
-
-# Remove NetlifyCMS form this repo, this repo for design onlyg
-src/admin_example/
+src/_includes/_tmp/style.css
 
 # Gatsby files
 .cache/

@@ -1,20 +1,21 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: dev
 
 media_folder: src/img
 public_folder: /img
-site_url: "{{site.url|safe}}"
+site_url: "{{site.url or env.deploy.url | safe}}"
+local_backend: true
 
 collections:
   - label: Settings
     name: settings
-    editor:
-      preview: false
     files:
       - label: Site Metadata
         name: metadata
         file: src/_data/site.json
+        editor:
+          preview: false
         fields:
           - { label: Title, name: title, widget: string }
           - {
@@ -30,8 +31,8 @@ collections:
               widget: string,
               pattern:
                 [
-                  "^https?:\/\/(?:.*\/)?[^\/.]+$",
-                  "Valid url with trailing slash",
+                  "(^$|^https?:\/\/(?:.*\/)?[^\/.]+$)",
+                  "valid url without trailing slash or empty",
                 ],
             }
           - { label: Favicon, name: favicon, widget: image }
@@ -49,8 +50,23 @@ collections:
                   hint: "example: GitHub, https://github.com",
                 },
             }
-      - label: Themes
-        name: themes
-        file: src/_data/themes.json
+          - label: Themes
+            name: themes
+            widget: list
+            hint: Curiousity kill the cat. Please read the documentation before adding / removing themes
+      - label: About
+        name: git
+        file: src/_data/git.json
         fields:
-          - { label: Register, name: register, widget: list }
+          - label: Repository URL
+            name: repo
+            widget: select
+            options: ["{{env.git.url | safe}}"]
+          - label: Branch
+            name: branch
+            widget: select
+            options: ["{{env.git.branch | safe}}"]
+          - label: GitHub or GitLab
+            name: type
+            widget: select
+            options: ["GitHub", "GitLab"]

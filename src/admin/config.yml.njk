@@ -2,18 +2,18 @@
 permalink: /admin/config.yml
 ---
 {#- Parent -#}
-{%- include "./config.part.yml" -%}
+{%- include "./config.yml" -%}
 
 {#- Themes -#}
 
 {%- set allThemes -%}
 
 {#- Concatenate all themes -#}
-{%- for theme in themes.register %}{# safety space #}
-{% include "theme/" + theme + "/config.part.yml" ignore missing -%}
+{%- for theme in site.themes %}{# safety space #}
+{% include "theme/" + theme + "/config.yml" ignore missing -%}
 {%- endfor -%}
 
 {%- endset -%}
 
 {#- Remove "collections:" to return valid configuration -#}
-{{- allThemes | replace("\ncollections:", "") | safe -}}
+{{- allThemes | replace("\ncollections:", "") | replace("collections:", "") | safe -}}

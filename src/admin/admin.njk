@@ -17,9 +17,10 @@ permalink: /admin/index.html
   <script>
   CMS.registerPreviewStyle("../style.css");
   </script>
-  {% for theme in themes.register %}
+  {% for theme in site.themes %}
     <script type="module" src="./preview/{{ theme }}/index.js"></script>
   {% endfor %}
+    <script type="module" src="./gitpr.js"></script>
 </body>
 
 </html>
