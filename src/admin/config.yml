@@ -1,11 +1,9 @@
 backend:
   name: git-gateway
   branch: main
-
 media_folder: src/img
 public_folder: /img
 site_url: "{{site.url or env.deploy.url | safe}}"
-
 collections:
   - label: Settings
     name: settings
@@ -16,25 +14,31 @@ collections:
         editor:
           preview: false
         fields:
-          - { label: Title, name: title, widget: string }
+          - label: Title
+            name: title
+            widget: string
           - label: Description
             name: description
             widget: string
             hint: 50-160 characters
-          - { label: Image, name: image, widget: image }
+          - label: Image
+            name: image
+            widget: image
           - label: URL
             name: url
             widget: string
             pattern:
-              [
-                "(^$|^https?:\/\/(?:.*\/)?[^\/.]+$)",
-                "valid url without trailing slash or empty",
-              ]
-          - { label: Favicon, name: favicon, widget: image }
-          - { label: Show Hero, name: showHero, widget: boolean }
-          - label: Navigation,
-            name: nav,
-            widget: list,
+              - "(^$|^https?://(?:.*/)?[^/.]+$)"
+              - valid url without trailing slash or empty
+          - label: Favicon
+            name: favicon
+            widget: image
+          - label: Show Hero
+            name: showHero
+            widget: boolean
+          - label: "Navigation,"
+            name: "nav,"
+            widget: "list,"
             field:
               - label: Link
                 name: link
@@ -45,7 +49,9 @@ collections:
           - label: Themes
             name: themes
             widget: list
-            hint: Curiousity kill the cat. Please read the documentation before adding / removing themes
+            hint: >-
+              Curiousity kill the cat. Please read the documentation before
+              adding / removing themes
       - label: About
         name: git
         file: src/_data/git.json
@@ -53,12 +59,16 @@ collections:
           - label: Repository URL
             name: repo
             widget: select
-            options: ["{{env.git.url | safe}}"]
+            options:
+              - "{{env.git.url | safe}}"
           - label: Branch
             name: branch
             widget: select
-            options: ["{{env.git.branch | safe}}"]
+            options:
+              - "{{env.git.branch | safe}}"
           - label: GitHub or GitLab
             name: type
             widget: select
-            options: ["GitHub", "GitLab"]
+            options:
+              - GitHub
+              - GitLab
