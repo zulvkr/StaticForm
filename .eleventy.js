@@ -11,21 +11,6 @@ module.exports = function (eleventyConfig) {
   // Register Themes
   eleventyConfig.addPlugin(require("./src/_includes/theme/basic/basic.eleventy"))
 
-  // Edit CSS during Build
-  if (process.env.ELEVENTY_PRODUCTION && process.env.SUPER_ADMIN) {
-    eleventyConfig.on('befroreBuild', () => {
-      const raw = fs.readFileSync('src/_data/themes.json')
-      const { twcss } = JSON.parse(raw);
-
-      fs.writeFile("src/styles/wind.css", twcss, function (err) {
-        if (err) {
-          return console.log(err);
-        }
-        console.log("The file was saved!");
-      });
-    });
-  }
-
   // Trigger reload when CSS updated
   if (!process.env.ELEVENTY_PRODUCTION) {
     eleventyConfig.addWatchTarget("src/_tmp/");
