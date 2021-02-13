@@ -17,38 +17,31 @@ collections:
           preview: false
         fields:
           - { label: Title, name: title, widget: string }
-          - {
-              label: Description,
-              name: description,
-              widget: string,
-              hint: 50-160 characters,
-            }
+          - label: Description
+            name: description
+            widget: string
+            hint: 50-160 characters
           - { label: Image, name: image, widget: image }
-          - {
-              label: URL,
-              name: url,
-              widget: string,
-              pattern:
-                [
-                  "(^$|^https?:\/\/(?:.*\/)?[^\/.]+$)",
-                  "valid url without trailing slash or empty",
-                ],
-            }
+          - label: URL
+            name: url
+            widget: string
+            pattern:
+              [
+                "(^$|^https?:\/\/(?:.*\/)?[^\/.]+$)",
+                "valid url without trailing slash or empty",
+              ]
           - { label: Favicon, name: favicon, widget: image }
           - { label: Show Hero, name: showHero, widget: boolean }
-          - {
-              label: Navigation,
-              name: nav,
-              widget: list,
-              field:
-                {
-                  label: Link,
-                  name: link,
-                  widget: list,
-                  max: 2,
-                  hint: "example: GitHub, https://github.com",
-                },
-            }
+          - label: Navigation,
+            name: nav,
+            widget: list,
+            field:
+              - label: Link
+                name: link
+                widget: list
+                min: 2
+                max: 2
+                hint: "example: GitHub, https://github.com"
           - label: Themes
             name: themes
             widget: list

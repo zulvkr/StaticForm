@@ -1,22 +1,21 @@
-module.exports = ({ id, name, placeholder="", required, type }) => {
+module.exports = ({ id, name, placeholder = "", required, type }) => {
+  let inputType = "";
 
-    let inputType = "";
+  switch (type) {
+    case "textfield":
+      inputType = "text";
+      break;
+    case "numberfield":
+      inputType = "number";
+      break;
+    case "emailfield":
+      inputType = "email";
+      break;
+    default:
+      inputType = "text";
+  }
 
-    switch (type) {
-        case "textfield":
-            inputType = "text";
-            break;
-        case "numberfield":
-            inputType = "number";
-            break;
-        case "emailfield":
-            inputType = "email";
-            break;
-        default:
-            inputType = "text";
-    }
-
-    return `
+  return `
     <input 
     class="basic-input"
     id="${id}"
@@ -24,5 +23,5 @@ module.exports = ({ id, name, placeholder="", required, type }) => {
     type="${inputType}"
     placeholder="${placeholder}"
     ${required ? "required" : ""}>
-    `
-}
+    `;
+};

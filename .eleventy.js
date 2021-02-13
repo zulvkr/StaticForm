@@ -1,12 +1,10 @@
-require('dotenv').config()
+require("dotenv").config();
 const { inspect } = require("util");
 const dateFormat = require("dateformat");
 const registerTheme = require("./.eleventy/registerTheme");
 const minifyHtml = require("./.eleventy/minifyHtml");
 
-
-module.exports = function (eleventyConfig) {
-
+module.exports = function(eleventyConfig) {
   // Use .eleventyignore
   eleventyConfig.setUseGitIgnore(false);
 
@@ -23,14 +21,16 @@ module.exports = function (eleventyConfig) {
     "src/admin/gitpr.js": "./admin/gitpr.js"
   });
 
-  eleventyConfig.addWatchTarget("./src/admin/")
+  eleventyConfig.addWatchTarget("./src/admin/");
 
-  
   // Print eleventy data object
-  eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
+  eleventyConfig.addFilter(
+    "debug",
+    content => `<pre>${inspect(content)}</pre>`
+  );
 
   // Format readable date
-  eleventyConfig.addFilter("readable", (date) => dateFormat(date, "mediumDate"));
+  eleventyConfig.addFilter("readable", date => dateFormat(date, "mediumDate"));
 
   // Minify HTML, including inlined JavaScript
   eleventyConfig.addTransform("htmlmin", minifyHtml);
@@ -40,4 +40,4 @@ module.exports = function (eleventyConfig) {
       input: "src"
     }
   };
-}
+};

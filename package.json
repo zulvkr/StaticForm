@@ -39,5 +39,8 @@
   },
   "directories": {
     "doc": "docs"
+  },
+  "devDependencies": {
+    "prettier": "npm:undefined@*"
   }
 }

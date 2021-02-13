@@ -23,11 +23,11 @@ Static Form is a form builder that built with JAMStack.
 
 ![Static Form Demo](/docs/web.gif)
 
-Sounds like a Google Form ripoff, but it has some advantage
+Sounds like a Google Form ripoff, but it has some advantage:
+
 1. Hackable. Host it yourself.
 2. Fast! 90+ Google Lighthouse test.
 3. Zero cost on Netlify free tier.
-
 
 ## Demo
 
@@ -47,7 +47,7 @@ Please visit our [documentation](#) for detailed information.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [Eleventy](https://www.11ty.dev/) 
+- [Eleventy](https://www.11ty.dev/)
 - [Netlify CMS](https://www.netlifycms.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Alpine.js](https://github.com/alpinejs/alpine)
