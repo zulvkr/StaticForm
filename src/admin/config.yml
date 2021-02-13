@@ -1,11 +1,10 @@
 backend:
   name: git-gateway
-  branch: dev
+  branch: main
 
 media_folder: src/img
 public_folder: /img
 site_url: "{{site.url or env.deploy.url | safe}}"
-local_backend: true
 
 collections:
   - label: Settings

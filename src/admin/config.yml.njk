@@ -2,7 +2,14 @@
 permalink: /admin/config.yml
 ---
 {#- Parent -#}
-{%- include "./config.yml" -%}
+
+{#- 
+Use local backend 
+https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+-#}
+local_backend: {{'true' if env.devProxy else 'false'}}
+
+{% include "./config.yml" -%}
 
 {#- Themes -#}
 

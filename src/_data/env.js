@@ -6,5 +6,6 @@ module.exports = {
     },
     deploy: {
         url: process.env.URL
-    }
+    },
+    devProxy: process.env.NETLIFY_PROXY
 };
