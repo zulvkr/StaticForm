@@ -1,14 +1,9 @@
-# This file is Nunjucks / Jinja flavored YAML
-
-##------------------------------ Main ------------------------------##
-
 backend:
   name: git-gateway
   branch: main
 
 media_folder: src/img
 public_folder: /img
-
 site_url: "{{site.url|safe}}"
 
 collections:
@@ -29,7 +24,16 @@ collections:
               hint: 50-160 characters,
             }
           - { label: Image, name: image, widget: image }
-          - { label: URL, name: url, widget: string }
+          - {
+              label: URL,
+              name: url,
+              widget: string,
+              pattern:
+                [
+                  "^https?:\/\/(?:.*\/)?[^\/.]+$",
+                  "Valid url with trailing slash",
+                ],
+            }
           - { label: Favicon, name: favicon, widget: image }
           - { label: Show Hero, name: showHero, widget: boolean }
           - {
@@ -45,3 +49,8 @@ collections:
                   hint: "example: GitHub, https://github.com",
                 },
             }
+      - label: Themes
+        name: themes
+        file: src/_data/themes.json
+        fields:
+          - { label: Register, name: register, widget: list }

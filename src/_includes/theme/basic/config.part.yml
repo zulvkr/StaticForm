@@ -1,8 +1,6 @@
-# This file is Nunjucks / Jinja flavored YAML
-
 ##------------------------------ Basic Theme ------------------------------##
 
-#collections:
+collections:   
   - label: Basic Forms
     name: basic
     folder: src/forms/basic
