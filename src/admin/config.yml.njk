@@ -23,4 +23,4 @@ local_backend: {{'true' if env.devProxy else 'false'}}
 {%- endset -%}
 
 {#- Remove "collections:" to return valid configuration -#}
-{{- allThemes | replace("\ncollections:", "") | replace("collections:", "") | safe -}}
+{{- allThemes | replace("collections:", "") | safe -}}

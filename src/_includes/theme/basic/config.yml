@@ -18,7 +18,7 @@ collections:
       - label: WhatsApp Number
         name: waNumber
         widget: number
-        hint: "accept number only and start with country code, example: 6281612345678"
+        hint: "Start with country code, example: 6281612345678"
       - label: Body text
         name: body
         widget: markdown
@@ -36,10 +36,10 @@ collections:
               - label: Id
                 name: id
                 widget: string
-                hint: Must be unique value
+                hint: Unique value
                 pattern:
-                  - "^[a-z0-9-]*$"
-                  - "Must only contain small alphabet, 0-9 and -"
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
               - label: Required
                 name: required
                 widget: boolean
@@ -54,10 +54,10 @@ collections:
               - label: Id
                 name: id
                 widget: string
-                hint: Must be unique value
+                hint: Unique value
                 pattern:
-                  - "^[a-z0-9-]*$"
-                  - "Must only contain small alphabet, 0-9 and -"
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
               - label: Required
                 name: required
                 widget: boolean
@@ -72,10 +72,10 @@ collections:
               - label: Id
                 name: id
                 widget: string
-                hint: Must be unique value
+                hint: Unique value
                 pattern:
-                  - "^[a-z0-9-]*$"
-                  - "Must only contain small alphabet, 0-9 and -"
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
               - label: Required
                 name: required
                 widget: boolean
@@ -90,10 +90,10 @@ collections:
               - label: Id
                 name: id
                 widget: string
-                hint: Must be unique value
+                hint: Unique value
                 pattern:
-                  - "^[a-z0-9-]*$"
-                  - "Must only contain small alphabet, 0-9 and -"
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
               - label: Required
                 name: required
                 widget: boolean
@@ -115,10 +115,10 @@ collections:
               - label: Id
                 name: id
                 widget: string
-                hint: Must be unique value
+                hint: Unique value
                 pattern:
-                  - "^[a-z0-9-]*$"
-                  - "Must only contain small alphabet, 0-9 and -"
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
               - label: Required
                 name: required
                 widget: boolean
@@ -136,10 +136,10 @@ collections:
               - label: Id
                 name: id
                 widget: string
-                hint: Must be unique value
+                hint: Unique value
                 pattern:
-                  - "^[a-z0-9-]*$"
-                  - "Must only contain small alphabet, 0-9 and -"
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
               - label: Required
                 name: required
                 widget: boolean
@@ -168,10 +168,10 @@ collections:
                   - label: Id
                     name: id
                     widget: string
-                    hint: Must be unique value
+                    hint: Unique value
                     pattern:
-                      - "^[a-z0-9-]*$"
-                      - "Must only contain small alphabet, 0-9 and -"
+                      - ^[a-z0-9-]*$
+                      - Only small alphabet, number and dash
                   - label: Required
                     name: required
                     widget: boolean

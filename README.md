@@ -8,6 +8,7 @@
 <div align="center">
 
 [![GitHub license](https://img.shields.io/github/license/zulvkr/StaticForm)](https://github.com/zulvkr/StaticForm/blob/main/LICENSE)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7080df2-1a6f-4408-b74f-ad09b0e26e9f/deploy-status)](https://app.netlify.com/sites/staticform21/deploys)
 
 </div>
