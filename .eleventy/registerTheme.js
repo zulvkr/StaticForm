@@ -9,7 +9,7 @@ module.exports = (eleventyConfig) => {
 
     const register = (theme) => {
 
-        const themeConfig = `./src/_includes/theme/${theme}/${theme}.eleventy.js`
+        const themeConfig = `./src/_includes/theme/${theme}/theme.eleventy.js`
 
         try {
             // Check if theme configuration file exist.

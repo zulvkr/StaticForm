@@ -22,26 +22,28 @@ layout: layouts/base.njk
       class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
       data-netlify="{{ 'true' if mode==='netlify' else 'false' }}" 
     >
-      {%- for field in form -%}
-        {%- BasicGroup field -%}
-          {%- switch field.type -%}
-            {%- case "textfield" -%}{%- case "numberfield" -%}{%- case "emailfield" -%}
-              {%- BasicInput field -%}
-            {%- case "selectfield" -%}
-              {%- BasicSelectField field -%}
-            {%- case "textarea" -%}
-              {%- BasicTextArea field -%}
-            {%- case "radio" -%}
-              {%- BasicRadioButtons field -%}
-            {%- case "checklist" -%}
-              {%- BasicCheckList field -%}
-            {%- default -%}
+      {% for field in form %}
+        {% BasicGroup field %}
+
+          {% switch field.type %}
+            {% case "textfield" %}{% case "numberfield" %}{% case "emailfield" %}
+              {% BasicInput field %}
+            {% case "selectfield" %}
+              {% BasicSelectField field %}
+            {% case "textarea" %}
+              {% BasicTextArea field %}
+            {% case "radio" %}
+              {% BasicRadioButtons field %}
+            {% case "checklist" %}
+              {% BasicCheckList field %}
+            {% default %}
               <p class="w-full py-2 text-sm text-center text-gray-500 bg-gray-200">
-              error, {{ field.type }} is not supported
+                Error: {{ field.type }} is not supported
               </p>
-          {%- endswitch -%}
-        {%- endBasicGroup -%}
-      {%- endfor -%}
+          {% endswitch %}
+          
+        {% endBasicGroup %}
+      {% endfor %}
       <div class="flex flex-row-reverse">
         <button type="Submit" class="basic-button">Submit</button>
       </div>
@@ -50,9 +52,9 @@ layout: layouts/base.njk
 </div>
 
 {% set js %}
-    let waNumber = "{{ waNumber or '' }}";
-    let mode = "{{ mode or '' }}";
-    {% include 'theme/basic/inline.js' %}
+  let waNumber = "{{ waNumber or '' }}";
+  let mode = "{{ mode or '' }}";
+  {% include 'theme/basic/inline.js' %}
 {% endset %}
 
 <script>

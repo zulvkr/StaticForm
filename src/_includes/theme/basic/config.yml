@@ -1,4 +1,4 @@
-collections:
+collections: # This line will be deleted during build
   - label: Basic Forms
     name: basic
     folder: src/forms/basic

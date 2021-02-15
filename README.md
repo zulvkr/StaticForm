@@ -56,4 +56,4 @@ Please visit our [documentation](#) for detailed information.
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - The idea of using [htm](https://github.com/developit/htm) for NetlifyCMS from this [boilerplate](https://github.com/danurbanowicz/eleventy-netlify-boilerplate/)
-- Lots of people who used 11ty with Tailwind and finally convinced me
+- Lots of people who used 11ty with Tailwind and finally convinced me to use Tailwind. It's rad 😆
