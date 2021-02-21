@@ -1,17 +1,26 @@
 ---
 permalink: /admin/config.yml
-
-# reusable strings  #
-az09-pt: "^[a-z0-9-]*$"
-az09-hint: "Must only contain small alphabet, 0-9 and -"
-uq: Must be unique value
-
 ---
-{# Parent -#}
-{%- include "./config.part.yml" %}
+{#- Parent -#}
 
-{# Theme #}
-{% for theme in themes.register %}
-{% include "theme/" + theme + "/config.part.yml" ignore missing %}
-{% endfor %}
+{#- 
+Use local backend 
+https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+-#}
+local_backend: {{'true' if env.devProxy else 'false'}}
 
+{% include "./config.yml" -%}
+
+{#- Themes -#}
+
+{%- set allThemes -%}
+
+{#- Concatenate all themes -#}
+{%- for theme in site.themes %}{# safety space #}
+{% include "theme/" + theme + "/config.yml" ignore missing -%}
+{%- endfor -%}
+
+{%- endset -%}
+
+{#- Remove "collections:" to return valid configuration -#}
+{{- allThemes | replace("collections:", "") | safe -}}

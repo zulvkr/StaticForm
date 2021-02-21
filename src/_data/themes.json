@@ -1,7 +1,0 @@
-{
-    "register": [
-        "basic",
-        "type"
-    ],
-    "twcss": "@import \"tailwindcss/base\";\n@import \"tailwindcss/components\";\n@import \"tailwindcss/utilities\";\n\n@import \"../_includes/theme/basic/basic.tailwind.css\";"
-}

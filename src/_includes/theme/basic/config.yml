@@ -1,0 +1,178 @@
+collections: # This line will be deleted during build
+  - label: Basic Forms
+    name: basic
+    folder: src/forms/basic
+    preview_path: "forms/basic/{{'{{slug}}'|safe}}" # double bracket need tbe escaped in Nunjucks
+    create: true
+    fields:
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: basic
+      - label: Title
+        name: title
+        widget: string
+      - label: Date
+        name: date
+        widget: datetime
+      - label: WhatsApp Number
+        name: waNumber
+        widget: number
+        hint: "Start with country code, example: 6281612345678"
+      - label: Body text
+        name: body
+        widget: markdown
+      - label: Form
+        name: form
+        widget: list
+        types:
+          - label: Text Field
+            name: textfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Unique value
+                pattern:
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+          - label: Email Field
+            name: emailfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Unique value
+                pattern:
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+          - label: Number Field
+            name: numberfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Unique value
+                pattern:
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+          - label: Select Field
+            name: selectfield
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Unique value
+                pattern:
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+              - label: Options
+                name: enum
+                widget: list
+                field:
+                  label: Option
+                  name: option
+                  widget: string
+          - label: Text Area
+            name: textarea
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Unique value
+                pattern:
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+              - label: Placeholder
+                name: placeholder
+                widget: string
+          - label: Radio Group
+            name: radio
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Id
+                name: id
+                widget: string
+                hint: Unique value
+                pattern:
+                  - ^[a-z0-9-]*$
+                  - Only small alphabet, number and dash
+              - label: Required
+                name: required
+                widget: boolean
+                default: true
+              - label: Options
+                name: enum
+                widget: list
+                field:
+                  label: Option
+                  name: option
+                  widget: string
+          - label: Checklist
+            name: checklist
+            widget: object
+            fields:
+              - label: Label
+                name: label
+                widget: string
+              - label: Checklist
+                name: checklist
+                widget: list
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                  - label: Id
+                    name: id
+                    widget: string
+                    hint: Unique value
+                    pattern:
+                      - ^[a-z0-9-]*$
+                      - Only small alphabet, number and dash
+                  - label: Required
+                    name: required
+                    widget: boolean
+                    default: true

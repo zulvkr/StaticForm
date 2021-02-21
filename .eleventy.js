@@ -1,48 +1,43 @@
-const inspect = require("util").inspect;
-const htmlmin = require("html-minifier-terser");
+require("dotenv").config();
+const { inspect } = require("util");
 const dateFormat = require("dateformat");
+const registerTheme = require("./.eleventy/registerTheme");
+const minifyHtml = require("./.eleventy/minifyHtml");
 
-module.exports = function (eleventyConfig) {
-
+module.exports = function(eleventyConfig) {
   // Use .eleventyignore
   eleventyConfig.setUseGitIgnore(false);
 
   // Register Themes
-  eleventyConfig.addPlugin(require("./src/_includes/theme/basic/basic.eleventy"))
+  registerTheme(eleventyConfig);
 
   // Trigger reload when CSS updated
   if (!process.env.ELEVENTY_PRODUCTION) {
-    eleventyConfig.addWatchTarget("src/_tmp/");
     eleventyConfig.addPassthroughCopy({ "src/_tmp/style.css": "./style.css" });
   }
 
   eleventyConfig.addPassthroughCopy({
-    "src/img/": "./img/"
+    "src/img/": "./img/",
+    "src/admin/gitpr.js": "./admin/gitpr.js"
   });
+
+  eleventyConfig.addWatchTarget("./src/admin/");
 
   // Print eleventy data object
-  eleventyConfig.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
+  eleventyConfig.addFilter(
+    "debug",
+    content => `<pre>${inspect(content)}</pre>`
+  );
 
   // Format readable date
-  eleventyConfig.addFilter("readable", (date) => dateFormat(date, "mediumDate"));
+  eleventyConfig.addFilter("readable", date => dateFormat(date, "mediumDate"));
 
   // Minify HTML, including inlined JavaScript
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (process.env.ELEVENTY_PRODUCTION && outputPath.indexOf(".html") > -1) {
-      const minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        minifyJS: true
-      });
-      return minified;
-    }
-    return content;
-  });
+  eleventyConfig.addTransform("htmlmin", minifyHtml);
 
   return {
     dir: {
       input: "src"
     }
   };
-}
+};

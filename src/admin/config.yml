@@ -1,0 +1,76 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: src/img
+public_folder: /img
+site_url: "{{site.url or env.deploy.url | safe}}"
+
+collections:
+  - label: Settings
+    name: settings
+    files:
+      - label: Site Metadata
+        name: metadata
+        file: src/_data/site.json
+        editor:
+          preview: false
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            hint: Title shown in navigation bar
+          - label: Description
+            name: description
+            widget: string
+            hint: Short description for SEO. 50-160 characters.
+          - label: Image
+            name: image
+            widget: image
+            hint: Image that will be shown in shared content
+          - label: URL
+            name: url
+            widget: string
+            pattern:
+              - (^$|^https?://(?:.*/)?[^/.]+$)
+              - valid url without trailing slash or empty
+            hint: Your website url. Fill this to override detected url.
+            default: "{{env.deploy.url | safe}}"
+            required: false
+          - label: Favicon
+            name: favicon
+            widget: image
+          - label: Show Hero
+            name: showHero
+            widget: boolean
+            required: false
+          - label: Navigation
+            name: nav
+            widget: list
+            field:
+                label: Link
+                name: link
+                widget: list
+                max: 2
+                hint: "example: GitHub, https://github.com"
+            required: false
+          - label: Themes
+            name: themes
+            widget: list
+            hint: >-
+              Curiousity kill the cat 🙀. Please read the documentation before
+              adding / removing themes.
+      - label: About
+        name: git
+        file: src/_data/git.json
+        fields:
+          - label: Repository URL
+            name: repo
+            widget: select
+            options:
+              - "{{env.git.url | safe}}"
+          - label: Branch
+            name: branch
+            widget: select
+            options:
+              - "{{env.git.branch | safe}}"

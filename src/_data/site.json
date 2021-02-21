@@ -2,12 +2,13 @@
   "title": "Static Form",
   "description": "Extendable Form Builder that Easy to Deploy",
   "image": "/img/StaticFormDark.png",
-  "url": "https://staticform21.netlify.app",
+  "url": "",
   "favicon": "/img/StaticFormDark.png",
   "showHero": false,
   "nav": [
     ["GitHub", "https://github.com/zulvkr/StaticForm"],
-    ["Docs", "#"],
+    ["Docs", "https://zulvkr.github.io/staticformdocs/"],
     ["Admin", "/admin"]
-  ]
+  ],
+  "themes": ["basic"]
 }

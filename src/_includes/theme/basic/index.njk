@@ -3,7 +3,8 @@ layout: layouts/base.njk
 ---
 <header class="flex flex-col items-center mx-8">
   <div
-    class="my-5 text-3xl tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-3xl sm:my-9 md:text-4xl">
+    class="my-5 text-3xl tracking-tight text-center text-gray-600 transition sm:leading-normal sm:text-3xl sm:my-9 md:text-4xl"
+  >
     {{ title or site.title }}
   </div>
 </header>
@@ -11,12 +12,19 @@ layout: layouts/base.njk
 <div class="flex items-center mb-4">
   <div class="px-5 py-10 mx-auto border-t border-gray-200 md:border-gray-800">
 
-    <article class="mb-5 overflow-auto prose">{{ content | safe }}</article>
+    <article class="mb-5 overflow-auto prose">
+      {{ content | safe }}
+    </article>
 
-    <form id="main-form" name="main-{{ page.fileSlug }}" {{ "data-netlify=true" if mode==="netlify" else "" }}
-      class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg">
+    <form
+      id="main-form"
+      name="main-{{ page.fileSlug }}" 
+      class="max-w-xl py-5 mx-auto border-t-2 border-gray-500 border-dotted sm:border-t-2 sm:border-solid sm:shadow-xl sm:p-8 sm:border-gray-100 sm:rounded-lg"
+      data-netlify="{{ 'true' if mode==='netlify' else 'false' }}" 
+    >
       {% for field in form %}
         {% BasicGroup field %}
+
           {% switch field.type %}
             {% case "textfield" %}{% case "numberfield" %}{% case "emailfield" %}
               {% BasicInput field %}
@@ -29,8 +37,11 @@ layout: layouts/base.njk
             {% case "checklist" %}
               {% BasicCheckList field %}
             {% default %}
-              <p class="w-full py-2 text-sm text-center text-gray-500 bg-gray-200">error, {{ field.type }} is not supported</p>
+              <p class="w-full py-2 text-sm text-center text-gray-500 bg-gray-200">
+                Error: {{ field.type }} is not supported
+              </p>
           {% endswitch %}
+          
         {% endBasicGroup %}
       {% endfor %}
       <div class="flex flex-row-reverse">
@@ -41,9 +52,9 @@ layout: layouts/base.njk
 </div>
 
 {% set js %}
-    let waNumber = "{{ waNumber }}";
-    let mode = "{{ mode }}";
-    {% include "theme/basic/inline.js" %}
+  let waNumber = "{{ waNumber or '' }}";
+  let mode = "{{ mode or '' }}";
+  {% include 'theme/basic/inline.js' %}
 {% endset %}
 
 <script>

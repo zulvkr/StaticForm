@@ -1,25 +1,35 @@
 ---
 permalink: /admin/index.html
 ---
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <title>{{ site.title }} - Admin</title>
+    <link rel="shortcut icon" type="image/png" href="{{ site.favicon }}" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <title>Content Manager - Netlify CMS</title>
-</head>
+  <body>
+    <script
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+      async
+    ></script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+      CMS.registerPreviewStyle("../style.css");
+    </script>
 
-<body>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script>
-  CMS.registerPreviewStyle("../style.css");
-  </script>
-  {% for theme in themes.register %}
+    {% for theme in site.themes %}
     <script type="module" src="./preview/{{ theme }}/index.js"></script>
-  {% endfor %}
-</body>
+    {% endfor %}
 
+    <script type="module" src="./gitpr.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
+  </body>
 </html>
