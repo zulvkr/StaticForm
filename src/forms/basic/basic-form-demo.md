@@ -47,8 +47,6 @@ form:
     required: false
 ---
 
-### [>> Try Demo: Edit this Form 🖊️ <<](/admin/#/collections/basic/entries/basic-form-demo)
-
 > This form is for demo purpose only.
 > Form submission will try to send result to imaginary WhatsApp number +62 1234 5678
 
