@@ -9,8 +9,9 @@
  * - Input tag must be self closed manually: <input />
  * - Style attributes must not be used
  * - All string ("" / `` / '') must be replaced with html`string`
- * - Check object is not undefined each time you call object
- *   method like map(). Ternary operator is very useful here.
+ * - Array is evaluated at every end of user input. Using map()
+ *   method before array exist can break React. Ternary operator 
+ *   is very useful here.
  */
 
 import htm from "https://unpkg.com/htm?module";

@@ -8,7 +8,6 @@ const Git = createClass({
     const repo = entry.getIn(["data", "repo"]);
     const branch = entry.getIn(["data", "branch"]);
     const type = entry.getIn(["data", "type"]);
-    // const fields = this.props.widgetsFor("form");
 
     return html`
       <p>Repository: ${repo}</p>
