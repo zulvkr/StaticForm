@@ -10,8 +10,8 @@
  * - Style attributes must not be used
  * - All string ("" / `` / '') must be replaced with html`string`
  * - Array is evaluated at every end of user input. Using map()
- *   method before array exist can break React. Ternary operator 
- *   is very useful here.
+ *   method on undefined Array breaks React. Always use ternary operator 
+ *   before map()/
  */
 
 import htm from "https://unpkg.com/htm?module";
