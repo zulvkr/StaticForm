@@ -17,7 +17,7 @@ module.exports = function(eleventyConfig) {
 
   // Trigger reload when CSS updated
   if (env !== "production") {
-    eleventyConfig.addPassthroughCopy({ "src/_tmp/style.css": "./style.css" });
+    eleventyConfig.addPassthroughCopy({ "src/_includes/_tmp/style.css": "./style.css" });
   }
 
   eleventyConfig.addPassthroughCopy({
