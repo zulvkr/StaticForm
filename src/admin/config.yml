@@ -74,9 +74,3 @@ collections:
             widget: select
             options:
               - "{{env.git.branch | safe}}"
-          - label: GitHub or GitLab
-            name: type
-            widget: select
-            options:
-              - GitHub
-              - GitLab

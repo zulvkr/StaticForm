@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img height=200px src="docs/StaticFormDark.svg" alt="Project logo"></a>
+ <img width=300px src="docs/logo.svg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Static Form</h3>
@@ -44,7 +44,7 @@ Thanks to Netlify, creating you own instance of Static Form is a one-click:
 
 This button will tell Netlify to make a copy of Static Form in your GitHub/GitLab, build the website in their edge server and set up the CI/CD automatically. You will then receive invitation email to become your new website user.
 
-Please visit our [documentation](#) for detailed information.
+Please visit our [documentation](https://zulvkr.github.io/staticformdocs/) for detailed information.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
