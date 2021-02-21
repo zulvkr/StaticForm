@@ -1,6 +1,6 @@
 {
   "name": "static-form",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Form builder built with JAMStack. Easily deployed.",
   "main": ".eleventy.js",
   "scripts": {
