@@ -1,39 +1,32 @@
-function processData(data) {
-  let text = "";
-  for (var pair of data.entries()) {
-    text = text + pair[1] + "#";
+"use strict";
+
+const processData = (data, encoding) => {
+  let dataArray = [];
+
+  for (const entry of data.entries()) {
+    dataArray.push(entry);
   }
-  text = text.slice(0, text.length - 1);
-  return text;
-}
 
-function waURL(number, text) {
-  return `https://wa.me/${number}?text=${text}`;
-}
+  const flatten = (text, entry, index) =>
+    index === 0
+      ? entry[0] + ":" + entry[1]
+      : text + "\n" + entry[0] + ":" + entry[1];
 
-function submit(event) {
+  const result = title + "\n\n" + dataArray.reduce(flatten, "");
+
+  return encoding === "url" ? encodeURIComponent(result) : result;
+};
+
+const submit = event => {
   event.preventDefault();
   const formData = new FormData(form);
-  stringData = processData(formData);
 
-  if (mode === "log") {
-    window.alert("check your console 🚧");
-    console.log(waNumber + ":" + stringData);
-  } else if (mode === "netlify") {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
-    })
-      .then(() => console.log("Form successfully submitted"))
-      .catch(error => alert(error));
-  } else {
-    encoded = encodeURIComponent(stringData);
-    window.open(waURL(waNumber, encoded));
-  }
-}
+  mode === "log"
+    ? console.log(waNumber + "\n\n" + processData(formData))
+    : window.open(`https://wa.me/${waNumber}?text=${processData(formData, "url")}`);
+};
 
-form = document.getElementById("main-form");
+const form = document.getElementById("main-form");
 
 if (form) {
   form.addEventListener("submit", submit);

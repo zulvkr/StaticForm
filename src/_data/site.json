@@ -1,9 +1,9 @@
 {
   "title": "Static Form",
   "description": "Extendable Form Builder that Easy to Deploy",
-  "image": "/img/StaticFormDark.png",
+  "image": "/img/logo.png",
   "url": "",
-  "favicon": "/img/StaticFormDark.png",
+  "favicon": "/img/logo-small.png",
   "showHero": false,
   "nav": [
     ["GitHub", "https://github.com/zulvkr/StaticForm"],

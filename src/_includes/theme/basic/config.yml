@@ -101,10 +101,8 @@ collections: # This line will be deleted during build
               - label: Options
                 name: enum
                 widget: list
-                field:
-                  label: Option
-                  name: option
-                  widget: string
+                hint: Comma separated list
+
           - label: Text Area
             name: textarea
             widget: object
@@ -147,10 +145,7 @@ collections: # This line will be deleted during build
               - label: Options
                 name: enum
                 widget: list
-                field:
-                  label: Option
-                  name: option
-                  widget: string
+                hint: Comma separated list
           - label: Checklist
             name: checklist
             widget: object

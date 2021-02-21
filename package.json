@@ -1,15 +1,15 @@
 {
   "name": "static-form",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Form builder built with JAMStack. Easily deployed.",
   "main": ".eleventy.js",
   "scripts": {
     "11ty": "npx eleventy --serve",
     "pcss": "npx postcss src/styles/tailwind.css -o src/_includes/_tmp/style.css -w --verbose",
     "start": "npx concurrently \"npm:11ty\" \"npm:pcss\"",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss src/styles/tailwind.css -o _site/style.css --verbose",
+    "build": "NODE_ENV=production npx eleventy && NODE_ENV=production npx postcss src/styles/tailwind.css -o _site/style.css --verbose",
     "clean": "rm -r _site src/_includes/_tmp",
-    "test": "npx eleventy --dryrun",
+    "test": "NODE_ENV=production npx eleventy --dryrun",
     "devproxy": "npx netlify-cms-proxy-server"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "dateformat": "^4.5.1",
     "dotenv": "^8.2.0",
     "html-minifier-terser": "^5.1.1",
+    "javascript-obfuscator": "^2.10.3",
     "postcss-cli": "^8.3.1",
     "postcss-easy-import": "^3.0.0",
     "postcss-import": "^14.0.0",
