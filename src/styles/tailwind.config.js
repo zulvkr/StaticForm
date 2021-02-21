@@ -1,20 +1,14 @@
 module.exports = {
-  purge: [
-    './_site/**/*.html',
-    './_site/**/*.js'
-  ],
+  purge: ["./_site/**/*.html", "./_site/**/*.js"],
   darkMode: false,
   theme: {
     fontFamily: {
-      'sans': ['poppins', 'ui-sans-serif', 'system-ui'],
+      sans: ["poppins", "ui-sans-serif", "system-ui"]
     },
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms')
-  ],
-}
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")]
+};
