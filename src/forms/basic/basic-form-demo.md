@@ -1,7 +1,7 @@
 ---
-date: 2021-02-09
 layout: basic
-title: "Bogor COVID Case Reporting Form"
+title: Bogor COVID Case Reporting Form
+date: 2021-02-09
 waNumber: 6212345678
 form:
   - type: textfield
@@ -45,9 +45,8 @@ form:
     label: Remarks
     id: remarks
     required: false
+    placeholder: Patient is ...
 ---
-
-### [>> Try Demo: Edit this Form 🖊️ <<](/admin/#/collections/basic/entries/basic-form-demo)
 
 > This form is for demo purpose only.
 > Form submission will try to send result to imaginary WhatsApp number +62 1234 5678
