@@ -9,8 +9,8 @@ const processData = (data, encoding) => {
 
   const flatten = (text, entry, index) =>
     index === 0
-      ? entry[0] + ":" + entry[1]
-      : text + "\n" + entry[0] + ":" + entry[1];
+      ? entry[0] + ": " + entry[1]
+      : text + "\n" + entry[0] + ": " + entry[1];
 
   const result = title + "\n\n" + dataArray.reduce(flatten, "");
 
