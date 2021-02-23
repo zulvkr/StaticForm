@@ -7,7 +7,7 @@
   "showHero": true,
   "nav": [
     ["GitHub", "https://github.com/zulvkr/StaticForm"],
-    ["Docs", "https://zulvkr.github.io/staticformdocs/"],
+    ["Docs", "http://docs.staticform.click/"],
     ["Admin", "/admin"]
   ],
   "themes": ["basic"]

@@ -2,7 +2,7 @@
 layout: basic
 title: Bogor COVID Case Reporting Form
 date: 2021-02-09
-waNumber: 6212345678
+waNumber: 621234567899
 form:
   - type: textfield
     label: Name
@@ -49,7 +49,7 @@ form:
 ---
 
 > This form is for demo purpose only.
-> Form submission will try to send result to imaginary WhatsApp number +62 1234 5678
+> Form submission will try to send result to imaginary WhatsApp number +6212 3456 7899
 
 The most common symptoms of COVID-19 are
 
