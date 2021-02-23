@@ -17,11 +17,12 @@ module.exports = ({ id, name, placeholder = "", required, type }) => {
 
   return `
     <input 
-    class="basic-input"
-    id="${id}"
-    name="${name ? name : id}"
-    type="${inputType}"
-    placeholder="${placeholder}"
-    ${required ? "required" : ""}>
-    `;
+      class="basic-input"
+      id="${id}"
+      name="${name ? name : id}"
+      type="${inputType}"
+      placeholder="${placeholder}"
+      ${required ? "required" : ""}
+    >
+  `;
 };

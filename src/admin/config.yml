@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: "{{env.cmsBackend or 'git-gateway' | safe}}"
+  branch: "{{env.git.branch or 'main' | safe}}"
 
 media_folder: src/img
 public_folder: /img
@@ -48,11 +48,11 @@ collections:
             name: nav
             widget: list
             field:
-                label: Link
-                name: link
-                widget: list
-                max: 2
-                hint: "example: GitHub, https://github.com"
+              label: Link
+              name: link
+              widget: list
+              max: 2
+              hint: "example: GitHub, https://github.com"
             required: false
           - label: Themes
             name: themes

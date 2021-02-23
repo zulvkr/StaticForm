@@ -15,8 +15,8 @@ export default ({ id, name, placeholder, required }) => {
           `
         : ""}
       class="basic-input"
+      placeholder="${placeholder ? placeholder : ""}"
     >
-${placeholder ? placeholder : ""}</textarea
-    >
+    </textarea>
   `;
 };

@@ -7,5 +7,10 @@ module.exports = {
   deploy: {
     url: process.env.URL
   },
-  devProxy: process.env.NETLIFY_PROXY
+  devProxy: process.env.NETLIFY_PROXY,
+  cmsBackend: process.env.CMS_BACKEND,
+  site: {
+    showHero: process.env.SHOW_HERO
+  }
+
 };
