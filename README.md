@@ -32,9 +32,9 @@ Sounds like a Google Form ripoff, but it has some advantage:
 
 ## Demo
 
-Static Form Demo lives [here](https://staticform21.netlify.app).
+Static Form Demo lives [here](https://staticform.click).
 
-You can also access the admin test area [here](https://staticform21.netlify.app/admin).
+You can also access the admin test area [here](https://staticform.click/admin).
 
 ## Quick Start
 
@@ -44,7 +44,7 @@ Thanks to Netlify, creating you own instance of Static Form is a one-click:
 
 This button will tell Netlify to make a copy of Static Form in your GitHub/GitLab, build the website in their edge server and set up the CI/CD automatically. You will then receive invitation email to become your new website user.
 
-Please visit our [documentation](https://zulvkr.github.io/staticformdocs/) for detailed information.
+Please visit our [documentation](https://docs.staticform.click) for detailed information.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -55,5 +55,6 @@ Please visit our [documentation](https://zulvkr.github.io/staticformdocs/) for d
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- The idea of using [htm](https://github.com/developit/htm) for NetlifyCMS from this [boilerplate](https://github.com/danurbanowicz/eleventy-netlify-boilerplate/)
-- Lots of people who used 11ty with Tailwind and finally convinced me to use Tailwind. It's rad 😆
+- The idea of using [preact/htm](https://github.com/developit/htm) for NetlifyCMS from this [boilerplate](https://github.com/danurbanowicz/eleventy-netlify-boilerplate/)
+- Folks featured in 11ty.dev who use Tailwind and Alpine.
+- A certain Laravel crash course in Youtube which uses Tailwind for prototyping. It's amazing.

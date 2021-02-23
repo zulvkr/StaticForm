@@ -17,7 +17,14 @@ export default ({ checklist }) => {
               `
             : ""}
         />
-        <label for="${id}">${label}</label>
+        <label for="${id}">
+          ${label}
+          ${required
+            ? html`
+                <span class="text-red-500">*</span>
+              `
+            : ""}
+        </label>
       </div>
     `;
   };

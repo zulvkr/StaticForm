@@ -80,7 +80,7 @@ const Basic = createClass({
             ${fields.map(field => renderGroup(field.get("data").toJS()))}
             <div class="flex flex-row-reverse">
               <button type="Submit" class="basic-button" disabled>
-                Submit
+                Send
               </button>
             </div>
           </form>
