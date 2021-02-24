@@ -34,7 +34,7 @@ features:
       <!-- navbar -->
       <nav
         class="container max-w-screen-xl px-5 m-auto"
-        x-data="{ open: false }"
+        x-data="{ open: true, init: true }"
       >
         <div
           class="relative flex flex-col items-stretch sm:flex-row sm:justify-between"
@@ -52,16 +52,17 @@ features:
             <button
               class="block px-2 py-2 my-3 text-sm transition-transform select-none rounded-xl sm:hidden focus:bg-gray-100 focus:outline-none"
               :class="{'bg-gray-100 px-4': open }"
-              @click="open = !open"
-              x-text=" open ? 'X' : '{ menu }'"
+              @click="open = !open;init ? (setTimeout(() => {init = false}, 10), setTimeout(() => {open = true}, 20)) : '';"
+              x-text=" init ? '{menu}' : open ? 'X' : '{ menu }'"
             ></button>
           </div>
 
           <!-- nav-menu -->
           <div
             class="absolute z-10 w-full sm:w-auto top-16 sm:block sm:static"
-            :class="{'hidden': !open}"
+            :class="{'hidden sm:static': init}"
             @click.away="open = false"
+            x-show.transition="open"
           >
             <ul
               class="flex flex-col px-5 py-2 text-gray-600 bg-white border rounded-lg shadow-xl sm:border-0 sm:w-auto sm:p-0 sm:flex-row sm:m-0 sm:shadow-none"
@@ -80,16 +81,17 @@ features:
 
       <!-- hero -->
       {% if (env.site.showHero or site.showHero) %}
-      <div class="shadow-xl">
+      <div class="shadow-lg">
         <div class="container max-w-screen-xl px-5 pb-16 m-auto sm:pb-28">
           <section class="py-16 text-center lg:py-24">
+            
             <!-- hero-title -->
             <h2
               class="p-5 mx-auto mb-5 text-4xl font-bold text-white transform rounded-lg bg-gradient-to-tr from-gray-900 to-gray-600 sm:rounded-xl max-w-max sm:text-5xl"
             >
               Static Form
             </h2>
-            <h3 class="text-2xl italic mb-9">
+            <h3 class="text-2xl italic text-gray-700 mb-9">
               Extendable Form Builder that Easy to Deploy
             </h3>
 
@@ -154,11 +156,11 @@ features:
 
       <section class="relative md:mb-28">
         <div
-          class="text-white bg-gray-800 md:max-w-2xl md:rounded-md md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0"
+          class="text-white bg-gray-800 md:max-w-xl md:rounded-3xl md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0"
         >
-          <div class="container max-w-screen-xl p-10 m-auto md:m-0">
-            <div class="mb-7" id="form-demo">
-              <b>Get started now! It is easy and free!</b><br />
+          <div class="p-10">
+            <div class="mb-6 text-gray-400" id="form-demo">
+              <span class="text-2xl text-white shadow-sm">Get Started Now.</span><br />
               Deploy your own instance of Static Form or try demo.
             </div>
             <div
@@ -166,13 +168,13 @@ features:
             >
               <a
                 href="https://docs.staticform.click/#/quick-start"
-                class="py-3 mr-0 font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600"
+                class="py-3 mr-0 text-sm font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 hover:bg-green-600"
               >
                 Deploy (5 min)
               </a>
               <a
                 href="/admin"
-                class="py-3 mr-0 font-bold transition border border-white rounded ring-offset-purple-400 px-7 sm:mr-2 text hover:bg-gray-700"
+                class="py-3 mr-0 text-sm text-gray-200 transition border border-gray-400 rounded px-7 sm:mr-2 text hover:bg-gray-900"
               >
                 Try Demo
               </a>
@@ -189,7 +191,7 @@ features:
       <div>
         <ul class="flex flex-wrap">
           {%- for form in collections.forms | reverse -%}
-          <li class="w-full px-1 py-1 sm:w-1/2">
+          <li class="w-full py-1 sm:px-1 sm:w-1/2">
             <a
               href="{{ form.url }}"
               class="block h-full p-5 text-lg text-gray-700 transition bg-white border-2 shadow rounded-xl hover:shadow-lg hover:border-green-300 focus:border-green-300 focus:outline-none"
