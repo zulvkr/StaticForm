@@ -1,49 +1,74 @@
 ---
 layout: layouts/base.njk
 title: Home
+features:
+  - a: "Easy 👋"
+    b: "Get started really easily with Netlify deploy button."
+  - a: "Intuitive 👌"
+    b: "Create form exactly as you want it with instant preview."
+  - a: "Extendable 🍵"
+    b: "Extend with components. Make your own component with Tailwind CSS + Eleventy + Alpine.js."
 ---
 
 <div class="flex flex-col min-h-screen">
-  <div class="h-2 bg-gray-800"></div>
-  <div class="flex-grow bg-gray-200">
+  <div
+    class="h-1 transform to-green-200 via-green-400 bg-gradient-to-r from-green-200"
+  ></div>
+  <style>
+    .sativa::after {
+      background: url(/img/sativa.png);
+      content: "";
+      opacity: 0.6;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+  </style>
+  <div
+    class="relative flex-grow transform bg-gradient-to-b from-white to-gray-100 sativa"
+  >
     <div class="bg-white">
+      <!-- navbar -->
       <nav
         class="container max-w-screen-xl px-5 m-auto"
         x-data="{ open: false }"
       >
-        <div class="flex flex-col items-stretch sm:flex-row sm:justify-between">
+        <div
+          class="relative flex flex-col items-stretch sm:flex-row sm:justify-between"
+        >
           <div class="flex items-stretch justify-between">
+            <!-- nav-logo -->
             <a
               href="{{ '/' | url }}"
               class="px-2 py-2 my-3 font-bold text-white bg-gray-800 rounded"
             >
               {{ site.title }}
             </a>
+
+            <!-- nav-button -->
             <button
-              class="block px-3 py-5 mx-4 sm:hidden"
-              @click="open = true"
-              :class="{ 'hidden': open === true }"
-            >
-              { menu }
-            </button>
-            <button
-              class="block px-3 py-5 mx-4 sm:hidden"
-              :class="{ 'hidden': open === false }"
-            >
-              X
-            </button>
+              class="block px-2 py-2 my-3 text-sm transition-transform select-none rounded-xl sm:hidden focus:bg-gray-100 focus:outline-none"
+              :class="{'bg-gray-100 px-4': open }"
+              @click="open = !open"
+              x-text=" open ? 'X' : '{ menu }'"
+            ></button>
           </div>
+
+          <!-- nav-menu -->
           <div
-            :class="{ 'hidden': open === false }"
-            class="absolute z-10 top-16 right-12 sm:block sm:static"
+            class="absolute z-10 w-full sm:w-auto top-16 sm:block sm:static"
+            :class="{'hidden': !open}"
             @click.away="open = false"
           >
             <ul
-              class="flex flex-col w-48 px-5 py-2 text-gray-600 bg-white border rounded-lg shadow-md sm:border-0 sm:w-auto sm:p-0 sm:flex-row sm:m-0 sm:shadow-none"
+              class="flex flex-col px-5 py-2 text-gray-600 bg-white border rounded-lg shadow-xl sm:border-0 sm:w-auto sm:p-0 sm:flex-row sm:m-0 sm:shadow-none"
             >
               {% for item, link in site.nav %}
               <li
-                class="py-3 text-center text-gray-500 transition sm:text-left sm:pl-8 sm:py-5 hover:text-green-400"
+                class="py-3 text-sm text-center transition sm:text-left sm:pl-8 sm:py-5 hover:text-green-400"
               >
                 <a href="{{ link }}">{{ item }}</a>
               </li>
@@ -53,30 +78,34 @@ title: Home
         </div>
       </nav>
 
+      <!-- hero -->
       {% if (env.site.showHero or site.showHero) %}
       <div class="shadow-xl">
         <div class="container max-w-screen-xl px-5 pb-16 m-auto sm:pb-28">
           <section class="py-16 text-center lg:py-24">
+            <!-- hero-title -->
             <h2
-              class="p-5 mx-auto mb-5 text-4xl font-bold text-white bg-gray-800 rounded-lg sm:rounded-xl max-w-max sm:text-5xl"
+              class="p-5 mx-auto mb-5 text-4xl font-bold text-white transform rounded-lg bg-gradient-to-tr from-gray-900 to-gray-600 sm:rounded-xl max-w-max sm:text-5xl"
             >
               Static Form
             </h2>
             <h3 class="text-2xl italic mb-9">
               Extendable Form Builder that Easy to Deploy
             </h3>
+
+            <!-- hero-button -->
             <div
               class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:max-w-max"
             >
               <a
                 href="https://docs.staticform.click/#/quick-start"
-                class="py-3 mr-0 font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600"
+                class="py-3 mr-0 text-sm font-bold text-white transition bg-green-500 rounded px-7 sm:mr-2 text hover:bg-green-600"
               >
                 Deploy (5 min)
               </a>
               <a
                 href="#form-demo"
-                class="py-3 mr-0 text-gray-700 transition bg-gray-100 border rounded border-grey-600 px-7 sm:mr-2 text hover:text-gray-800 hover:bg-gray-200"
+                class="py-3 mr-0 text-sm text-gray-700 transition bg-gray-100 border rounded border-grey-600 px-7 sm:mr-2 text hover:text-gray-800 hover:bg-gray-200"
               >
                 Example / Demo
               </a>
@@ -89,32 +118,21 @@ title: Home
           </section>
 
           <section class="mx-auto mb-10 space-y-10 md:flex md:justify-between">
+            
+            <!-- hero-feature -->
             <ul
               class="items-center max-w-sm m-auto space-y-8 text-center md:mr-8 md:ml-0 md:text-left"
             >
-              <li class="md:pl-5 md:border-l-4 md:border-green-400">
-                <h3 class="mb-1 text-lg font-bold text-gray-700">Easy 👋</h3>
-                <p class="text-gray-700">
-                  Get started really easily with Netlify deploy button.
-                </p>
-              </li>
+              {% for item in features %}
               <li class="md:pl-5 md:border-l-4 md:border-green-400">
                 <h3 class="mb-1 text-lg font-bold text-gray-700">
-                  Intuitive 👌
+                  {{ item.a }}
                 </h3>
                 <p class="text-gray-700">
-                  Create form exactly as you want it with instant preview.
+                  {{ item.b }}
                 </p>
               </li>
-              <li class="md:pl-5 md:border-l-4 md:border-green-400">
-                <h3 class="mb-1 text-lg font-bold text-gray-700">
-                  Extendable 🍵
-                </h3>
-                <p class="text-gray-700">
-                  Extend with components. Make your own component with Tailwind
-                  CSS + Eleventy + Alpine.js
-                </p>
-              </li>
+              {% endfor %}
             </ul>
             <div class="relative max-w-3xl">
               <video
@@ -136,15 +154,15 @@ title: Home
 
       <section class="relative md:mb-28">
         <div
-          class="text-white bg-gray-900 md:max-w-2xl md:rounded-xl md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0"
+          class="text-white bg-gray-800 md:max-w-2xl md:rounded-md md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0"
         >
           <div class="container max-w-screen-xl p-10 m-auto md:m-0">
             <div class="mb-7" id="form-demo">
-              <b>Getting started is easy and free!</b><br />
+              <b>Get started now! It is easy and free!</b><br />
               Deploy your own instance of Static Form or try demo.
             </div>
             <div
-              class="flex flex-col max-w-sm m-auto space-y-5 text-center sm:block sm:text-left sm:max-w-max sm:m-0"
+              class="flex flex-col m-auto space-y-5 text-center sm:block sm:text-left sm:max-w-max sm:m-0"
             >
               <a
                 href="https://docs.staticform.click/#/quick-start"
@@ -174,9 +192,9 @@ title: Home
           <li class="w-full px-1 py-1 sm:w-1/2">
             <a
               href="{{ form.url }}"
-              class="block h-full p-5 text-lg text-gray-600 transition duration-200 ease-in-out bg-white border rounded shadow hover:shadow-lg hover:border-green-400 focus:border-green-400 focus:outline-none"
+              class="block h-full p-5 text-lg text-gray-700 transition bg-white border-2 shadow rounded-xl hover:shadow-lg hover:border-green-300 focus:border-green-300 focus:outline-none"
             >
-              <p class="mb-3 text-sm font-bold">
+              <p class="mb-3 text-sm text-gray-400">
                 {{ form.data.layout }}
                 -
                 {{ form.data.date | readable }}
@@ -191,5 +209,7 @@ title: Home
   </div>
   <!-- end flex-grow -->
 
-  <footer class="h-2 bg-gray-800"></footer>
+  <footer
+    class="h-1 transform to-green-400 via-green-500 bg-gradient-to-r from-green-400"
+  ></footer>
 </div>
