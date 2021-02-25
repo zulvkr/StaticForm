@@ -15,13 +15,15 @@ const processData = (data, encoding) => {
         index === 0
           ? entry[0] + ": " + entry[1]
           : accumulate + "\n" + entry[0] + ": " + entry[1],
-      title /* global var */ + "\n\n"
+      ""
     );
+
+  const format = string => title + "\n\n" + string;
 
   const encode = string =>
     encoding === "url" ? encodeURIComponent(string) : string;
 
-  return encode(flatten(makeArray(data)));
+  return encode(format(flatten(makeArray(data))));
 };
 
 const whatsAppApi = (waNumber, text) =>
