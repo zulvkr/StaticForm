@@ -3,6 +3,7 @@ layout: basic
 title: Example - COVID Little Survey
 date: 2021-02-22T14:17:14.203Z
 waNumber: 621234567899
+mode: log
 form:
   - type: radio
     required: true

@@ -3,6 +3,7 @@ layout: basic
 title: Example - Bogor COVID Case Reporting Form
 date: 2021-02-09
 waNumber: 621234567899
+mode: log
 form:
   - type: textfield
     label: Name
