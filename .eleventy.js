@@ -10,7 +10,7 @@ const env = process.env.NODE_ENV;
 module.exports = function(eleventyConfig) {
   registerTheme(eleventyConfig);
 
-  // inspect Eleventy data
+  // print Eleventy data
   eleventyConfig.addFilter(
     "debug",
     content => `<pre>${inspect(content)}</pre>`
