@@ -1,26 +1,17 @@
 ---
 permalink: /admin/config.yml
 ---
-{#- Parent -#}
-
-{#- 
-Use local backend 
+{#- Use local backend 
 https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
 -#}
 local_backend: {{'true' if env.devProxy else 'false'}}
 
 {% include "./config.yml" -%}
 
-{#- Themes -#}
-
 {%- set allThemes -%}
-
-{#- Concatenate all themes -#}
-{%- for theme in site.themes %}{# safety space #}
+{%- for theme in site.themes %}
 {% include "theme/" + theme + "/config.yml" ignore missing -%}
 {%- endfor -%}
-
 {%- endset -%}
 
-{#- Remove "collections:" to return valid configuration -#}
 {{- allThemes | replace("collections:", "") | safe -}}

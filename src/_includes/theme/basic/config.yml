@@ -2,7 +2,8 @@ collections: # This line will be deleted during build
   - label: Basic Forms
     name: basic
     folder: src/forms/basic
-    preview_path: "forms/basic/{{'{{slug}}'|safe}}" # double bracket need tbe escaped in Nunjucks
+    # double bracket need to be escaped in Nunjucks
+    preview_path: "forms/basic/{{'{{slug}}'|safe}}"
     create: true
     fields:
       - label: Layout

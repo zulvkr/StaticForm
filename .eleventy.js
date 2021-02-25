@@ -8,12 +8,7 @@ const obfuscateJs = require("./.eleventy/obfuscateJs");
 const env = process.env.NODE_ENV;
 
 module.exports = function(eleventyConfig) {
-
   registerTheme(eleventyConfig);
-
-  /**
-   * Filters
-   */
 
   // inspect Eleventy data
   eleventyConfig.addFilter(
@@ -26,13 +21,11 @@ module.exports = function(eleventyConfig) {
   // obfuscate JavaScript
   eleventyConfig.addFilter("obfuscate", js => obfuscateJs(js));
 
-
-  
-  /* Minify HTML & inlined JavaScript */
+  // minify output
   eleventyConfig.addTransform("htmlmin", minifyHtml);
 
   eleventyConfig.setUseGitIgnore(false);
-  
+
   eleventyConfig.addWatchTarget("./src/admin/");
 
   eleventyConfig.addPassthroughCopy({

@@ -1,4 +1,4 @@
-const {obfuscate} = require("javascript-obfuscator");
+const { obfuscate } = require("javascript-obfuscator");
 const env = process.env.NODE_ENV;
 
 module.exports = js =>
