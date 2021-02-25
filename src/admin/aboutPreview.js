@@ -2,7 +2,7 @@ import htm from "https://unpkg.com/htm?module";
 
 const html = htm.bind(h);
 
-const Git = createClass({
+const About = createClass({
   render() {
     const entry = this.props.entry;
     const repo = entry.getIn(["data", "repo"]);
@@ -131,4 +131,4 @@ const Git = createClass({
   }
 });
 
-CMS.registerPreviewTemplate("git", Git);
+CMS.registerPreviewTemplate("about", About);

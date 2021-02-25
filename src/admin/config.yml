@@ -61,8 +61,8 @@ collections:
               Curiousity kill the cat 🙀. Please read the documentation before
               adding / removing themes.
       - label: About
-        name: git
-        file: src/_data/git.json
+        name: about
+        file: src/_data/about.json
         fields:
           - label: Repository URL
             name: repo
