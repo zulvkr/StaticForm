@@ -32,6 +32,8 @@
     onload="this.media='all'"
   />
 
+  {{ (insertHead or "") | safe }}
+
   <!-- Primary Meta Tags -->
   <title>
     {{ title }}
@@ -43,21 +45,21 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:url" content="{{ site.url or env.deploy.url }}{{ page.url }}" />
   <meta property="og:title" content="{{ title }} - {{ site.title }}" />
   <meta
     property="og:description"
     content="{{ description or site.description }}"
   />
-  <meta property="og:image" content="{{ image or site.image }}" />
+  <meta property="og:image" content="{{ site.url or env.deploy.url }}{{ image or site.image }}" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="twitter:url" content="{{ site.url or env.deploy.url }}{{ page.url }}" />
   <meta property="twitter:title" content="{{ title }} - {{ site.title }}" />
   <meta
     property="twitter:description"
     content="{{ description or site.description }}"
   />
-  <meta property="twitter:image" content="{{ image or site.image }}" />
+  <meta property="twitter:image" content="{{ site.url or env.deploy.url }}{{ image or site.image }}" />
 </head>
