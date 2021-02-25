@@ -40,10 +40,6 @@ collections:
           - label: Favicon
             name: favicon
             widget: image
-          - label: Show Hero
-            name: showHero
-            widget: boolean
-            required: false
           - label: Navigation
             name: nav
             widget: list

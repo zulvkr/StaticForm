@@ -4,7 +4,6 @@
   "image": "/img/logo.png",
   "url": "",
   "favicon": "/img/logo-small.png",
-  "showHero": true,
   "nav": [
     ["GitHub", "https://github.com/zulvkr/StaticForm"],
     ["Docs", "http://docs.staticform.click/"],
