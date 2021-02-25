@@ -1,29 +1,46 @@
 "use strict";
 
 const processData = (data, encoding) => {
-  let dataArray = [];
+  const makeArray = iterator => {
+    const array = [];
+    for (const entry of iterator.entries()) {
+      array.push(entry);
+    }
+    return array;
+  };
 
-  for (const entry of data.entries()) {
-    dataArray.push(entry);
-  }
+  const flatten = arr =>
+    arr.reduce(
+      (accumulate, entry, index) =>
+        index === 0
+          ? entry[0] + ": " + entry[1]
+          : accumulate + "\n" + entry[0] + ": " + entry[1],
+      title /* global var */ + "\n\n"
+    );
 
-  const flatten = (text, entry, index) =>
-    index === 0
-      ? entry[0] + ": " + entry[1]
-      : text + "\n" + entry[0] + ": " + entry[1];
+  const encode = string =>
+    encoding === "url" ? encodeURIComponent(string) : string;
 
-  const result = title + "\n\n" + dataArray.reduce(flatten, "");
-
-  return encoding === "url" ? encodeURIComponent(result) : result;
+  return encode(flatten(makeArray(data)));
 };
+
+const whatsAppApi = (waNumber, text) =>
+  `https://wa.me/${waNumber}?text=${text}`;
 
 const submit = event => {
   event.preventDefault();
   const formData = new FormData(form);
+  const openWA = () =>
+    open(whatsAppApi(waNumber, processData(formData, "url")), "_self");
 
-  mode === "log"
-    ? console.log(waNumber + "\n\n" + processData(formData))
-    : window.open(`https://wa.me/${waNumber}?text=${processData(formData, "url")}`);
+  if (mode === "log") {
+    confirm(`Send to ${waNumber}?` + "\n\n" + processData(formData))
+      ? openWA()
+      : alert("message not sent");
+    return;
+  }
+
+  openWA();
 };
 
 const form = document.getElementById("main-form");
