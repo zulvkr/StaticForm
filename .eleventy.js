@@ -3,44 +3,43 @@ const { inspect } = require("util");
 const dateFormat = require("dateformat");
 const registerTheme = require("./.eleventy/registerTheme");
 const minifyHtml = require("./.eleventy/minifyHtml");
-const obfuscateJs = require("./.eleventy/obfuscateJs")
+const obfuscateJs = require("./.eleventy/obfuscateJs");
 
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV;
 
 module.exports = function(eleventyConfig) {
-  
-  // Use .eleventyignore
-  eleventyConfig.setUseGitIgnore(false);
 
-  // Register Themes
   registerTheme(eleventyConfig);
 
-  // Trigger reload when CSS updated
-  if (env !== "production") {
-    eleventyConfig.addPassthroughCopy({ "src/_includes/_tmp/style.css": "./style.css" });
-  }
+  /**
+   * Filters
+   */
 
-  eleventyConfig.addPassthroughCopy({
-    "src/img/": "./img/",
-    "src/admin/gitpr.js": "./admin/gitpr.js"
-  });
-
-  eleventyConfig.addWatchTarget("./src/admin/");
-
-  // Print eleventy data object
+  // inspect Eleventy data
   eleventyConfig.addFilter(
     "debug",
     content => `<pre>${inspect(content)}</pre>`
   );
 
-  // Format readable date
   eleventyConfig.addFilter("readable", date => dateFormat(date, "mediumDate"));
 
-  // Obfuscate JavaScript
+  // obfuscate JavaScript
   eleventyConfig.addFilter("obfuscate", js => obfuscateJs(js));
 
-  // Minify HTML, including inlined JavaScript
+
+  
+  /* Minify HTML & inlined JavaScript */
   eleventyConfig.addTransform("htmlmin", minifyHtml);
+
+  eleventyConfig.setUseGitIgnore(false);
+  
+  eleventyConfig.addWatchTarget("./src/admin/");
+
+  eleventyConfig.addPassthroughCopy({
+    "src/img/": "./img/",
+    "src/admin/aboutPreview.js": "./admin/aboutPreview.js",
+    "src/_includes/_tmp/style.css": "./style.css"
+  });
 
   return {
     dir: {
