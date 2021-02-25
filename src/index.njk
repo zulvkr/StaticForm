@@ -50,10 +50,10 @@ features:
 
             <!-- nav-button -->
             <button
-              class="block px-2 py-2 my-3 text-sm transition-transform select-none rounded-xl sm:hidden focus:bg-gray-100 focus:outline-none"
-              :class="{'bg-gray-100 px-4': open }"
-              @click="open = !open;init ? (setTimeout(() => {init = false}, 10), setTimeout(() => {open = true}, 20)) : '';"
-              x-text=" init ? '{menu}' : open ? 'X' : '{ menu }'"
+              class="block px-2 py-2 my-auto text-sm select-none rounded-xl sm:hidden focus:bg-gray-100 focus:outline-none"
+              :class="{'bg-gray-100 px-4': !init && open }"
+              @click="open = !open;init ? (init = false, open = true) : '';"
+              x-text=" init ? '{\ menu\ }' : open ? 'X' : '{\ menu\ }'"
             ></button>
           </div>
 
@@ -62,7 +62,7 @@ features:
             class="absolute z-10 w-full sm:w-auto top-16 sm:block sm:static"
             :class="{'hidden sm:static': init}"
             @click.away="open = false"
-            x-show.transition="open"
+            x-show.transition.origin.top.right="open"
           >
             <ul
               class="flex flex-col px-5 py-2 text-gray-600 bg-white border rounded-lg shadow-xl sm:border-0 sm:w-auto sm:p-0 sm:flex-row sm:m-0 sm:shadow-none"
@@ -84,7 +84,6 @@ features:
       <div class="shadow-lg">
         <div class="container max-w-screen-xl px-5 pb-16 m-auto sm:pb-28">
           <section class="py-16 text-center lg:py-24">
-            
             <!-- hero-title -->
             <h2
               class="p-5 mx-auto mb-5 text-4xl font-bold text-white transform rounded-lg bg-gradient-to-tr from-gray-900 to-gray-600 sm:rounded-xl max-w-max sm:text-5xl"
@@ -114,13 +113,14 @@ features:
               <a
                 href="https://docs.staticform.click"
                 class="px-4 py-3 underline hover:no-underline sm:block"
-                >Learn more
+                >See Documentation
               </a>
             </div>
           </section>
 
-          <section class="mx-auto mb-10 space-y-10 md:flex md:justify-between">
-            
+          <section
+            class="pt-10 mx-auto mb-10 space-y-10 border-t md:flex md:justify-between md:border-none md:pt-0"
+          >
             <!-- hero-feature -->
             <ul
               class="items-center max-w-sm m-auto space-y-8 text-center md:mr-8 md:ml-0 md:text-left"
@@ -136,17 +136,20 @@ features:
               </li>
               {% endfor %}
             </ul>
-            <div class="relative max-w-3xl">
+            <div class="grid max-w-3xl grid-cols-12 grid-rows-6">
               <video
                 autoplay
                 muted
                 loop
                 playsinline
-                class="w-full rounded-lg shadow-lg"
+                class="z-10 col-start-2 col-end-13 row-start-2 row-end-7 rounded-lg shadow-lg"
               >
                 <source src="/img/web.webm" type="video/webm" />
                 <source src="/img/web.mp4" type="video/mp4" />
               </video>
+              <div
+                class="col-start-1 col-end-12 row-start-1 row-end-6 transform bg-green-400 shadow-lg rounded-xl rotate-2"
+              ></div>
             </div>
           </section>
         </div>
@@ -158,13 +161,15 @@ features:
         <div
           class="text-white bg-gray-800 md:max-w-xl md:rounded-3xl md:shadow-xl md:absolute md:-top-16 md:mx-auto md:left-0 md:right-0"
         >
-          <div class="p-10">
-            <div class="mb-6 text-gray-400" id="form-demo">
-              <span class="text-2xl text-white shadow-sm">Get Started Now.</span><br />
-              Deploy your own instance of Static Form or try demo.
+          <div class="px-5 pt-4 pb-8 text-center">
+            <div class="mb-6 text-gray-300" id="form-demo">
+              <p class="mb-1 text-3xl text-white">Get Started Now.</p>
+              <p>
+                Deploy your own instance of Static Form or try demo.
+              </p>
             </div>
             <div
-              class="flex flex-col m-auto space-y-5 text-center sm:block sm:text-left sm:max-w-max sm:m-0"
+              class="flex flex-col mx-auto space-y-5 text-center sm:block sm:max-w-max"
             >
               <a
                 href="https://docs.staticform.click/#/quick-start"
@@ -186,7 +191,7 @@ features:
     </div>
 
     <section class="container max-w-screen-md px-5 py-20 m-auto">
-      <h3 class="text-2xl mb-7">Recent Form</h3>
+      <h3 class="mb-4 text-3xl">Recent Form</h3>
 
       <div>
         <ul class="flex flex-wrap">
