@@ -1,11 +1,13 @@
 const fs = require("fs");
 
 /**
- * Add all theme listed in site.json
- * as Eleventy plugin
+ * This function adds all theme configuration file
+ * listed in site.json to .eleventy.js using addPlugin method
  */
 
 module.exports = eleventyConfig => {
+  let themes = [];
+
   try {
     let site = JSON.parse(fs.readFileSync("./src/_data/site.json", "utf8"));
     console.log("site configuration found!");
@@ -18,12 +20,11 @@ module.exports = eleventyConfig => {
     );
   }
 
-  let themes = [];
-
   const register = theme => {
     const themeConfig = `./src/_includes/theme/${theme}/theme.eleventy.js`;
 
     try {
+      // Check if theme configuration file exist.
       fs.accessSync(themeConfig, fs.constants.R_OK);
       console.log(theme + " theme found!");
       eleventyConfig.addPlugin(require("." + themeConfig));
