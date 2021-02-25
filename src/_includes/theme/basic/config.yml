@@ -22,6 +22,7 @@ collections: # This line will be deleted during build
       - label: Body text
         name: body
         widget: markdown
+        required: false
       - label: Form
         name: form
         widget: list

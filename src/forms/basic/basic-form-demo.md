@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: Bogor COVID Case Reporting Form
+title: Example - Bogor COVID Case Reporting Form
 date: 2021-02-09
 waNumber: 621234567899
 form:
