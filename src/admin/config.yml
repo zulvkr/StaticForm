@@ -1,10 +1,10 @@
 backend:
-  name: "{{env.cmsBackend or 'git-gateway' | safe}}"
-  branch: "{{env.git.branch or 'main' | safe}}"
+  name: "{{env.cmsBackend or 'git-gateway'}}"
+  branch: "{{env.git.branch or 'main'}}"
 
 media_folder: src/img
 public_folder: /img
-site_url: "{{site.url or env.deploy.url | safe}}"
+site_url: "{{site.url or env.deploy.url}}"
 
 collections:
   - label: Settings
@@ -35,7 +35,7 @@ collections:
               - (^$|^https?://(?:.*/)?[^/.]+$)
               - valid url without trailing slash or empty
             hint: Your website url. Fill this to override detected url.
-            default: "{{env.deploy.url | safe}}"
+            default: "{{env.deploy.url}}"
             required: false
           - label: Favicon
             name: favicon
@@ -64,9 +64,9 @@ collections:
             name: repo
             widget: select
             options:
-              - "{{env.git.url | safe}}"
+              - "{{env.git.url}}"
           - label: Branch
             name: branch
             widget: select
             options:
-              - "{{env.git.branch | safe}}"
+              - "{{env.git.branch}}"
