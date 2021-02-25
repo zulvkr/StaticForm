@@ -5,8 +5,6 @@ const registerTheme = require("./.eleventy/registerTheme");
 const minifyHtml = require("./.eleventy/minifyHtml");
 const obfuscateJs = require("./.eleventy/obfuscateJs");
 
-const env = process.env.NODE_ENV;
-
 module.exports = function(eleventyConfig) {
   registerTheme(eleventyConfig);
 
