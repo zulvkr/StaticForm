@@ -9,7 +9,7 @@
   ></script>
 
   <!-- Netlify CMS only require Identity for initial registration and devlopment using git-gateway You can safely disable it after that. -->
-  {% if page.url === "/" and !env.disableIdentity  %}
+  {% if page.url === "/" and not env.disableIdentity  %}
   <script
     src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     async="async"
