@@ -8,7 +8,6 @@ module.exports = ({ id, name, placeholder, required }) => {
       ${required ? "required" : ""}
       class="basic-input"
       placeholder="${placeholder ? placeholder : ""}"
-    >
-    </textarea>
+    ></textarea>
   `;
 };
