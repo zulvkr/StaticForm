@@ -16,11 +16,20 @@
   ></script>
   {% endif %}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
+    rel="preload"
+    as="style"
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  />
+
+  <link
     rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    media="print"
+    onload="this.media='all'"
   />
 
   <!-- Primary Meta Tags -->
